@@ -27,6 +27,7 @@
 		840539DF2352CCA50042C26F /* CoordinatorFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840539DE2352CCA50042C26F /* CoordinatorFactoryImp.swift */; };
 		840539E12352CDE40042C26F /* ModuleFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840539E02352CDE40042C26F /* ModuleFactoryImp.swift */; };
 		840EFEDC23B468D200E23347 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EFEDB23B468D200E23347 /* DateExtensions.swift */; };
+		84135DBA23C48B7D0066BACD /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84135DB923C48B7D0066BACD /* Certificates.swift */; };
 		8421ED3823A31E20002091FF /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED2823A31E20002091FF /* OrderController.swift */; };
 		8421ED3923A31E20002091FF /* OrderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED2923A31E20002091FF /* OrderTableCell.swift */; };
 		8421ED3A23A31E20002091FF /* DataSourcesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED2B23A31E20002091FF /* DataSourcesFactory.swift */; };
@@ -43,15 +44,12 @@
 		8421ED4723A31E8E002091FF /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED4623A31E8E002091FF /* AuthCoordinator.swift */; };
 		8421ED4923A31EAF002091FF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED4823A31EAF002091FF /* LoginController.swift */; };
 		8421ED4B23A31ECD002091FF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED4A23A31ECD002091FF /* LoginViewModel.swift */; };
-		8421ED4D23A322C3002091FF /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED4C23A322C3002091FF /* ResponseParser.swift */; };
-		8421ED4F23A3C38D002091FF /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED4E23A3C38D002091FF /* NetworkProvider.swift */; };
 		8437AB0B23C33AD700621A49 /* ReasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385423BFA368002B9563 /* ReasonModel.swift */; };
 		8437AB0C23C33AE300621A49 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385523BFA368002B9563 /* OrderModel.swift */; };
+		8437AB1223C3518600621A49 /* CustomMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437AB1123C3518600621A49 /* CustomMoyaProvider.swift */; };
 		843ABFAD239DE5890050E37D /* CarMasterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ABFAC239DE5890050E37D /* CarMasterApi.swift */; };
 		843ABFE923A2594F0050E37D /* CarMasterApiExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ABFE823A2594F0050E37D /* CarMasterApiExtensions.swift */; };
-		8440588F23C207DE00BEE9DF /* AlamofireSessionManagerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440588E23C207DE00BEE9DF /* AlamofireSessionManagerBuilder.swift */; };
 		8440589323C233E800BEE9DF /* carmasterapi.cer in Resources */ = {isa = PBXBuildFile; fileRef = 8440589223C2297C00BEE9DF /* carmasterapi.cer */; };
-		8440589523C23BD900BEE9DF /* CustomServerTrustPolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440589423C23BD800BEE9DF /* CustomServerTrustPolicyManager.swift */; };
 		84532B2A238CB85100CC8676 /* PasswordDialogueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84532B29238CB85100CC8676 /* PasswordDialogueController.swift */; };
 		84532B2C238CB89C00CC8676 /* PasswordDialogueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84532B2B238CB89C00CC8676 /* PasswordDialogueViewModel.swift */; };
 		84532B2E238CBAB600CC8676 /* PasswordDialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84532B2D238CBAB600CC8676 /* PasswordDialogue.storyboard */; };
@@ -70,12 +68,13 @@
 		847C221A235811420040B097 /* OrderControllerExtansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C2219235811420040B097 /* OrderControllerExtansions.swift */; };
 		8492385D23BFA368002B9563 /* DetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385623BFA368002B9563 /* DetailsDataSource.swift */; };
 		8492385E23BFA368002B9563 /* RecommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385823BFA368002B9563 /* RecommendationModel.swift */; };
-		8492385F23BFA368002B9563 /* TokensModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385923BFA368002B9563 /* TokensModel.swift */; };
+		8492385F23BFA368002B9563 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385923BFA368002B9563 /* UserDataModel.swift */; };
 		8492386023BFA368002B9563 /* OrdersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385A23BFA368002B9563 /* OrdersDataSource.swift */; };
 		8497D44A23A90CF4007DDE13 /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497D44923A90CF4007DDE13 /* DateFormatterExtensions.swift */; };
 		84B221692382DAE1005FA7B3 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B221682382DAE0005FA7B3 /* UITableViewExtensions.swift */; };
 		84B2216D2383A039005FA7B3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2216A2383A039005FA7B3 /* CircularProgressBar.swift */; };
 		84B2216F2383A039005FA7B3 /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2216C2383A039005FA7B3 /* BorderLayer.swift */; };
+		84B95D2023C6E0EE00CE5C52 /* SettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B95D1F23C6E0EE00CE5C52 /* SettingsHelper.swift */; };
 		84BEC0B72349C1030054FE21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEC0B62349C1030054FE21 /* AppDelegate.swift */; };
 		84BEC0BC2349C1030054FE21 /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BEC0BA2349C1030054FE21 /* Orders.storyboard */; };
 		84BEC0BE2349C1040054FE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BEC0BD2349C1040054FE21 /* Assets.xcassets */; };
@@ -125,6 +124,7 @@
 		840539DE2352CCA50042C26F /* CoordinatorFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryImp.swift; sourceTree = "<group>"; };
 		840539E02352CDE40042C26F /* ModuleFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryImp.swift; sourceTree = "<group>"; };
 		840EFEDB23B468D200E23347 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		84135DB923C48B7D0066BACD /* Certificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificates.swift; sourceTree = "<group>"; };
 		8421ED2823A31E20002091FF /* OrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		8421ED2923A31E20002091FF /* OrderTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableCell.swift; sourceTree = "<group>"; };
 		8421ED2B23A31E20002091FF /* DataSourcesFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourcesFactory.swift; sourceTree = "<group>"; };
@@ -141,13 +141,10 @@
 		8421ED4623A31E8E002091FF /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		8421ED4823A31EAF002091FF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		8421ED4A23A31ECD002091FF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		8421ED4C23A322C3002091FF /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
-		8421ED4E23A3C38D002091FF /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		8437AB1123C3518600621A49 /* CustomMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMoyaProvider.swift; sourceTree = "<group>"; };
 		843ABFAC239DE5890050E37D /* CarMasterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterApi.swift; sourceTree = "<group>"; };
 		843ABFE823A2594F0050E37D /* CarMasterApiExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterApiExtensions.swift; sourceTree = "<group>"; };
-		8440588E23C207DE00BEE9DF /* AlamofireSessionManagerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireSessionManagerBuilder.swift; sourceTree = "<group>"; };
 		8440589223C2297C00BEE9DF /* carmasterapi.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = carmasterapi.cer; sourceTree = "<group>"; };
-		8440589423C23BD800BEE9DF /* CustomServerTrustPolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomServerTrustPolicyManager.swift; sourceTree = "<group>"; };
 		84532B29238CB85100CC8676 /* PasswordDialogueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDialogueController.swift; sourceTree = "<group>"; };
 		84532B2B238CB89C00CC8676 /* PasswordDialogueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDialogueViewModel.swift; sourceTree = "<group>"; };
 		84532B2D238CBAB600CC8676 /* PasswordDialogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordDialogue.storyboard; sourceTree = "<group>"; };
@@ -168,12 +165,13 @@
 		8492385523BFA368002B9563 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		8492385623BFA368002B9563 /* DetailsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsDataSource.swift; sourceTree = "<group>"; };
 		8492385823BFA368002B9563 /* RecommendationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationModel.swift; sourceTree = "<group>"; };
-		8492385923BFA368002B9563 /* TokensModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokensModel.swift; sourceTree = "<group>"; };
+		8492385923BFA368002B9563 /* UserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		8492385A23BFA368002B9563 /* OrdersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersDataSource.swift; sourceTree = "<group>"; };
 		8497D44923A90CF4007DDE13 /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
 		84B221682382DAE0005FA7B3 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		84B2216A2383A039005FA7B3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		84B2216C2383A039005FA7B3 /* BorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
+		84B95D1F23C6E0EE00CE5C52 /* SettingsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHelper.swift; sourceTree = "<group>"; };
 		84BEC0B32349C1030054FE21 /* CarMasterNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarMasterNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BEC0B62349C1030054FE21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84BEC0BB2349C1030054FE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Orders.storyboard; sourceTree = "<group>"; };
@@ -370,11 +368,9 @@
 		843ABFAB239DE5450050E37D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				84135DB923C48B7D0066BACD /* Certificates.swift */,
 				843ABFAC239DE5890050E37D /* CarMasterApi.swift */,
-				8421ED4C23A322C3002091FF /* ResponseParser.swift */,
-				8421ED4E23A3C38D002091FF /* NetworkProvider.swift */,
-				8440588E23C207DE00BEE9DF /* AlamofireSessionManagerBuilder.swift */,
-				8440589423C23BD800BEE9DF /* CustomServerTrustPolicyManager.swift */,
+				8437AB1123C3518600621A49 /* CustomMoyaProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -443,8 +439,9 @@
 				8492385523BFA368002B9563 /* OrderModel.swift */,
 				8492385623BFA368002B9563 /* DetailsDataSource.swift */,
 				8492385823BFA368002B9563 /* RecommendationModel.swift */,
-				8492385923BFA368002B9563 /* TokensModel.swift */,
+				8492385923BFA368002B9563 /* UserDataModel.swift */,
 				8492385A23BFA368002B9563 /* OrdersDataSource.swift */,
+				84B95D1F23C6E0EE00CE5C52 /* SettingsHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -706,6 +703,7 @@
 				84D44AEA234D9770005E467E /* TextFieldView.swift in Sources */,
 				8421ED3D23A31E20002091FF /* ReasonCellViewModel.swift in Sources */,
 				8497D44A23A90CF4007DDE13 /* DateFormatterExtensions.swift in Sources */,
+				84135DBA23C48B7D0066BACD /* Certificates.swift in Sources */,
 				840539C62351D3B30042C26F /* UIViewExtensions.swift in Sources */,
 				843ABFE923A2594F0050E37D /* CarMasterApiExtensions.swift in Sources */,
 				8421ED4723A31E8E002091FF /* AuthCoordinator.swift in Sources */,
@@ -717,6 +715,7 @@
 				8421ED4B23A31ECD002091FF /* LoginViewModel.swift in Sources */,
 				8421ED3A23A31E20002091FF /* DataSourcesFactory.swift in Sources */,
 				840539CC2351D89F0042C26F /* StoryboardsEnum.swift in Sources */,
+				84B95D2023C6E0EE00CE5C52 /* SettingsHelper.swift in Sources */,
 				840539C82351D5BF0042C26F /* NSObjectExtensions.swift in Sources */,
 				840539CE2351DE4E0042C26F /* ApplicationCoordinator.swift in Sources */,
 				84532B2A238CB85100CC8676 /* PasswordDialogueController.swift in Sources */,
@@ -739,18 +738,15 @@
 				840539A2234F36A40042C26F /* UIImageExtensions.swift in Sources */,
 				84CA35A7235E97340082C0BA /* Detail.swift in Sources */,
 				84BEC0B72349C1030054FE21 /* AppDelegate.swift in Sources */,
-				8421ED4F23A3C38D002091FF /* NetworkProvider.swift in Sources */,
 				8421ED4123A31E20002091FF /* MessagesCell.swift in Sources */,
 				84B2216D2383A039005FA7B3 /* CircularProgressBar.swift in Sources */,
 				847C22122356DE240040B097 /* SettingsController.swift in Sources */,
-				8440588F23C207DE00BEE9DF /* AlamofireSessionManagerBuilder.swift in Sources */,
-				8421ED4D23A322C3002091FF /* ResponseParser.swift in Sources */,
 				8437AB0C23C33AE300621A49 /* OrderModel.swift in Sources */,
 				84532B2C238CB89C00CC8676 /* PasswordDialogueViewModel.swift in Sources */,
 				840539BE2351CCEB0042C26F /* BaseView.swift in Sources */,
 				840539E12352CDE40042C26F /* ModuleFactoryImp.swift in Sources */,
 				84D44AE8234D9216005E467E /* ButtonView.swift in Sources */,
-				8492385F23BFA368002B9563 /* TokensModel.swift in Sources */,
+				8492385F23BFA368002B9563 /* UserDataModel.swift in Sources */,
 				840539C22351CDE00042C26F /* Coordinator.swift in Sources */,
 				847C22102356DE130040B097 /* SettingsCoordinator.swift in Sources */,
 				8492385E23BFA368002B9563 /* RecommendationModel.swift in Sources */,
@@ -760,7 +756,7 @@
 				847C22142356DEC00040B097 /* SettingsModuleFactory.swift in Sources */,
 				843ABFAD239DE5890050E37D /* CarMasterApi.swift in Sources */,
 				840539D92351E6190042C26F /* RouterImp.swift in Sources */,
-				8440589523C23BD900BEE9DF /* CustomServerTrustPolicyManager.swift in Sources */,
+				8437AB1223C3518600621A49 /* CustomMoyaProvider.swift in Sources */,
 				84D4C17023741A5700DB8F58 /* SettingsViewModel.swift in Sources */,
 				8421ED3C23A31E20002091FF /* ReasonsCell.swift in Sources */,
 			);

@@ -2,11 +2,11 @@ import Foundation
 import Moya
 
 extension CarMasterApi: TargetType, AccessTokenAuthorizable {
-    
-    var authorizationType: AuthorizationType {
+
+    var authorizationType: AuthorizationType? {
         switch self {
         case .signIn:
-            return .none
+            return .bearer
         case .getCars:
             return .bearer
         case .getReasons:
@@ -16,6 +16,8 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
         case .changeStatus:
             return .bearer
         case .addMessage:
+            return .bearer
+        case .refreshToken:
             return .bearer
         }
     }
@@ -38,6 +40,8 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             return "/api/reasons/changestatus"
         case .addMessage:
             return "/api/recommendations/add"
+        case .refreshToken:
+            return "/oauth/token"
         }
     }
     
@@ -54,6 +58,8 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
         case .changeStatus:
             return .post
         case .addMessage:
+            return .post
+        case .refreshToken:
             return .post
         }
     }
@@ -93,6 +99,14 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             
         case .addMessage(let text, let order):
             return .requestParameters(parameters: ["message" : text, "orderNum" : order], encoding: JSONEncoding.default)
+        case .refreshToken(let refreshToken):
+            return .requestParameters(
+                parameters: [
+                "refresh_token": refreshToken,
+                "grant_type": "refresh_token",
+                "client_id": "1C",
+                "client_secret": "SomeRandomCharsAndNumbers"],
+            encoding: JSONEncoding.default)
         }
     }
     

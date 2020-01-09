@@ -88,6 +88,34 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="Rjm-rV-2tg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ZsA-Yj-thf">
+                                        <rect key="frame" x="16" y="278" width="343" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZsA-Yj-thf" id="lmS-cD-YlR">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bf-Th-6Xp" customClass="RoundCornerButton" customModule="CarMasterNotify" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                    <color key="backgroundColor" red="0.28423232349999999" green="0.4257795378" blue="0.63181403110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Sign Out"/>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7Bf-Th-6Xp" firstAttribute="height" secondItem="lmS-cD-YlR" secondAttribute="height" id="289-1r-9ZF"/>
+                                                <constraint firstItem="7Bf-Th-6Xp" firstAttribute="leading" secondItem="lmS-cD-YlR" secondAttribute="leading" id="NH2-L5-sEV"/>
+                                                <constraint firstItem="7Bf-Th-6Xp" firstAttribute="top" secondItem="lmS-cD-YlR" secondAttribute="top" id="k4h-Lg-szX"/>
+                                                <constraint firstItem="7Bf-Th-6Xp" firstAttribute="width" secondItem="lmS-cD-YlR" secondAttribute="width" id="wkb-li-1Ag"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="0wD-bn-AbU" id="WSH-k7-zBS"/>
@@ -100,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iag-DJ-W1t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="94"/>
+            <point key="canvasLocation" x="133.59999999999999" y="93.103448275862078"/>
         </scene>
     </scenes>
 </document>

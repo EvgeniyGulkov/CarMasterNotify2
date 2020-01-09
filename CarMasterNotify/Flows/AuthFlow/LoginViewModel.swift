@@ -12,13 +12,12 @@ class LoginViewModel {
     let errorMessage: PublishSubject<String>
     
     var checkFields: Observable<Bool>
-    var networkProvider: NetworkProvider
+    var networkProvider: CustomMoyaProvider<CarMasterApi>
     
     var signInOk: (()->())?
     
-    init(networkProvider: NetworkProvider) {
+    init(networkProvider: CustomMoyaProvider<CarMasterApi>) {
         self.networkProvider = networkProvider
-        
         self.loginText = PublishSubject()
         self.passwordText = PublishSubject()
         self.signInButton = PublishSubject()
@@ -35,25 +34,27 @@ class LoginViewModel {
         
         self.signInButton.asObservable()
             .subscribe(onNext: {[unowned self] signIn in
-                self.loading.onNext(true)
-                let tokens = self.networkProvider.request(from: signIn, Int.self)
-                tokens.subscribe(
-                    onSuccess: {statusCode in
-                        self.loading.onNext(false)
-                        
-                        if statusCode == 200 {
-                            self.signInOk!()
-                        }
-                        if statusCode == 403 {
-                            self.errorMessage.onNext("Login or password is incorrect")
-                        }
-                },
-                    onError: {error in
-                        self.errorMessage.onNext(error.localizedDescription)
-                        self.loading.onNext(false)
-                })
-                    .disposed(by: self.disposeBag)
+                self.signIn(signIn)
             })
         .disposed(by: disposeBag)
+    }
+    
+    func signIn (_ signIn: CarMasterApi) {
+        self.loading.onNext(true)
+        let provider = CustomMoyaProvider<CarMasterApi>()
+        provider.signInRequest(signIn)
+            .subscribe(
+            onSuccess: {
+                statusCode in
+                self.loading.onNext(false)
+                
+                if statusCode == 200 {self.signInOk!()}
+                if statusCode == 403 {self.errorMessage.onNext("Login or password is Incorrect")}
+        },
+            onError: {error in
+                self.errorMessage.onNext(error.localizedDescription)
+                self.loading.onNext(false)
+        })
+            .disposed(by: self.disposeBag)
     }
 }

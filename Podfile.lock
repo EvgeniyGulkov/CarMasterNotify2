@@ -1,13 +1,12 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.0.0-rc.3)
   - Differentiator (4.0.1)
   - KeychainAccess (4.1.0)
-  - Moya (13.0.1):
-    - Moya/Core (= 13.0.1)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Result (4.1.0)
+  - Moya/Core (14.0.0-beta.6):
+    - Alamofire (= 5.0.0-rc.3)
+  - Moya/RxSwift (14.0.0-beta.6):
+    - Moya/Core
+    - RxSwift (~> 5.0)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -24,7 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - KeychainAccess
-  - Moya (~> 13.0)
+  - Moya/RxSwift (~> 14.0.0-beta.6)
   - RxCocoa (~> 5)
   - RxDataSources (~> 4.0)
   - RxKeyboard
@@ -36,7 +35,6 @@ SPEC REPOS:
     - Differentiator
     - KeychainAccess
     - Moya
-    - Result
     - RxCocoa
     - RxDataSources
     - RxKeyboard
@@ -44,17 +42,16 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  Moya: d4821fbcb3e784f34d2f82869e6855057a0b85d1
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: cb004412953bbf0acaaae633836c77c106f594df
+PODFILE CHECKSUM: 33a796d8a582bc48c9b4b7addbef3044ec7a2ce7
 
 COCOAPODS: 1.8.4

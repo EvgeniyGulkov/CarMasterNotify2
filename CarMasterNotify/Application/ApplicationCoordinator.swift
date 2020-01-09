@@ -60,7 +60,6 @@ class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func runMainFlow() {
-        UserDefaults.standard.set("Evgeniy", forKey: "shortName")
         UserDefaults.standard.set(true, forKey: "notificationsOn")
         
         let coordinator = coordinatorFactory.makeTabbarCoordinator()

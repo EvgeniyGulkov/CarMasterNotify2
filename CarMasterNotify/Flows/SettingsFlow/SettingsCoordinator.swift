@@ -39,8 +39,8 @@ class SettingsCoordinator: BaseCoordinator {
         router.present(passwordChangeDialogueOutput, animated: true)
     }
     
-    private func showNameChangeDialogue() {
-        let viewmodel = ViewModelFactory.makeNameDialogueViewModel()
+    private func showNameChangeDialogue(username: String) {
+        let viewmodel = ViewModelFactory.makeNameDialogueViewModel(username: username)
         let nameChangeDialogueOutput = factory.makeChangeNameDialogueOutput(viewModel: viewmodel)
         
         viewmodel.tapCancel.asObservable()

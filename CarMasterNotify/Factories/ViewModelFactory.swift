@@ -3,12 +3,12 @@ import UIKit
 class ViewModelFactory {
     
     static func makeDetailViewModel(order: OrderModel) -> DetailViewModel {
-        let networkProvider = NetworkProvider()
+        let networkProvider = CustomMoyaProvider<CarMasterApi>()
         return DetailViewModel(order: order, networkProvider: networkProvider)
     }
     
     static func makeLoginViewModel() -> LoginViewModel {
-        let networkProvider = NetworkProvider()
+        let networkProvider = CustomMoyaProvider<CarMasterApi>()
         let viewModel = LoginViewModel(networkProvider: networkProvider)
         return viewModel
     }
@@ -23,13 +23,13 @@ class ViewModelFactory {
         return viewModel
     }
     
-    static func makeNameDialogueViewModel() -> NameChangeViewModel {
-        let viewModel = NameChangeViewModel()
+    static func makeNameDialogueViewModel(username: String) -> NameChangeViewModel {
+        let viewModel = NameChangeViewModel(username: username)
         return viewModel
     }
     
     static func makeOrderViewModel() -> OrderViewModel {
-        let networkProvider = NetworkProvider()
+        let networkProvider = CustomMoyaProvider<CarMasterApi>()
         let viewModel = OrderViewModel(networkProvider: networkProvider)
         return viewModel
     }

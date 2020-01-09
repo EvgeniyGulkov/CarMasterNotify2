@@ -17,7 +17,7 @@ class SettingsController: UITableViewController {
     }
     
     func setupBindings() {
-        self.viewModel?.userName!
+        self.viewModel?.user!
         .bind(to: self.shortName.rx.text)
         .disposed(by: disposeBag)
         }

@@ -11,10 +11,10 @@ class OrderViewModel {
     let displayLastCell:PublishSubject<Int>
     
     var data: PublishSubject<[OrdersDataSource]>
-    var networkProvider: NetworkProvider
+    var networkProvider: CustomMoyaProvider<CarMasterApi>
     var orders: [Int:OrderModel]
     
-    init(networkProvider: NetworkProvider) {
+    init(networkProvider: CustomMoyaProvider<CarMasterApi>) {
         self.networkProvider = networkProvider
         self.selectData = PublishSubject()
         self.search = PublishSubject()
@@ -41,23 +41,24 @@ class OrderViewModel {
         if searchText.count>2 {
             self.orders.removeAll()
         }
-        let cars = self.networkProvider.request(from: .getCars(offset: offset, limit: limit, searchText: searchText), [OrderModel].self)
-        cars.subscribe(
-            onSuccess: {orders in
-                orders.forEach{order in
-                    self.orders[order.orderNumber!] = order
-                }
-                let sections = self.splitByDate(orders: self.orders)
-                var orderDataSources: [OrdersDataSource] = []
-                sections.forEach {section in
-                    orderDataSources.append(OrdersDataSource(title: DateFormatter.formattedString(date: section.date, format: "dd.MM.yyyy") , items: section.items))
-                }
-                if !orders.isEmpty {
-                self.data.onNext(orderDataSources)
-                }
-        },
-            onError: {error in print(error.localizedDescription)})
-        .disposed(by: disposeBag)
+        self.networkProvider.request(.getCars(offset: offset, limit: limit, searchText: searchText), [OrderModel].self)
+            .subscribe(onSuccess:
+                {[unowned self] orders in
+                    orders.forEach{order in
+                        self.orders[order.orderNumber!] = order
+                    }
+                    let sections = self.splitByDate(orders: self.orders)
+                    var orderDataSources: [OrdersDataSource] = []
+                    sections.forEach {section in
+                        orderDataSources.append(OrdersDataSource(title: DateFormatter.formattedString(date: section.date, format: "dd.MM.yyyy") , items: section.items))
+                    }
+                    if !orders.isEmpty {
+                    self.data.onNext(orderDataSources)
+                    }
+            },
+                       onError: {error in
+                        print(error) })
+            .disposed(by: disposeBag)
     }
     
     func splitByDate (orders: [Int:OrderModel]) -> [OrderSection] {

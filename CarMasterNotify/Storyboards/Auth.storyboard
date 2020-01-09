@@ -56,8 +56,8 @@
                                 </constraints>
                                 <color key="color" red="0.28423232349999999" green="0.4257795378" blue="0.63181403110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hi7-pI-ey6">
-                                <rect key="frame" x="187.5" y="360" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hi7-pI-ey6">
+                                <rect key="frame" x="16" y="351" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -72,11 +72,12 @@
                             <constraint firstItem="AGE-xX-62U" firstAttribute="top" secondItem="NRt-r0-xFa" secondAttribute="top" id="Lz2-kG-Ixd"/>
                             <constraint firstItem="1SZ-Ww-pIB" firstAttribute="width" secondItem="AGE-xX-62U" secondAttribute="width" id="NTz-HC-nbt"/>
                             <constraint firstItem="JJt-2v-c9l" firstAttribute="width" secondItem="TbW-n5-MsN" secondAttribute="width" id="PbL-ki-yF6"/>
-                            <constraint firstItem="hi7-pI-ey6" firstAttribute="centerX" secondItem="Idy-zj-W12" secondAttribute="centerX" id="XH6-Dd-X9Q"/>
                             <constraint firstItem="AGE-xX-62U" firstAttribute="leading" secondItem="NRt-r0-xFa" secondAttribute="leading" constant="16" id="Z03-5y-tJo"/>
                             <constraint firstItem="JJt-2v-c9l" firstAttribute="centerX" secondItem="TbW-n5-MsN" secondAttribute="centerX" id="cks-6t-v3J"/>
-                            <constraint firstItem="hi7-pI-ey6" firstAttribute="top" secondItem="JJt-2v-c9l" secondAttribute="bottom" constant="41" id="diZ-oj-c37"/>
+                            <constraint firstItem="hi7-pI-ey6" firstAttribute="top" secondItem="JJt-2v-c9l" secondAttribute="bottom" constant="32" id="diZ-oj-c37"/>
                             <constraint firstItem="Idy-zj-W12" firstAttribute="firstBaseline" secondItem="JJt-2v-c9l" secondAttribute="baseline" constant="52.5" id="i4p-PC-SJU"/>
+                            <constraint firstItem="hi7-pI-ey6" firstAttribute="leading" secondItem="AGE-xX-62U" secondAttribute="leading" id="mC2-YV-zu1"/>
+                            <constraint firstItem="hi7-pI-ey6" firstAttribute="trailing" secondItem="AGE-xX-62U" secondAttribute="trailing" id="ogb-ls-T4l"/>
                             <constraint firstItem="TbW-n5-MsN" firstAttribute="top" secondItem="1SZ-Ww-pIB" secondAttribute="bottom" constant="1" id="swh-e7-WPw"/>
                             <constraint firstItem="TbW-n5-MsN" firstAttribute="centerX" secondItem="1SZ-Ww-pIB" secondAttribute="centerX" id="vbX-l1-ijH"/>
                             <constraint firstItem="TbW-n5-MsN" firstAttribute="width" secondItem="1SZ-Ww-pIB" secondAttribute="width" id="xHF-bk-24q"/>

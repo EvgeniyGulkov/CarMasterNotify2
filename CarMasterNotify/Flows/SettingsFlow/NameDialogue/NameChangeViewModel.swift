@@ -9,9 +9,8 @@ class NameChangeViewModel {
     var userName: Observable<String>?
     var nameChanged: PublishSubject<Void>
     
-    init() {
-        self.userName = Observable.just(UserDefaults.standard.string(forKey: "shortName") ?? "")
-        
+    init(username: String) {
+        self.userName = Observable.just(username)
         self.tapCancel = PublishSubject<Void>()
         self.tapDone = PublishSubject<String>()
         self.nameChanged = PublishSubject()
