@@ -68,7 +68,7 @@ class OrderViewModel {
             if sections[key!] == nil {
                 sections[key!] = OrderSection(order: order)
             } else {
-                if let index = sections[key!]?.items.firstIndex(where: { $0.date! > order.date!
+                if let index = sections[key!]?.items.firstIndex(where: { $0.date! < order.date!
                 }) {
                     sections[key!]?.items.insert(order, at: index)
                 } else {
@@ -76,6 +76,6 @@ class OrderViewModel {
                 }
             }
         }
-        return Array (sections.values.map{$0}.sorted(by: {first,second in return first.date < second.date}))
+        return Array (sections.values.map{$0}.sorted(by: {first,second in return first.date > second.date}))
     }
 }
