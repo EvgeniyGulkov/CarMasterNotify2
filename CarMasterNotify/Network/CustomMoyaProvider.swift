@@ -39,7 +39,7 @@ class CustomMoyaProvider<Target: TargetType>: MoyaProvider<Target> {
                     return Single.just(result)
                 }
             }
-        .map(T.self, atKeyPath: nil, using: jsonDecoder, failsOnEmptyData: false)
+          .map(T.self, atKeyPath: nil, using: self.jsonDecoder, failsOnEmptyData: false)
         }
 
     func signInRequest (_ token: Target) -> Single<Int> {
@@ -59,10 +59,11 @@ class CustomMoyaProvider<Target: TargetType>: MoyaProvider<Target> {
             provider.request(.refreshToken(refreshToken: token)){
                 result in
                 switch result {
-                case .success(let userdata):
-                    let data = try? userdata.map(UserDataModel.self)
-                    print(data!)
+                case .success(let response):
+                    if response.statusCode == 200 {
+                    let data = try? response.map(UserDataModel.self, atKeyPath: nil, using: self.jsonDecoder, failsOnEmptyData: false)
                     single(.success(data!))
+                    }
                 case .failure(let error):
                     single(.error(error))
                 }

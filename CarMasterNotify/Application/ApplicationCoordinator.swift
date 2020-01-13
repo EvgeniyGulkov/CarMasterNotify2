@@ -23,7 +23,7 @@ class ApplicationCoordinator: BaseCoordinator {
     private var instructor: LaunchInstructor {
     
         if (try? self.keychain.getString("access_token")) != nil {
-            isAutorized = true
+           // isAutorized = true
         }
         return LaunchInstructor.configure()
     }
