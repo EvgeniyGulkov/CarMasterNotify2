@@ -5,11 +5,23 @@ final class ModuleFactoryImp:
     AuthModuleFactory,
     OrderModuleFactory,
     SettingsModuleFactory,
-    MainModuleFactory
+    MainModuleFactory,
+    DetailsModuleFactory
 {
-    
-let disposeBag = DisposeBag()
-    
+    let disposeBag = DisposeBag()
+
+    func makeDetailsTabbarOutput() -> DetailsTabbarController {
+        let reasonsNavigationController = NavigationController()
+        let messagesNavigationController = NavigationController()
+        
+        let controller = DetailsTabbarController.controllerFromStoryboard(.detailsTabbar)
+             
+             controller.viewControllers = [reasonsNavigationController, messagesNavigationController]
+             controller.delegate = controller
+        
+        return controller
+    }
+        
     func makeMainOutput() -> TabbarController {
         let ordersNavigationController = NavigationController()
         let settingsNavigationController = NavigationController()
@@ -24,6 +36,18 @@ let disposeBag = DisposeBag()
     
     func makeSettingsOutput(viewModel: SettingsViewModel) -> SettingsController {
         let controller = SettingsController.controllerFromStoryboard(.settings)
+        controller.viewModel = viewModel
+        return controller
+    }
+    
+    func makeReasonsOutput(viewModel: ReasonViewModel) -> ReasonsController {
+        let controller = ReasonsController.controllerFromStoryboard(.reasons)
+        controller.viewModel = viewModel
+        return controller
+    }
+    
+    func makeMessagesOutput(viewModel: MessageViewModel) -> MessageController {
+        let controller = MessageController.controllerFromStoryboard(.message)
         controller.viewModel = viewModel
         return controller
     }
@@ -53,7 +77,7 @@ let disposeBag = DisposeBag()
     }
     
     func makeOrderDetailOutput(viewModel: DetailViewModel) -> DetailsController {
-        let controller = DetailsController.controllerFromStoryboard(.details)
+        let controller = DetailsController.controllerFromStoryboard(.main)
         controller.viewModel = viewModel
         return controller
     }

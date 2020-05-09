@@ -1,6 +1,7 @@
 import UIKit
 import RxKeyboard
 import RxSwift
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -11,9 +12,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private lazy var applicationCoordinator: Coordinator = self.makeCoordinator()
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "CarMasterNotifyData")
+        container.loadPersistentStores() {description, error in
+            if let error = error {
+                print("Unable to load persisten stores: \(error)")
+            }
+        }
+        return container
+    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        
         let navController = NavigationController()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
         

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8405399D234EF8FB0042C26F /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8405399C234EF8FB0042C26F /* Details.storyboard */; };
+		8405399D234EF8FB0042C26F /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8405399C234EF8FB0042C26F /* Message.storyboard */; };
 		840539A2234F36A40042C26F /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840539A1234F36A40042C26F /* UIImageExtensions.swift */; };
 		840539B923509D020042C26F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840539B823509D020042C26F /* NavigationController.swift */; };
 		840539BE2351CCEB0042C26F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840539BD2351CCEB0042C26F /* BaseView.swift */; };
@@ -50,6 +50,7 @@
 		843ABFAD239DE5890050E37D /* CarMasterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ABFAC239DE5890050E37D /* CarMasterApi.swift */; };
 		843ABFE923A2594F0050E37D /* CarMasterApiExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ABFE823A2594F0050E37D /* CarMasterApiExtensions.swift */; };
 		8440589323C233E800BEE9DF /* carmasterapi.cer in Resources */ = {isa = PBXBuildFile; fileRef = 8440589223C2297C00BEE9DF /* carmasterapi.cer */; };
+		845163EA23E1142200EA7582 /* CarMasterNotifyData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845163E823E1142200EA7582 /* CarMasterNotifyData.xcdatamodeld */; };
 		84532B2A238CB85100CC8676 /* PasswordDialogueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84532B29238CB85100CC8676 /* PasswordDialogueController.swift */; };
 		84532B2C238CB89C00CC8676 /* PasswordDialogueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84532B2B238CB89C00CC8676 /* PasswordDialogueViewModel.swift */; };
 		84532B2E238CBAB600CC8676 /* PasswordDialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84532B2D238CBAB600CC8676 /* PasswordDialogue.storyboard */; };
@@ -57,6 +58,9 @@
 		84532B33238EA1D900CC8676 /* NameChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84532B32238EA1D900CC8676 /* NameChangeViewModel.swift */; };
 		84532B35238EA3A600CC8676 /* NameDialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84532B34238EA3A600CC8676 /* NameDialogue.storyboard */; };
 		84532B37238FF0E600CC8676 /* DetailControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84532B36238FF0E600CC8676 /* DetailControllerExtensions.swift */; };
+		846E13C123F8235E00A77C42 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E13C023F8235E00A77C42 /* CoreDataManager.swift */; };
+		846E13C323F829C100A77C42 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E13C223F829C100A77C42 /* Reason.swift */; };
+		8475C01723F0627100F19B0D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475C01623F0627100F19B0D /* Message.swift */; };
 		847C21E62352ECB20040B097 /* OrderModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C21E52352ECB20040B097 /* OrderModuleFactory.swift */; };
 		847C21F52355B79E0040B097 /* TabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C21F42355B79E0040B097 /* TabbarCoordinator.swift */; };
 		847C21F72355B7AB0040B097 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C21F62355B7AB0040B097 /* TabbarController.swift */; };
@@ -66,8 +70,9 @@
 		847C22122356DE240040B097 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C22112356DE240040B097 /* SettingsController.swift */; };
 		847C22142356DEC00040B097 /* SettingsModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C22132356DEC00040B097 /* SettingsModuleFactory.swift */; };
 		847C221A235811420040B097 /* OrderControllerExtansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C2219235811420040B097 /* OrderControllerExtansions.swift */; };
-		8492385D23BFA368002B9563 /* DetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385623BFA368002B9563 /* DetailsDataSource.swift */; };
-		8492385E23BFA368002B9563 /* RecommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385823BFA368002B9563 /* RecommendationModel.swift */; };
+		848260E723EA51C100C3909C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848260E623EA51C100C3909C /* Order.swift */; };
+		8492385D23BFA368002B9563 /* ReasonsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385623BFA368002B9563 /* ReasonsDataSource.swift */; };
+		8492385E23BFA368002B9563 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385823BFA368002B9563 /* MessageModel.swift */; };
 		8492385F23BFA368002B9563 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385923BFA368002B9563 /* UserDataModel.swift */; };
 		8492386023BFA368002B9563 /* OrdersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385A23BFA368002B9563 /* OrdersDataSource.swift */; };
 		8497D44A23A90CF4007DDE13 /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497D44923A90CF4007DDE13 /* DateFormatterExtensions.swift */; };
@@ -75,6 +80,7 @@
 		84B2216D2383A039005FA7B3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2216A2383A039005FA7B3 /* CircularProgressBar.swift */; };
 		84B2216F2383A039005FA7B3 /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2216C2383A039005FA7B3 /* BorderLayer.swift */; };
 		84B95D2023C6E0EE00CE5C52 /* SettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B95D1F23C6E0EE00CE5C52 /* SettingsHelper.swift */; };
+		84B95D2223CC874200CE5C52 /* SocketApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B95D2123CC874200CE5C52 /* SocketApi.swift */; };
 		84BEC0B72349C1030054FE21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEC0B62349C1030054FE21 /* AppDelegate.swift */; };
 		84BEC0BC2349C1030054FE21 /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BEC0BA2349C1030054FE21 /* Orders.storyboard */; };
 		84BEC0BE2349C1040054FE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BEC0BD2349C1040054FE21 /* Assets.xcassets */; };
@@ -85,6 +91,16 @@
 		84D44AEA234D9770005E467E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D44AE9234D9770005E467E /* TextFieldView.swift */; };
 		84D4C17023741A5700DB8F58 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4C16F23741A5700DB8F58 /* SettingsViewModel.swift */; };
 		84D4C17C23758C4B00DB8F58 /* MainModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4C17B23758C4B00DB8F58 /* MainModuleFactory.swift */; };
+		84E6F40024011C0B003FFE08 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F3FF24011C0B003FFE08 /* User.swift */; };
+		84E6F4022403E2D0003FFE08 /* DetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F4012403E2D0003FFE08 /* DetailsCoordinator.swift */; };
+		84E6F4052403E43C003FFE08 /* DetailsTabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6F4042403E43C003FFE08 /* DetailsTabbar.storyboard */; };
+		84E6F4072403E526003FFE08 /* DetailsTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F4062403E526003FFE08 /* DetailsTabbarController.swift */; };
+		84E6F40A2403EBE7003FFE08 /* ReasonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F4092403EBE7003FFE08 /* ReasonsController.swift */; };
+		84E6F4102403F049003FFE08 /* Reasons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6F40F2403F049003FFE08 /* Reasons.storyboard */; };
+		84E6F4122403F11E003FFE08 /* DetailsModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F4112403F11E003FFE08 /* DetailsModuleFactory.swift */; };
+		84E6F415240403C8003FFE08 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F414240403C8003FFE08 /* MessageController.swift */; };
+		84E6F419240408D2003FFE08 /* ReasonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F418240408D2003FFE08 /* ReasonViewModel.swift */; };
+		84E6F41B24041930003FFE08 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F41A24041930003FFE08 /* MessageViewModel.swift */; };
 		84E8DD2F23683D5B008EF413 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DD2E23683D5B008EF413 /* ViewModelFactory.swift */; };
 		BC9689BF2E01F2248357E7DF /* Pods_CarMasterNotifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F404F16F419B0B11FE47E697 /* Pods_CarMasterNotifyTests.framework */; };
 		E0E0C7D1F6ACA8D8FC78FB48 /* Pods_CarMasterNotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA0562DFA8AB2CEA0BE13CF /* Pods_CarMasterNotify.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -104,7 +120,7 @@
 		1DA0562DFA8AB2CEA0BE13CF /* Pods_CarMasterNotify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarMasterNotify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		206A3ABE7E3C74A90AC0FD34 /* Pods-CarMasterNotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarMasterNotify.debug.xcconfig"; path = "Target Support Files/Pods-CarMasterNotify/Pods-CarMasterNotify.debug.xcconfig"; sourceTree = "<group>"; };
 		4AE19108DB12B958B9B34B4A /* Pods-CarMasterNotifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarMasterNotifyTests.release.xcconfig"; path = "Target Support Files/Pods-CarMasterNotifyTests/Pods-CarMasterNotifyTests.release.xcconfig"; sourceTree = "<group>"; };
-		8405399C234EF8FB0042C26F /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		8405399C234EF8FB0042C26F /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		840539A1234F36A40042C26F /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		840539B823509D020042C26F /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		840539BD2351CCEB0042C26F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -145,6 +161,7 @@
 		843ABFAC239DE5890050E37D /* CarMasterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterApi.swift; sourceTree = "<group>"; };
 		843ABFE823A2594F0050E37D /* CarMasterApiExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterApiExtensions.swift; sourceTree = "<group>"; };
 		8440589223C2297C00BEE9DF /* carmasterapi.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = carmasterapi.cer; sourceTree = "<group>"; };
+		845163E923E1142200EA7582 /* CarMasterNotifyData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarMasterNotifyData.xcdatamodel; sourceTree = "<group>"; };
 		84532B29238CB85100CC8676 /* PasswordDialogueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDialogueController.swift; sourceTree = "<group>"; };
 		84532B2B238CB89C00CC8676 /* PasswordDialogueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDialogueViewModel.swift; sourceTree = "<group>"; };
 		84532B2D238CBAB600CC8676 /* PasswordDialogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordDialogue.storyboard; sourceTree = "<group>"; };
@@ -152,6 +169,9 @@
 		84532B32238EA1D900CC8676 /* NameChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChangeViewModel.swift; sourceTree = "<group>"; };
 		84532B34238EA3A600CC8676 /* NameDialogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameDialogue.storyboard; sourceTree = "<group>"; };
 		84532B36238FF0E600CC8676 /* DetailControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailControllerExtensions.swift; sourceTree = "<group>"; };
+		846E13C023F8235E00A77C42 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		846E13C223F829C100A77C42 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
+		8475C01623F0627100F19B0D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		847C21E52352ECB20040B097 /* OrderModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModuleFactory.swift; sourceTree = "<group>"; };
 		847C21F42355B79E0040B097 /* TabbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCoordinator.swift; sourceTree = "<group>"; };
 		847C21F62355B7AB0040B097 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
@@ -161,10 +181,11 @@
 		847C22112356DE240040B097 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		847C22132356DEC00040B097 /* SettingsModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleFactory.swift; sourceTree = "<group>"; };
 		847C2219235811420040B097 /* OrderControllerExtansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderControllerExtansions.swift; sourceTree = "<group>"; };
+		848260E623EA51C100C3909C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		8492385423BFA368002B9563 /* ReasonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReasonModel.swift; sourceTree = "<group>"; };
 		8492385523BFA368002B9563 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
-		8492385623BFA368002B9563 /* DetailsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsDataSource.swift; sourceTree = "<group>"; };
-		8492385823BFA368002B9563 /* RecommendationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationModel.swift; sourceTree = "<group>"; };
+		8492385623BFA368002B9563 /* ReasonsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReasonsDataSource.swift; sourceTree = "<group>"; };
+		8492385823BFA368002B9563 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		8492385923BFA368002B9563 /* UserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		8492385A23BFA368002B9563 /* OrdersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersDataSource.swift; sourceTree = "<group>"; };
 		8497D44923A90CF4007DDE13 /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
@@ -172,6 +193,7 @@
 		84B2216A2383A039005FA7B3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		84B2216C2383A039005FA7B3 /* BorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
 		84B95D1F23C6E0EE00CE5C52 /* SettingsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHelper.swift; sourceTree = "<group>"; };
+		84B95D2123CC874200CE5C52 /* SocketApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketApi.swift; sourceTree = "<group>"; };
 		84BEC0B32349C1030054FE21 /* CarMasterNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarMasterNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BEC0B62349C1030054FE21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84BEC0BB2349C1030054FE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Orders.storyboard; sourceTree = "<group>"; };
@@ -186,6 +208,16 @@
 		84D44AE9234D9770005E467E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		84D4C16F23741A5700DB8F58 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		84D4C17B23758C4B00DB8F58 /* MainModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleFactory.swift; sourceTree = "<group>"; };
+		84E6F3FF24011C0B003FFE08 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84E6F4012403E2D0003FFE08 /* DetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCoordinator.swift; sourceTree = "<group>"; };
+		84E6F4042403E43C003FFE08 /* DetailsTabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsTabbar.storyboard; sourceTree = "<group>"; };
+		84E6F4062403E526003FFE08 /* DetailsTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTabbarController.swift; sourceTree = "<group>"; };
+		84E6F4092403EBE7003FFE08 /* ReasonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonsController.swift; sourceTree = "<group>"; };
+		84E6F40F2403F049003FFE08 /* Reasons.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reasons.storyboard; sourceTree = "<group>"; };
+		84E6F4112403F11E003FFE08 /* DetailsModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModuleFactory.swift; sourceTree = "<group>"; };
+		84E6F414240403C8003FFE08 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		84E6F418240408D2003FFE08 /* ReasonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonViewModel.swift; sourceTree = "<group>"; };
+		84E6F41A24041930003FFE08 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		84E8DD2E23683D5B008EF413 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		BA4FFBE8354554858DD70326 /* Pods-CarMasterNotifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarMasterNotifyTests.debug.xcconfig"; path = "Target Support Files/Pods-CarMasterNotifyTests/Pods-CarMasterNotifyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F15EFE72F5E8447D6B919EA9 /* Pods-CarMasterNotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarMasterNotify.release.xcconfig"; path = "Target Support Files/Pods-CarMasterNotify/Pods-CarMasterNotify.release.xcconfig"; sourceTree = "<group>"; };
@@ -253,12 +285,14 @@
 			isa = PBXGroup;
 			children = (
 				84D44AE0234D85CC005E467E /* Auth.storyboard */,
-				8405399C234EF8FB0042C26F /* Details.storyboard */,
+				8405399C234EF8FB0042C26F /* Message.storyboard */,
 				847C21FE2356C1ED0040B097 /* Main.storyboard */,
 				84BEC0BA2349C1030054FE21 /* Orders.storyboard */,
 				84532B34238EA3A600CC8676 /* NameDialogue.storyboard */,
 				84532B2D238CBAB600CC8676 /* PasswordDialogue.storyboard */,
 				847C220A2356DD8D0040B097 /* Settings.storyboard */,
+				84E6F4042403E43C003FFE08 /* DetailsTabbar.storyboard */,
+				84E6F40F2403F049003FFE08 /* Reasons.storyboard */,
 				840539CB2351D89F0042C26F /* StoryboardsEnum.swift */,
 			);
 			path = Storyboards;
@@ -287,6 +321,7 @@
 				847C22132356DEC00040B097 /* SettingsModuleFactory.swift */,
 				84E8DD2E23683D5B008EF413 /* ViewModelFactory.swift */,
 				84D4C17B23758C4B00DB8F58 /* MainModuleFactory.swift */,
+				84E6F4112403F11E003FFE08 /* DetailsModuleFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -319,6 +354,7 @@
 				8421ED3623A31E20002091FF /* OrderCoordinator.swift */,
 				8421ED2823A31E20002091FF /* OrderController.swift */,
 				8421ED2923A31E20002091FF /* OrderTableCell.swift */,
+				84E6F4032403E2F0003FFE08 /* DetailsTabbarFlow */,
 				8421ED2A23A31E20002091FF /* DetailView */,
 			);
 			path = OrdersFlow;
@@ -327,10 +363,8 @@
 		8421ED2A23A31E20002091FF /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
-				8421ED2C23A31E20002091FF /* CellState.swift */,
 				8421ED3023A31E20002091FF /* DetailsController.swift */,
 				8421ED3123A31E20002091FF /* DetailViewModel.swift */,
-				8421ED2D23A31E20002091FF /* ReasonsCellView */,
 				8421ED3223A31E20002091FF /* RecommendationsCellView */,
 			);
 			path = DetailView;
@@ -348,6 +382,7 @@
 		8421ED3223A31E20002091FF /* RecommendationsCellView */ = {
 			isa = PBXGroup;
 			children = (
+				8421ED2C23A31E20002091FF /* CellState.swift */,
 				8421ED3323A31E20002091FF /* UserCellViewModel.swift */,
 				8421ED3423A31E20002091FF /* MessagesCell.swift */,
 				8421ED3523A31E20002091FF /* UserMessageCell.swift */,
@@ -371,6 +406,7 @@
 				84135DB923C48B7D0066BACD /* Certificates.swift */,
 				843ABFAC239DE5890050E37D /* CarMasterApi.swift */,
 				8437AB1123C3518600621A49 /* CustomMoyaProvider.swift */,
+				84B95D2123CC874200CE5C52 /* SocketApi.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -381,6 +417,33 @@
 				843ABFE823A2594F0050E37D /* CarMasterApiExtensions.swift */,
 			);
 			path = NetworkExtensions;
+			sourceTree = "<group>";
+		};
+		843F18022400E66000312109 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				848260E623EA51C100C3909C /* Order.swift */,
+				8492385523BFA368002B9563 /* OrderModel.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		843F18052400E68D00312109 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				8475C01623F0627100F19B0D /* Message.swift */,
+				8492385823BFA368002B9563 /* MessageModel.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		843F18062400E9A800312109 /* Reason */ = {
+			isa = PBXGroup;
+			children = (
+				846E13C223F829C100A77C42 /* Reason.swift */,
+				8492385423BFA368002B9563 /* ReasonModel.swift */,
+			);
+			path = Reason;
 			sourceTree = "<group>";
 		};
 		84532B28238CB83200CC8676 /* PasswordDialogue */ = {
@@ -399,6 +462,15 @@
 				84532B32238EA1D900CC8676 /* NameChangeViewModel.swift */,
 			);
 			path = NameDialogue;
+			sourceTree = "<group>";
+		};
+		8475C01523F0625D00F19B0D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				84B95D1F23C6E0EE00CE5C52 /* SettingsHelper.swift */,
+				846E13C023F8235E00A77C42 /* CoreDataManager.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		847C21DB2352DD040040B097 /* DesignClasses */ = {
@@ -435,13 +507,12 @@
 		8492385323BFA368002B9563 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8492385423BFA368002B9563 /* ReasonModel.swift */,
-				8492385523BFA368002B9563 /* OrderModel.swift */,
-				8492385623BFA368002B9563 /* DetailsDataSource.swift */,
-				8492385823BFA368002B9563 /* RecommendationModel.swift */,
-				8492385923BFA368002B9563 /* UserDataModel.swift */,
-				8492385A23BFA368002B9563 /* OrdersDataSource.swift */,
-				84B95D1F23C6E0EE00CE5C52 /* SettingsHelper.swift */,
+				84E6F41C240419B8003FFE08 /* DataSources */,
+				84E6F3FE24011BFE003FFE08 /* User */,
+				843F18062400E9A800312109 /* Reason */,
+				843F18052400E68D00312109 /* Message */,
+				843F18022400E66000312109 /* Order */,
+				8475C01523F0625D00F19B0D /* Helpers */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -478,6 +549,7 @@
 		84BEC0B52349C1030054FE21 /* CarMasterNotify */ = {
 			isa = PBXGroup;
 			children = (
+				845163E823E1142200EA7582 /* CarMasterNotifyData.xcdatamodeld */,
 				8440589223C2297C00BEE9DF /* carmasterapi.cer */,
 				8492385323BFA368002B9563 /* Models */,
 				843ABFAB239DE5450050E37D /* Network */,
@@ -513,6 +585,54 @@
 				84CA35A6235E97340082C0BA /* Detail.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		84E6F3FE24011BFE003FFE08 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8492385923BFA368002B9563 /* UserDataModel.swift */,
+				84E6F3FF24011C0B003FFE08 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		84E6F4032403E2F0003FFE08 /* DetailsTabbarFlow */ = {
+			isa = PBXGroup;
+			children = (
+				84E6F4012403E2D0003FFE08 /* DetailsCoordinator.swift */,
+				84E6F4062403E526003FFE08 /* DetailsTabbarController.swift */,
+				84E6F413240403B4003FFE08 /* MessageFlow */,
+				84E6F4082403EBCA003FFE08 /* ReasonsFlow */,
+			);
+			path = DetailsTabbarFlow;
+			sourceTree = "<group>";
+		};
+		84E6F4082403EBCA003FFE08 /* ReasonsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				84E6F4092403EBE7003FFE08 /* ReasonsController.swift */,
+				84E6F418240408D2003FFE08 /* ReasonViewModel.swift */,
+				8421ED2D23A31E20002091FF /* ReasonsCellView */,
+			);
+			path = ReasonsFlow;
+			sourceTree = "<group>";
+		};
+		84E6F413240403B4003FFE08 /* MessageFlow */ = {
+			isa = PBXGroup;
+			children = (
+				84E6F414240403C8003FFE08 /* MessageController.swift */,
+				84E6F41A24041930003FFE08 /* MessageViewModel.swift */,
+			);
+			path = MessageFlow;
+			sourceTree = "<group>";
+		};
+		84E6F41C240419B8003FFE08 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				8492385A23BFA368002B9563 /* OrdersDataSource.swift */,
+				8492385623BFA368002B9563 /* ReasonsDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,8 +725,10 @@
 				84532B2E238CBAB600CC8676 /* PasswordDialogue.storyboard in Resources */,
 				8440589323C233E800BEE9DF /* carmasterapi.cer in Resources */,
 				847C21FF2356C1ED0040B097 /* Main.storyboard in Resources */,
-				8405399D234EF8FB0042C26F /* Details.storyboard in Resources */,
+				84E6F4102403F049003FFE08 /* Reasons.storyboard in Resources */,
+				8405399D234EF8FB0042C26F /* Message.storyboard in Resources */,
 				847C220B2356DD8D0040B097 /* Settings.storyboard in Resources */,
+				84E6F4052403E43C003FFE08 /* DetailsTabbar.storyboard in Resources */,
 				84BEC0BE2349C1040054FE21 /* Assets.xcassets in Resources */,
 				84BEC0BC2349C1030054FE21 /* Orders.storyboard in Resources */,
 			);
@@ -692,31 +814,40 @@
 			files = (
 				847C21F52355B79E0040B097 /* TabbarCoordinator.swift in Sources */,
 				840539DD2352C6C80042C26F /* AuthModuleFactory.swift in Sources */,
-				8492385D23BFA368002B9563 /* DetailsDataSource.swift in Sources */,
+				8492385D23BFA368002B9563 /* ReasonsDataSource.swift in Sources */,
 				84532B31238EA1C800CC8676 /* NameChangeDialogueController.swift in Sources */,
 				84532B33238EA1D900CC8676 /* NameChangeViewModel.swift in Sources */,
 				8421ED4323A31E20002091FF /* OrderCoordinator.swift in Sources */,
 				8492386023BFA368002B9563 /* OrdersDataSource.swift in Sources */,
 				84B221692382DAE1005FA7B3 /* UITableViewExtensions.swift in Sources */,
 				84E8DD2F23683D5B008EF413 /* ViewModelFactory.swift in Sources */,
+				846E13C323F829C100A77C42 /* Reason.swift in Sources */,
 				847C21E62352ECB20040B097 /* OrderModuleFactory.swift in Sources */,
 				84D44AEA234D9770005E467E /* TextFieldView.swift in Sources */,
 				8421ED3D23A31E20002091FF /* ReasonCellViewModel.swift in Sources */,
+				84E6F41B24041930003FFE08 /* MessageViewModel.swift in Sources */,
+				84E6F40A2403EBE7003FFE08 /* ReasonsController.swift in Sources */,
 				8497D44A23A90CF4007DDE13 /* DateFormatterExtensions.swift in Sources */,
 				84135DBA23C48B7D0066BACD /* Certificates.swift in Sources */,
 				840539C62351D3B30042C26F /* UIViewExtensions.swift in Sources */,
+				84E6F4072403E526003FFE08 /* DetailsTabbarController.swift in Sources */,
 				843ABFE923A2594F0050E37D /* CarMasterApiExtensions.swift in Sources */,
 				8421ED4723A31E8E002091FF /* AuthCoordinator.swift in Sources */,
+				84E6F4022403E2D0003FFE08 /* DetailsCoordinator.swift in Sources */,
 				847C21F72355B7AB0040B097 /* TabbarController.swift in Sources */,
 				840539D02351E07B0042C26F /* BaseCoordinator.swift in Sources */,
 				8421ED3F23A31E20002091FF /* DetailViewModel.swift in Sources */,
+				84E6F419240408D2003FFE08 /* ReasonViewModel.swift in Sources */,
 				840EFEDC23B468D200E23347 /* DateExtensions.swift in Sources */,
 				8421ED4223A31E20002091FF /* UserMessageCell.swift in Sources */,
+				8475C01723F0627100F19B0D /* Message.swift in Sources */,
 				8421ED4B23A31ECD002091FF /* LoginViewModel.swift in Sources */,
 				8421ED3A23A31E20002091FF /* DataSourcesFactory.swift in Sources */,
 				840539CC2351D89F0042C26F /* StoryboardsEnum.swift in Sources */,
+				846E13C123F8235E00A77C42 /* CoreDataManager.swift in Sources */,
 				84B95D2023C6E0EE00CE5C52 /* SettingsHelper.swift in Sources */,
 				840539C82351D5BF0042C26F /* NSObjectExtensions.swift in Sources */,
+				845163EA23E1142200EA7582 /* CarMasterNotifyData.xcdatamodeld in Sources */,
 				840539CE2351DE4E0042C26F /* ApplicationCoordinator.swift in Sources */,
 				84532B2A238CB85100CC8676 /* PasswordDialogueController.swift in Sources */,
 				840539C42351CEA00042C26F /* DeepLinkOption.swift in Sources */,
@@ -735,11 +866,13 @@
 				8421ED4923A31EAF002091FF /* LoginController.swift in Sources */,
 				840539B923509D020042C26F /* NavigationController.swift in Sources */,
 				8421ED4423A31E20002091FF /* OrderViewModel.swift in Sources */,
+				84B95D2223CC874200CE5C52 /* SocketApi.swift in Sources */,
 				840539A2234F36A40042C26F /* UIImageExtensions.swift in Sources */,
 				84CA35A7235E97340082C0BA /* Detail.swift in Sources */,
 				84BEC0B72349C1030054FE21 /* AppDelegate.swift in Sources */,
 				8421ED4123A31E20002091FF /* MessagesCell.swift in Sources */,
 				84B2216D2383A039005FA7B3 /* CircularProgressBar.swift in Sources */,
+				84E6F4122403F11E003FFE08 /* DetailsModuleFactory.swift in Sources */,
 				847C22122356DE240040B097 /* SettingsController.swift in Sources */,
 				8437AB0C23C33AE300621A49 /* OrderModel.swift in Sources */,
 				84532B2C238CB89C00CC8676 /* PasswordDialogueViewModel.swift in Sources */,
@@ -749,16 +882,19 @@
 				8492385F23BFA368002B9563 /* UserDataModel.swift in Sources */,
 				840539C22351CDE00042C26F /* Coordinator.swift in Sources */,
 				847C22102356DE130040B097 /* SettingsCoordinator.swift in Sources */,
-				8492385E23BFA368002B9563 /* RecommendationModel.swift in Sources */,
+				8492385E23BFA368002B9563 /* MessageModel.swift in Sources */,
 				8421ED3E23A31E20002091FF /* DetailsController.swift in Sources */,
 				8421ED3823A31E20002091FF /* OrderController.swift in Sources */,
 				8437AB0B23C33AD700621A49 /* ReasonModel.swift in Sources */,
 				847C22142356DEC00040B097 /* SettingsModuleFactory.swift in Sources */,
+				84E6F415240403C8003FFE08 /* MessageController.swift in Sources */,
+				848260E723EA51C100C3909C /* Order.swift in Sources */,
 				843ABFAD239DE5890050E37D /* CarMasterApi.swift in Sources */,
 				840539D92351E6190042C26F /* RouterImp.swift in Sources */,
 				8437AB1223C3518600621A49 /* CustomMoyaProvider.swift in Sources */,
 				84D4C17023741A5700DB8F58 /* SettingsViewModel.swift in Sources */,
 				8421ED3C23A31E20002091FF /* ReasonsCell.swift in Sources */,
+				84E6F40024011C0B003FFE08 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,6 +1157,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		845163E823E1142200EA7582 /* CarMasterNotifyData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				845163E923E1142200EA7582 /* CarMasterNotifyData.xcdatamodel */,
+			);
+			currentVersion = 845163E923E1142200EA7582 /* CarMasterNotifyData.xcdatamodel */;
+			path = CarMasterNotifyData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 84BEC0AB2349C1030054FE21 /* Project object */;
 }

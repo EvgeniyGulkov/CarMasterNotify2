@@ -20,6 +20,9 @@ PODS:
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
+  - Socket.IO-Client-Swift (15.2.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.1)
 
 DEPENDENCIES:
   - KeychainAccess
@@ -28,6 +31,7 @@ DEPENDENCIES:
   - RxDataSources (~> 4.0)
   - RxKeyboard
   - RxSwift (~> 5)
+  - Socket.IO-Client-Swift (~> 15.2.0)
 
 SPEC REPOS:
   trunk:
@@ -40,6 +44,8 @@ SPEC REPOS:
     - RxKeyboard
     - RxRelay
     - RxSwift
+    - Socket.IO-Client-Swift
+    - Starscream
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
@@ -51,7 +57,9 @@ SPEC CHECKSUMS:
   RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: 33a796d8a582bc48c9b4b7addbef3044ec7a2ce7
+PODFILE CHECKSUM: 011658a1e4a8727daa9005ab6b1c9abb13b98ed0
 
 COCOAPODS: 1.8.4

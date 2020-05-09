@@ -32,7 +32,9 @@ class CustomMoyaProvider<Target: TargetType>: MoyaProvider<Target> {
                 if result.statusCode == 401 {
                     return self.refreshSessionToken(token: SettingsHelper.refreshToken())
                     .do(
-                        onSuccess:{userdata in SettingsHelper.saveUserData(userdata: userdata)},
+                        onSuccess:{userdata in
+                            let settingsHelper = SettingsHelper()
+                            settingsHelper.saveUserData(userdata: userdata)},
                         onError: {_ in})
                         .flatMap{_ in return self.provider.rx.request(token)}
                 } else {
@@ -47,7 +49,8 @@ class CustomMoyaProvider<Target: TargetType>: MoyaProvider<Target> {
             .map { response in
                 if response.statusCode == 200 {
                     let userdata = try? response.map(UserDataModel.self)
-                    SettingsHelper.saveUserData(userdata: userdata!)
+                    let settingsHelper = SettingsHelper()
+                    settingsHelper.saveUserData(userdata: userdata!)
                 }
                 return response.statusCode
         }

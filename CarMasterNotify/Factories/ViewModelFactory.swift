@@ -1,10 +1,20 @@
 import UIKit
+import SocketIO
 
 class ViewModelFactory {
     
-    static func makeDetailViewModel(order: OrderModel) -> DetailViewModel {
+    static func makeDetailViewModel(order: Order,socketClient: SocketClient<CarMasterSocketApi>) -> DetailViewModel {
         let networkProvider = CustomMoyaProvider<CarMasterApi>()
-        return DetailViewModel(order: order, networkProvider: networkProvider)
+        return DetailViewModel(order: order, networkProvider: networkProvider, socketClient: socketClient)
+    }
+    
+    static func makeReasonViewModel(order: Order) -> ReasonViewModel {
+        let networkProvider = CustomMoyaProvider<CarMasterApi>()
+        return ReasonViewModel(order: order, networkProvider: networkProvider)
+    }
+    
+    static func makeMessageViewModel(order: Order, socketClient: SocketClient<CarMasterSocketApi> ) -> MessageViewModel {
+        return MessageViewModel(order: order, socketClient: socketClient)
     }
     
     static func makeLoginViewModel() -> LoginViewModel {
@@ -29,8 +39,9 @@ class ViewModelFactory {
     }
     
     static func makeOrderViewModel() -> OrderViewModel {
+        let socketClient = SocketClient<CarMasterSocketApi>()
         let networkProvider = CustomMoyaProvider<CarMasterApi>()
-        let viewModel = OrderViewModel(networkProvider: networkProvider)
+        let viewModel = OrderViewModel(networkProvider: networkProvider, socketClient: socketClient)
         return viewModel
     }
 }

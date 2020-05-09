@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import SocketIO
 
 enum ActionStrings: String {
     case complete = "Complete"
@@ -29,7 +30,7 @@ final class OrderCoordinator: BaseCoordinator {
         let viewModel = ViewModelFactory.makeOrderViewModel()
         viewModel.selectData
             .subscribe({ [unowned self] in
-                self.showOrderDetail($0.element!)
+                self.showOrderDetail($0.element!,socketClient: viewModel.socketClient)
             })
             .disposed(by: disposeBag)
         let ordersOutput = factory.makeOrdersOutput(viewModel: viewModel)
@@ -37,12 +38,10 @@ final class OrderCoordinator: BaseCoordinator {
         router.setRootModule(ordersOutput)
     }
         
-    private func showOrderDetail(_ order: OrderModel) {
-        let viewModel = ViewModelFactory.makeDetailViewModel(order: order)
-        let orderDetailFlowOutput = factory.makeOrderDetailOutput(viewModel: viewModel)
-        orderDetailFlowOutput.handler = self.showCompleteAction()
-
-        router.push(orderDetailFlowOutput, hideBottomBar: false)
+    private func showOrderDetail(_ order: Order, socketClient: SocketClient<CarMasterSocketApi>) {
+        let coordinator = coordinatorFactory.makeDetailsTabbarCoordinator(order: order, router: self.router, socketClient: socketClient)
+        addDependency(coordinator)
+        coordinator.start()
         }
     
     func showCompleteAction() -> (DetailsController, Int) -> () {

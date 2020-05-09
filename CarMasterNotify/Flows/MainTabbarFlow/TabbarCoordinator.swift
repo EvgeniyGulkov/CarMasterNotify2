@@ -7,7 +7,8 @@ class TabbarCoordinator: BaseCoordinator {
     var controller:TabbarController
     var ordersNavController: UINavigationController
     var settingsNavController: UINavigationController
-    
+    var finishFlow: (() -> Void)?
+
     init(coordinatorFactory: CoordinatorFactory,factory: MainModuleFactory) {
         self.coordinatorFactory = coordinatorFactory
         self.controller = factory.makeMainOutput()
@@ -32,6 +33,7 @@ class TabbarCoordinator: BaseCoordinator {
     private func runSettingsFlow(in navController: UINavigationController) {
             if navController.viewControllers.isEmpty == true {
                 let settingsCoordinator = self.coordinatorFactory.makeSettingsCoordinator(navController: navController)
+                settingsCoordinator.finishFlow = self.finishFlow
                 self.addDependency(settingsCoordinator)
                 settingsCoordinator.start()
         }

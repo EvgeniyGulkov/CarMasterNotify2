@@ -8,65 +8,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Details Controller-->
+        <!--Message Controller-->
         <scene sceneID="DbS-8W-wyo">
             <objects>
-                <viewController storyboardIdentifier="DetailsController" id="8go-Fp-2zT" customClass="DetailsController" customModule="CarMasterNotify" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8go-Fp-2zT" customClass="MessageController" customModule="CarMasterNotify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J1Y-1t-NaN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="o46-jc-z6c">
-                                <rect key="frame" x="0.0" y="315" width="375" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" red="0.28423232349999999" green="0.4257795378" blue="0.63181403110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="De9-Bw-tZP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrt-Ix-ywD">
-                                        <rect key="frame" x="160.5" y="4.5" width="54" height="26"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Label">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.28423232349999999" green="0.4257795378" blue="0.63181403110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="22" name="ArialNarrow-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="yrt-Ix-ywD" firstAttribute="centerY" secondItem="De9-Bw-tZP" secondAttribute="centerY" id="BQH-CH-cYE"/>
-                                    <constraint firstItem="yrt-Ix-ywD" firstAttribute="centerX" secondItem="De9-Bw-tZP" secondAttribute="centerX" id="XAg-A5-fCZ"/>
-                                    <constraint firstAttribute="height" constant="35" id="mN9-LE-08J"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ANU-3Y-KFz">
-                                <rect key="frame" x="0.0" y="35" width="375" height="588"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reasonsCell" textLabel="q87-oj-iN4" style="IBUITableViewCellStyleDefault" id="1g5-SY-8gT" customClass="ReasonsCell" customModule="CarMasterNotify" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1g5-SY-8gT" id="uiB-zN-X9I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q87-oj-iN4">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recommendationsCell" id="DVx-R8-XtR" customClass="MessageCell" customModule="CarMasterNotify" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="59.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Message" id="DVx-R8-XtR" customClass="MessageCell" customModule="CarMasterNotify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="59.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DVx-R8-XtR" id="JbA-nZ-erb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -117,8 +71,8 @@
                                             <outlet property="messageView" destination="epD-Oz-Imw" id="1Sy-RY-1Fd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userRecommendationsCell" id="Sr7-a4-kcI" customClass="UserMessageCell" customModule="CarMasterNotify" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="131.5" width="375" height="38.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserMessage" id="Sr7-a4-kcI" customClass="UserMessageCell" customModule="CarMasterNotify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="87.5" width="375" height="38.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sr7-a4-kcI" id="Auu-Oi-F5M">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="38.5"/>
@@ -178,7 +132,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ka-SH-jL7">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9r-xS-Igw">
                                         <rect key="frame" x="20" y="5" width="305" height="34"/>
@@ -207,27 +161,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ANU-3Y-KFz" firstAttribute="top" secondItem="De9-Bw-tZP" secondAttribute="bottom" id="2gM-qe-1Pa"/>
                             <constraint firstItem="1Ka-SH-jL7" firstAttribute="width" secondItem="J1Y-1t-NaN" secondAttribute="width" id="3Va-wn-lSh"/>
                             <constraint firstItem="ANU-3Y-KFz" firstAttribute="leading" secondItem="aAf-Sr-1Ix" secondAttribute="leading" id="IXY-yN-6oC"/>
                             <constraint firstItem="aAf-Sr-1Ix" firstAttribute="bottom" secondItem="1Ka-SH-jL7" secondAttribute="bottom" id="Li7-L2-SGE"/>
                             <constraint firstItem="1Ka-SH-jL7" firstAttribute="leading" secondItem="aAf-Sr-1Ix" secondAttribute="leading" id="No2-4q-shJ"/>
-                            <constraint firstItem="De9-Bw-tZP" firstAttribute="width" secondItem="J1Y-1t-NaN" secondAttribute="width" id="PYW-Vh-MtZ"/>
-                            <constraint firstItem="De9-Bw-tZP" firstAttribute="top" secondItem="aAf-Sr-1Ix" secondAttribute="top" id="UsH-t7-6Be"/>
                             <constraint firstItem="1Ka-SH-jL7" firstAttribute="top" secondItem="ANU-3Y-KFz" secondAttribute="bottom" id="Wt6-BL-JY0"/>
+                            <constraint firstItem="ANU-3Y-KFz" firstAttribute="top" secondItem="aAf-Sr-1Ix" secondAttribute="top" id="hR6-dF-fkc"/>
                             <constraint firstItem="ANU-3Y-KFz" firstAttribute="width" secondItem="J1Y-1t-NaN" secondAttribute="width" id="tfx-vb-tU7"/>
-                            <constraint firstItem="De9-Bw-tZP" firstAttribute="leading" secondItem="aAf-Sr-1Ix" secondAttribute="leading" id="vBR-i5-64q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aAf-Sr-1Ix"/>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bottomConstraint" destination="Li7-L2-SGE" id="ia8-uF-lmZ"/>
-                        <outlet property="carInfoText" destination="yrt-Ix-ywD" id="lay-Yu-ZRL"/>
-                        <outlet property="detailsTableView" destination="ANU-3Y-KFz" id="Cjd-xn-KBm"/>
-                        <outlet property="loadingIndicator" destination="o46-jc-z6c" id="RMH-Zn-zTi"/>
-                        <outlet property="messageField" destination="w9r-xS-Igw" id="sWH-3l-TfK"/>
-                        <outlet property="messageViewHeightConstraint" destination="se2-Lf-1je" id="x9q-Ha-P5h"/>
-                        <outlet property="sendMessageButton" destination="6HC-nI-1HF" id="RGm-gv-xQN"/>
+                        <outlet property="messageTextField" destination="w9r-xS-Igw" id="Myd-oT-sPR"/>
+                        <outlet property="sendMessageButton" destination="6HC-nI-1HF" id="4zF-Xq-O42"/>
+                        <outlet property="tableView" destination="ANU-3Y-KFz" id="f0D-TJ-uh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1x-aK-kI4" userLabel="First Responder" sceneMemberID="firstResponder"/>

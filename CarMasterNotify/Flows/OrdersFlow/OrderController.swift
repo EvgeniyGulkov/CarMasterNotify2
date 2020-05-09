@@ -19,6 +19,10 @@ class OrderController: UIViewController {
         setupBindings()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.viewModel.getData()
+    }
+    
     func setupUI() {
         self.refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
@@ -31,6 +35,7 @@ class OrderController: UIViewController {
     }
     
     private func setupBindings() {
+        
         self.refreshControl!.rx.controlEvent(.valueChanged)
             .subscribe(onNext: {
                 self.viewModel.getData()
@@ -55,7 +60,7 @@ class OrderController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(OrderModel.self)
+        tableView.rx.modelSelected(Order.self)
             .bind(to: viewModel.selectData)
             .disposed(by: disposeBag)
         

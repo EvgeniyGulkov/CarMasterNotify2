@@ -3,11 +3,13 @@ import Foundation
 struct UserDataModel: Codable {
     var accessToken: String?
     var refreshToken: String?
-    var userName: String?
+    var login: String?
+    var chatName: String?
     
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
         case refreshToken = "refresh_token"
-        case userName = "username"
+        case chatName = "chatname"
+        case login = "username"
     }
 }

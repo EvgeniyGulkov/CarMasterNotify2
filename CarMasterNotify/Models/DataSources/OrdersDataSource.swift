@@ -5,16 +5,16 @@ import RxDataSources
 struct OrdersDataSource {
     
     var title: String
-    var items: [OrderModel]
+    var items: [Order]
 }
 extension OrdersDataSource: SectionModelType {
     
-    init(original: OrdersDataSource, items: [OrderModel]) {
+    init(original: OrdersDataSource, items: [Order]) {
         self.items = items
         self.title = original.title
     }
     
-    init(items: [OrderModel], title:String) {
+    init(items: [Order], title:String) {
         self.items = items
         self.title = title
     }

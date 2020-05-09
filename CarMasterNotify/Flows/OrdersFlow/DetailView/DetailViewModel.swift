@@ -1,30 +1,43 @@
 import UIKit
 import RxSwift
 import RxDataSources
+import SocketIO
 
 class DetailViewModel {
     let dataChanged: PublishSubject<Int>
-    let data: PublishSubject<[DetailDataSource]>
+   // let data: PublishSubject<[DetailDataSource]>
     let newMessage: PublishSubject<String?>
+    let socketClient: SocketClient<CarMasterSocketApi>
+    let loadMore: PublishSubject<Int>
     
+    private let limit = 20
     private let disposeBag = DisposeBag()
     private var networkProvider: CustomMoyaProvider<CarMasterApi>
-
-    var recommendations: [RecommendationModel]?
-    var order: OrderModel
+    
+    var messages: [String: MessageModel] = [:]
+    var order: Order
     var title: Observable<String>
     
-    var recommendationsViewModels: [UserCellViewModel] = []
+    var messagesViewModels: [UserCellViewModel] = []
     var reasonsViewModels: [ReasonsCellViewModel] = []
-
     
-    init(order:OrderModel, networkProvider: CustomMoyaProvider<CarMasterApi>) {
-        self.data = PublishSubject<[DetailDataSource]>()
+    init(order:Order, networkProvider: CustomMoyaProvider<CarMasterApi>, socketClient: SocketClient<CarMasterSocketApi>) {
+        self.socketClient = socketClient
+            // self.data = PublishSubject<[DetailDataSource]>()
         self.networkProvider = networkProvider
         self.order = order
         self.title = Observable.just(String(order.model! + " - " + order.plateNumber!))
         self.dataChanged = PublishSubject()
         self.newMessage = PublishSubject<String?>()
+        self.loadMore = PublishSubject()
+        
+        self.loadMore
+            .subscribe(onNext: {index in
+                if index == 1 {
+                    self.getData(index: 1)
+                }
+            })
+            .disposed(by: disposeBag)
         
         self.dataChanged
             .subscribe(onNext: {index in
@@ -37,68 +50,111 @@ class DetailViewModel {
                     self.addMessage(text: $0!)}
             })
             .disposed(by: disposeBag)
-        }
-    
+        
+        self.socketClient.on(event: .getMessage, callback: {[unowned self] data,_ in
+            let message = MessageModel.fromData(data: data).first
+            message?.toManagedObject(order: self.order)
+            CoreDataManager.save()
+            
+            self.updateMessages(messages: [message!])
+        })
+    }
     
     func getData(index: Int) {
         switch index {
         case 1:
-            self.networkProvider.request(.getRecommendations(orderNumber: order.orderNumber!), [RecommendationModel].self)
-                .subscribe(
-                onSuccess: {recommendations in
-                    self.recommendations = recommendations.sorted(by: {first,second in first.date! < second.date!
-                    })
-                    self.createRecommendationsCellViewModels(recommendations: self.recommendations!)
-                    self.data.onNext([DetailDataSource(detailData: .recommendations(recommendations: self.recommendations!))])
-            },
-                onError: {_ in})
-                .disposed(by: disposeBag)
-        default:
-            self.networkProvider.request(.getReasons(orderNumber: order.orderNumber!), [ReasonModel].self)
-                .subscribe(
-                onSuccess: {reasons in
-                    self.createReasonsCellViewModels(reasons: reasons)
-                    self.data.onNext([DetailDataSource(detailData: .reasons(reasons: reasons))])
-            },
-                onError: {error in print(error.localizedDescription)})
-                .disposed(by: disposeBag)
+            self.socketClient.emitWithAck(event: .getMessages, ["orderNum":order.number,
+                                                                "offset":self.messages.count,
+                                                                "limit": limit],
+                                          timingOut: 0.5)
+            { [unowned self] data in
+                guard let code = data.first as? Int else {
+                    self.getFromLocalDB(offset: self.messages.count, limit: self.limit)
+                    return
+                }
+                if code == 200 {
+                    let messages = MessageModel.fromData(data: data[1])
+                    let _ = messages.map {$0.toManagedObject(order: self.order)}
+                    CoreDataManager.save()
+                    self.updateMessages(messages: messages)
+                }
+                else {
+                    self.getFromLocalDB(offset: self.messages.count, limit: self.limit)
+                }
             }
+        default:
+            self.networkProvider.request(.getReasons(orderNumber: Int(self.order.number)), [ReasonModel].self)
+                .subscribe(onSuccess: { reasons in
+                    let _ = reasons.map {$0.toManagedObject(order: self.order)}
+                    CoreDataManager.save()
+                    self.updateReasons()
+                }, onError: {error in
+                    print(error)
+                    self.updateReasons()
+                })
+                .disposed(by: self.disposeBag)
+        }
     }
     
-    func createReasonsCellViewModels(reasons: [ReasonModel]) {
+    private func updateReasons() {
+        let reasons = self.order.reason?.allObjects as! [Reason]
+        self.createReasonsCellViewModels(reasons: reasons)
+ //       self.data.onNext([DetailDataSource(detailData: .reasons(reasons: reasons))])
+    }
+    
+    private func updateMessages(messages: [MessageModel]) {
+        messages.forEach { [unowned self] message in
+            if self.messages[message.id!] == nil {
+                self.messages[message.id!] = message
+                self.messagesViewModels.append(UserCellViewModel())
+            }
+        }
+        let allMessage = Array<MessageModel>(self.messages.values).sorted(by: {first,second in
+            first.date! < second.date!
+        })
+     //   self.data.onNext([DetailDataSource(detailData: .messages(messages: allMessage))])
+    }
+    
+    private func getFromLocalDB(offset: Int, limit: Int) {
+        let messages = Message.messages(offset: offset, limit: limit, order: self.order)
+        self.updateMessages(messages: messages.map{$0.toObject()})
+    }
+    
+    func createReasonsCellViewModels(reasons: [Reason]) {
+        self.reasonsViewModels.removeAll()
         for reason in reasons {
             self.reasonsViewModels.append(ReasonsCellViewModel(id:reason.id! ,status: .error))
         }
     }
     
-    func createRecommendationsCellViewModels(recommendations: [RecommendationModel]) {
-        for _ in recommendations {
-            self.recommendationsViewModels.append(UserCellViewModel(status: .complete))
+    func createMessagesCellViewModels(messages: [MessageModel]) {
+        self.messagesViewModels.removeAll()
+        for _ in messages {
+            self.messagesViewModels.append(UserCellViewModel(status: .complete))
         }
     }
     
     func changeStatus (index: Int) -> (){
         self.networkProvider.request(.changeStatus(id: self.reasonsViewModels[index].id), Int.self)
             .subscribe(
-            onSuccess: {_ in self.dataChanged.onNext(0)
-        },
-            onError: {_ in})
-        .disposed(by: disposeBag)
-
+                onSuccess: {_ in self.dataChanged.onNext(0)
+            },
+                onError: {_ in})
+            .disposed(by: disposeBag)
     }
     
-    func addMessage(text: String) {
-        self.recommendations!.append(RecommendationModel(text: text))
-        self.recommendationsViewModels.append(UserCellViewModel(status: .loading))
-        
-        self.data.onNext([DetailDataSource(detailData: .recommendations(recommendations: self.recommendations!))])
-        
-        self.networkProvider.request(.addMessage(text: text, order: self.order.orderNumber!), Int.self)
-            .subscribe(
-            onSuccess: {statusCode in
-                self.recommendationsViewModels.last?.status.onNext(.complete)
-        },
-            onError: {_ in self.recommendationsViewModels.last?.status.onNext(.error)})
-        .disposed(by: disposeBag)
+    private func addMessage(text: String) {
+        socketClient.emitWithAck(event: .addMessage, ["orderNum": self.order.number,
+                                                      "message": text], timingOut: 3)
+        { data in
+            guard let code = data.first as? Int else {
+                return
+            }
+            if code == 200 {
+                let message = data[1]
+                // self.toLocalDatabase(data: [message])
+                //  self.updateMessages(offset: 0, limit: 1)
+            }
+        }
     }
 }

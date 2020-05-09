@@ -21,10 +21,10 @@ class ApplicationCoordinator: BaseCoordinator {
     private let keychain = Keychain()
     
     private var instructor: LaunchInstructor {
-    
-        if (try? self.keychain.getString("access_token")) != nil {
-           // isAutorized = true
-        }
+        let settingsHelper = SettingsHelper()
+      //  if settingsHelper.fetchRequest(key: .chatName, type: String.self) != nil {
+            isAutorized = true
+     //   } else { isAutorized = false }
         return LaunchInstructor.configure()
     }
     
@@ -60,9 +60,13 @@ class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func runMainFlow() {
-        UserDefaults.standard.set(true, forKey: "notificationsOn")
-        
         let coordinator = coordinatorFactory.makeTabbarCoordinator()
+        coordinator.finishFlow = {[weak self,weak coordinator] in
+            let settingsHelper = SettingsHelper()
+            settingsHelper.removeUserData()
+            self?.start()
+            self?.removeDependency(coordinator)
+        }
         addDependency(coordinator)
         router.setRootModule(coordinator.controller, hideBar: true)
         coordinator.start()

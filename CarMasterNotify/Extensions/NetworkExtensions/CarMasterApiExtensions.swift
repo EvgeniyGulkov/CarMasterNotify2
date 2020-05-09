@@ -11,7 +11,7 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             return .bearer
         case .getReasons:
             return .bearer
-        case .getRecommendations:
+        case .getMessages:
             return .bearer
         case .changeStatus:
             return .bearer
@@ -19,11 +19,15 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             return .bearer
         case .refreshToken:
             return .bearer
+        case .changePassword:
+            return .bearer
+        case .changeChatname:
+            return .bearer
         }
     }
     
     var baseURL: URL {
-        return URL(string: "https://www.carmasterapi.me.uk:443")!
+        return URL(string: "http://192.168.0.104:8000")!
     }
     
     var path: String {
@@ -34,7 +38,7 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             return "/api/carorders"
         case .getReasons:
             return "/api/reasons"
-        case .getRecommendations:
+        case .getMessages:
             return "/api/recommendations"
         case .changeStatus:
             return "/api/reasons/changestatus"
@@ -42,6 +46,10 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             return "/api/recommendations/add"
         case .refreshToken:
             return "/oauth/token"
+        case .changeChatname:
+            return "/api/user/changechatname"
+        case .changePassword:
+            return "/api/user/changepassword"
         }
     }
     
@@ -53,13 +61,17 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             return .get
         case .getReasons:
             return .get
-        case .getRecommendations:
+        case .getMessages:
             return .get
         case .changeStatus:
             return .post
         case .addMessage:
             return .post
         case .refreshToken:
+            return .post
+        case .changeChatname:
+            return .post
+        case .changePassword:
             return .post
         }
     }
@@ -86,7 +98,7 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
         case .getReasons(let orderNumber):
             return .requestParameters(parameters: ["ordernumber" : orderNumber], encoding: URLEncoding.default)
             
-        case .getRecommendations(let orderNumber):
+        case .getMessages(let orderNumber):
             return .requestParameters(parameters: ["ordernumber" : orderNumber], encoding: URLEncoding.default)
             
         case .changeStatus(let id):
@@ -99,6 +111,7 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             
         case .addMessage(let text, let order):
             return .requestParameters(parameters: ["message" : text, "orderNum" : order], encoding: JSONEncoding.default)
+            
         case .refreshToken(let refreshToken):
             return .requestParameters(
                 parameters: [
@@ -107,6 +120,16 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
                 "client_id": "1C",
                 "client_secret": "SomeRandomCharsAndNumbers"],
             encoding: JSONEncoding.default)
+            
+        case .changeChatname(let newChatname):
+            return .requestParameters(parameters: ["chatname" : newChatname], encoding: JSONEncoding.default)
+            
+        case .changePassword(let currentPassword, let newPassword):
+            return .requestParameters(parameters:
+                [
+                    "currentpassword" : currentPassword,
+                    "newpassword" : newPassword
+            ], encoding: JSONEncoding.default)
         }
     }
     

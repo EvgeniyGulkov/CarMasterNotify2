@@ -13,6 +13,7 @@ target 'CarMasterNotify' do
    pod 'RxDataSources', '~> 4.0'
    pod 'Moya/RxSwift', '~> 14.0.0-beta.6'
    pod 'KeychainAccess'
+   pod 'Socket.IO-Client-Swift', '~> 15.2.0'
 
 
   target 'CarMasterNotifyTests' do
