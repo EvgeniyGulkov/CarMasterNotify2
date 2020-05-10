@@ -27,15 +27,20 @@ class OrderController: BaseTableViewController {
         tableView.keyboardDismissMode = .interactive
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.refreshControl = UIRefreshControl()
-        tableView.refreshControl = refreshControl
         self.createSearchController(navigationItem: self.navigationItem)
+        self.createRefreshControl()
     }
 
     private func setupBindings() {
-        
-        self.refreshControl!.rx.controlEvent(.valueChanged)
-            .subscribe(onNext: {
-                self.viewModel.getData()
+        self.searchController?.searchBar.searchTextField.rx.controlEvent(.editingDidBegin)
+            .subscribe(onNext: {[weak self] _ in
+                self?.tableView.refreshControl = nil
+            })
+            .disposed(by: disposeBag)
+
+        self.searchController?.searchBar.searchTextField.rx.controlEvent(.editingDidEnd)
+            .subscribe(onNext: {[weak self] _ in
+                self?.createRefreshControl()
             })
             .disposed(by: disposeBag)
 
@@ -45,17 +50,14 @@ class OrderController: BaseTableViewController {
             .distinctUntilChanged()
             .bind(to: self.viewModel.search)
             .disposed(by: disposeBag)
-
-        tableView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
         
         self.viewModel.data
             .bind(to: tableView.rx.items(dataSource: DataSourcesFactory.getOrdersDataSource()))
             .disposed(by: disposeBag)
 
         self.viewModel.data
-            .subscribe(onNext: {_ in
-                self.refreshControl?.endRefreshing()
+            .subscribe(onNext: {[weak self] _ in
+                self?.refreshControl?.endRefreshing()
             })
             .disposed(by: disposeBag)
 
@@ -66,6 +68,15 @@ class OrderController: BaseTableViewController {
         tableView.rx.willDisplayCell
             .map{cell, index in return index.section*2+index.row+1}
             .bind(to: self.viewModel.displayLastCell)
+            .disposed(by: disposeBag)
+    }
+
+    private func createRefreshControl() {
+        self.tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl!.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: {
+                self.viewModel.getData()
+            })
             .disposed(by: disposeBag)
     }
 }
