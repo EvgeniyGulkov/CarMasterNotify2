@@ -15,9 +15,9 @@ struct ReasonModel: Detail, Codable {
     }
     
     func toManagedObject(order: Order) -> Reason {
-        let context = CoreDataManager.context
-        context?.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        let reason = Reason(context: context!)
+        let context = DataController.shared.main
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        let reason = Reason(context: context)
         reason.id = self.id
         reason.text = self.text
         reason.order = order

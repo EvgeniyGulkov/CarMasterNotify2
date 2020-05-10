@@ -69,12 +69,12 @@ class MessageController: UIViewController {
 
 extension MessageController: NSFetchedResultsControllerDelegate {
     func fetch() {
-        let context = CoreDataManager.context
+        let context = DataController.shared.main
         let request = NSFetchRequest<Message>(entityName: "Message")
         let sort = NSSortDescriptor(key: "created", ascending: true)
         request.sortDescriptors = [sort]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request,
-                                                              managedObjectContext: context!,
+                                                              managedObjectContext: context,
                                                               sectionNameKeyPath: nil,
                                                               cacheName: nil)
         fetchedResultsController!.delegate = self

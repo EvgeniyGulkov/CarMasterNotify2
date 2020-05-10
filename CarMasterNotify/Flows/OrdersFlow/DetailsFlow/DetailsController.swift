@@ -10,12 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ReasonsController: UIViewController {
+class DetailsController: BaseTableViewController {
     private let disposeBag = DisposeBag()
-    var viewModel: ReasonViewModel!
-    var refreshControl: UIRefreshControl?
-    
-    @IBOutlet weak var tableView: UITableView!
+    var viewModel: DetailsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +21,7 @@ class ReasonsController: UIViewController {
     }
     
     func setupUI() {
+        self.tableView.dataSource = nil
         self.refreshControl = UIRefreshControl()
         self.refresh()
     }
@@ -35,11 +33,8 @@ class ReasonsController: UIViewController {
             })
             .disposed(by: self.disposeBag)
         
-        self.viewModel.title
-            .bind(to: self.rx.title)
-            .disposed(by: self.disposeBag)
-        
         self.viewModel.reasons
+            .do(onNext: { [weak self] _ in self?.refreshControl?.endRefreshing()})
             .bind(to: self.tableView.rx.items(dataSource: DataSourcesFactory
                 .reasonsDatasource(viewModel: self.viewModel)))
             .disposed(by: self.disposeBag)
@@ -47,5 +42,10 @@ class ReasonsController: UIViewController {
     
     func refresh() {
         self.viewModel.getReasons()
+    }
+
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = Theme.Color.greenColor
     }
 }

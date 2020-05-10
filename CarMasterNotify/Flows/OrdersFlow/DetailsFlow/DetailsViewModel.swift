@@ -9,23 +9,18 @@
 import Foundation
 import RxSwift
 
-class ReasonViewModel {
+class DetailsViewModel {
     let order: Order
     let networkProvider: CustomMoyaProvider<CarMasterApi>
     private let disposeBag = DisposeBag()
     
-    var reasonsViewModels: [ReasonsCellViewModel] = []
-    var title: Observable<String>
+    var reasonsViewModels: [DetailsCellViewModel] = []
     
-    var reasons: PublishSubject<[ReasonDataSource]>
+    var reasons: PublishSubject<[DetailsDataSource]>
     
     init(order: Order, networkProvider: CustomMoyaProvider<CarMasterApi>) {
         self.order = order
-        
-        self.title = Observable.just("\(order.manufacturer!) \(order.model!) - \(order.plateNumber!)")
-        
         self.reasons = PublishSubject()
-        
         self.networkProvider = networkProvider
     }
     
@@ -33,7 +28,7 @@ class ReasonViewModel {
         self.networkProvider.request(.getReasons(orderNumber: Int(self.order.number)), [ReasonModel].self)
         .subscribe(onSuccess: { reasons in
             let _ = reasons.map {$0.toManagedObject(order: self.order)}
-            CoreDataManager.save()
+            DataController.shared.save()
             self.updateReasons()
         }, onError: {error in
             print(error)
@@ -43,15 +38,16 @@ class ReasonViewModel {
     }
     
     private func updateReasons() {
-           let reasons = self.order.reason?.allObjects as! [Reason]
-           self.createReasonsCellViewModels(reasons: reasons)
-           self.reasons.onNext([ReasonDataSource(items: reasons)])
+        guard let reasons = order.reason?.allObjects else {return}
+        self.reasonsViewModels.removeAll()
+        let orders: [Order] = Array(repeating: order, count: reasons.count)
+        self.reasons.onNext([DetailsDataSource(title: "Car information", items: [order]), DetailsDataSource(title: "Reasons", items: orders)])
        }
     
     private func createReasonsCellViewModels(reasons: [Reason]) {
         self.reasonsViewModels.removeAll()
         for reason in reasons {
-            self.reasonsViewModels.append(ReasonsCellViewModel(id:reason.id! ,status: .error))
+            self.reasonsViewModels.append(DetailsCellViewModel(id:reason.id! ,status: .error))
         }
     }
 }

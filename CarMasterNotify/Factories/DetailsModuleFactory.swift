@@ -9,7 +9,5 @@
 import UIKit
 
 protocol DetailsModuleFactory {
-    func makeDetailsTabbarOutput() -> DetailsTabbarController
-    func makeReasonsOutput(viewModel: ReasonViewModel) -> ReasonsController
     func makeMessagesOutput(viewModel: MessageViewModel) -> MessageController
 }

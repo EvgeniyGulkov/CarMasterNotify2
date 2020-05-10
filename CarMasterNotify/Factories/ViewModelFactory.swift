@@ -3,14 +3,9 @@ import SocketIO
 
 class ViewModelFactory {
     
-    static func makeDetailViewModel(order: Order,socketClient: SocketClient<CarMasterSocketApi>) -> DetailViewModel {
+    static func makeDetailsViewModel(order: Order) -> DetailsViewModel {
         let networkProvider = CustomMoyaProvider<CarMasterApi>()
-        return DetailViewModel(order: order, networkProvider: networkProvider, socketClient: socketClient)
-    }
-    
-    static func makeReasonViewModel(order: Order) -> ReasonViewModel {
-        let networkProvider = CustomMoyaProvider<CarMasterApi>()
-        return ReasonViewModel(order: order, networkProvider: networkProvider)
+        return DetailsViewModel(order: order, networkProvider: networkProvider)
     }
     
     static func makeMessageViewModel(order: Order, socketClient: SocketClient<CarMasterSocketApi> ) -> MessageViewModel {
@@ -33,8 +28,8 @@ class ViewModelFactory {
         return viewModel
     }
     
-    static func makeNameDialogueViewModel(username: String) -> NameChangeViewModel {
-        let viewModel = NameChangeViewModel(username: username)
+    static func makeNameDialogueViewModel() -> NameChangeViewModel {
+        let viewModel = NameChangeViewModel()
         return viewModel
     }
     

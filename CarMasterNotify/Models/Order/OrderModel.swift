@@ -24,9 +24,9 @@ struct OrderModel: Codable {
     }
     
     func toManagedObject() -> Order {
-        let context = CoreDataManager.context
-        context?.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        let order = Order(context: context!)
+        let context = DataController.shared.main
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        let order = Order(context: context)
         order.createDate = self.createDate
         order.updateDate = self.updateDate
         order.manufacturer = self.manufacturer

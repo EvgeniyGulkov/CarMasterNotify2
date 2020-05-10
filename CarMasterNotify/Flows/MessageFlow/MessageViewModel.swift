@@ -49,7 +49,7 @@ class MessageViewModel {
         self.socketClient.on(event: .getMessage, callback: {[unowned self] data,_ in
             let message = MessageModel.fromData(data: data).first
             message?.toManagedObject(order: self.order)
-            CoreDataManager.save()
+            DataController.shared.save()
         })
     }
     
@@ -65,7 +65,7 @@ class MessageViewModel {
             if code == 200 {
                 let messages = MessageModel.fromData(data: data[1]).map {$0.toManagedObject(order: self.order)}
                 if !messages.isEmpty {
-                    CoreDataManager.save()
+                    DataController.shared.save()
                 }
             }
         }
@@ -75,27 +75,27 @@ class MessageViewModel {
         guard !text.isEmpty else {
             return
         }
-        let context = CoreDataManager.context
-        let message = Message(context: context!)
+        let context = DataController.shared.main
+        let message = Message(context: context)
         message.text = text
         message.status = CellState.loading.rawValue
         message.isMy = true
         message.created = Date()
-        CoreDataManager.save()
+        DataController.shared.save()
         
         socketClient.emitWithAck(event: .addMessage, ["orderNum": self.order.number,
                                                       "message": text], timingOut: 20)
         { data in
             guard let code = data.first as? Int else {
                 message.status = CellState.error.rawValue
-                CoreDataManager.save()
+                DataController.shared.save()
                 return
             }
             if code == 200 {
                 let newMessage = MessageModel.fromData(data: [data[1]]).first
                 message.id = newMessage?.id!
                 message.status = CellState.complete.rawValue
-                CoreDataManager.save()
+                DataController.shared.save()
             }
         }
     }

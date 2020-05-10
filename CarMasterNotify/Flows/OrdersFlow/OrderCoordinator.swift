@@ -34,21 +34,22 @@ final class OrderCoordinator: BaseCoordinator {
             })
             .disposed(by: disposeBag)
         let ordersOutput = factory.makeOrdersOutput(viewModel: viewModel)
-        ordersOutput.tabBarItem = UITabBarItem(title: ordersOutput.title, image: UIImage(named: "orders_icon"), tag: 0)
         router.setRootModule(ordersOutput)
     }
         
     private func showOrderDetail(_ order: Order, socketClient: SocketClient<CarMasterSocketApi>) {
-        let coordinator = coordinatorFactory.makeDetailsTabbarCoordinator(order: order, router: self.router, socketClient: socketClient)
-        addDependency(coordinator)
-        coordinator.start()
+        let viewModel = ViewModelFactory.makeDetailsViewModel(order: order)
+        let controller = factory.makeDetailsOutput(viewModel: viewModel)
+        controller.title = "Order details"
+        router.push(controller)
         }
     
     func showCompleteAction() -> (DetailsController, Int) -> () {
         return { controller, index in
             let completeMenu = UIAlertController(title: nil, message: ActionStrings.message.rawValue, preferredStyle: .actionSheet)
                  
-            let markCompleteAction = UIAlertAction(title: ActionStrings.ok.rawValue, style: .default, handler: {action in controller.viewModel!.changeStatus(index: index)})
+            let markCompleteAction = UIAlertAction(title: ActionStrings.ok.rawValue, style: .default, handler: {action in //controller.viewModel!.changeStatus(index: index)
+            })
             let cancelAction = UIAlertAction(title: ActionStrings.cancel.rawValue, style: .cancel, handler: nil)
                 completeMenu.addAction(markCompleteAction)
                 completeMenu.addAction(cancelAction)

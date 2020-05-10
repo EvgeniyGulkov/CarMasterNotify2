@@ -5,7 +5,7 @@ import RxSwift
 class LoginController: UIViewController {
     @IBOutlet weak var loginText: RoundCornerTextField!
     @IBOutlet weak var passwordText: RoundCornerTextField!
-    @IBOutlet weak var signInButton: RoundCornerButton!
+    @IBOutlet weak var signInButton: UIButton!
     
     @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     

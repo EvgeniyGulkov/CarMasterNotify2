@@ -26,9 +26,9 @@ struct MessageModel: Detail, Codable {
     
     @discardableResult
     func toManagedObject(order: Order) -> Message {
-        let context = CoreDataManager.context
-        context?.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        let message = Message(context: context!)
+        let context = DataController.shared.main
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        let message = Message(context: context)
         message.id = self.id
         message.text = self.text
         message.created = Date()

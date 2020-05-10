@@ -6,7 +6,7 @@ class SettingsController: BaseTableViewController {
     let disposeBag = DisposeBag()
 
     @IBOutlet weak var nickName: UILabel!
-    @IBOutlet weak var signOutButton: RoundCornerButton!
+    @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var accessLevel: UILabel!
     @IBOutlet weak var position: DefaultTextLabel!
@@ -16,6 +16,7 @@ class SettingsController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Settings"
         avatarImageView.layer.borderColor = UIColor.gray.cgColor
         avatarImageView.layer.borderWidth = 1.0
         setupBindings()
@@ -28,7 +29,7 @@ class SettingsController: BaseTableViewController {
     }
     
     func setupBindings() {
-        self.viewModel?.nickName?
+        self.viewModel?.nickName
             .subscribe(onSuccess: { name in
                 self.nickName.text = name
             }, onError: { error in
@@ -44,7 +45,11 @@ class SettingsController: BaseTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        self.viewModel?.selectSettings?.onNext(indexPath)
+        self.viewModel?.selectSettings.onNext(indexPath)
+    }
+
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = Theme.Color.greenColor
     }
 }

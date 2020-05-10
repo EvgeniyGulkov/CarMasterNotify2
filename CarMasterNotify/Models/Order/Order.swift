@@ -2,7 +2,7 @@ import UIKit
 import CoreData
 import RxSwift
 
-private let context = CoreDataManager.context
+private let context = DataController.shared.main
 
 struct OrderSection {
     static let dateFormat = "dd.MM.yyyy"
@@ -28,8 +28,8 @@ extension Order {
             request.predicate = andPredicate
         }
         do {
-            let orders = try context?.fetch(request)
-            return orders!
+            let orders = try context.fetch(request)
+            return orders
         } catch {
             print(error)
             return []
@@ -40,8 +40,8 @@ extension Order {
         let request = NSFetchRequest<Order>(entityName: String(describing: self))
             request.predicate = NSPredicate(format: "number == %@", number)
         do {
-            let order = try context?.fetch(request).first
-            return order!
+            let order = try context.fetch(request).first
+            return order
         } catch {
             print(error)
             return nil

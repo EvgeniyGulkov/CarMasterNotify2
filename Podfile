@@ -11,7 +11,7 @@ target 'CarMasterNotify' do
    pod 'RxCocoa', '~> 5.1.1'
    pod 'RxKeyboard'
    pod 'RxDataSources', '~> 4.0.1'
-   pod 'Moya/RxSwift', '~> 14.0.0-beta.6'
+   pod 'Moya/RxSwift', '~> 14.0.0'
    pod 'KeychainAccess'
    pod 'Socket.IO-Client-Swift', '~> 15.2.0'
 

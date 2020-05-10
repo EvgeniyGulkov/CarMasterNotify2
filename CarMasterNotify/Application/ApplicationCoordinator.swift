@@ -21,10 +21,9 @@ class ApplicationCoordinator: BaseCoordinator {
     private let keychain = Keychain()
     
     private var instructor: LaunchInstructor {
-        let settingsHelper = SettingsHelper()
-      //  if settingsHelper.fetchRequest(key: .chatName, type: String.self) != nil {
+        if SecureManager.isAutorized {
             isAutorized = true
-     //   } else { isAutorized = false }
+        } else { isAutorized = false }
         return LaunchInstructor.configure()
     }
     
@@ -62,8 +61,6 @@ class ApplicationCoordinator: BaseCoordinator {
     private func runMainFlow() {
         let coordinator = coordinatorFactory.makeTabbarCoordinator()
         coordinator.finishFlow = {[weak self,weak coordinator] in
-            let settingsHelper = SettingsHelper()
-            settingsHelper.removeUserData()
             self?.start()
             self?.removeDependency(coordinator)
         }

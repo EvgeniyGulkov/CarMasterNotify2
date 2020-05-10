@@ -8,7 +8,7 @@ class CustomMoyaProvider<Target: TargetType>: MoyaProvider<Target> {
     
     override init(endpointClosure: @escaping MoyaProvider<Target>.EndpointClosure = MoyaProvider.defaultEndpointMapping, requestClosure: @escaping MoyaProvider<Target>.RequestClosure = MoyaProvider<Target>.defaultRequestMapping, stubClosure: @escaping MoyaProvider<Target>.StubClosure = MoyaProvider.neverStub, callbackQueue: DispatchQueue? = nil, session: Session = MoyaProvider<Target>.defaultAlamofireSession(), plugins: [PluginType] = [], trackInflights: Bool = false)
     {
-        let authPlugin = AccessTokenPlugin { _ in SettingsHelper.accessToken() }
+        let authPlugin = AccessTokenPlugin { _ in SecureManager.accessToken }
         let evaluators = [
           "www.carmasterapi.me.uk":
             PinnedCertificatesTrustEvaluator(certificates: [
@@ -30,11 +30,10 @@ class CustomMoyaProvider<Target: TargetType>: MoyaProvider<Target> {
           return request
             .flatMap{result in
                 if result.statusCode == 401 {
-                    return self.refreshSessionToken(token: SettingsHelper.refreshToken())
+                    return self.refreshSessionToken(token: SecureManager.refreshToken)
                     .do(
                         onSuccess:{userdata in
-                            let settingsHelper = SettingsHelper()
-                            settingsHelper.saveUserData(userdata: userdata)},
+                            SecureManager.saveUserData(userdata: userdata)},
                         onError: {_ in})
                         .flatMap{_ in return self.provider.rx.request(token)}
                 } else {
@@ -49,8 +48,7 @@ class CustomMoyaProvider<Target: TargetType>: MoyaProvider<Target> {
             .map { response in
                 if response.statusCode == 200 {
                     let userdata = try? response.map(UserDataModel.self)
-                    let settingsHelper = SettingsHelper()
-                    settingsHelper.saveUserData(userdata: userdata!)
+                    SecureManager.saveUserData(userdata: userdata!)
                 }
                 return response.statusCode
         }

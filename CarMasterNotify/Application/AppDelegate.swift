@@ -11,28 +11,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return self.window!.rootViewController as! UINavigationController
     }
     
-    private lazy var applicationCoordinator: Coordinator = self.makeCoordinator()
-    
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "CarMasterNotifyData")
-        container.loadPersistentStores() {description, error in
-            if let error = error {
-                print("Unable to load persisten stores: \(error)")
-            }
-        }
-        return container
-    }()
+    lazy var applicationCoordinator: Coordinator = self.makeCoordinator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        
         let navController = NavigationController()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
-        
-        
-        let notification = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [String: AnyObject]
-        let deepLink = DeepLinkOption.build(with: notification)
-        applicationCoordinator.start(with: deepLink)
+        let persistentContainer = NSPersistentContainer(name: "CarMasterNotifyData")
+        DataController.create(persistentContainer: persistentContainer) {
+            let notification = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [String: AnyObject]
+            let deepLink = DeepLinkOption.build(with: notification)
+            self.applicationCoordinator.start(with: deepLink)
+        }
         return true
     }
     

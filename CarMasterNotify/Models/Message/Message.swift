@@ -2,7 +2,7 @@ import UIKit
 import RxSwift
 import CoreData
 
-private let context = CoreDataManager.context
+private let context = DataController.shared.main
 private let disposeBag = DisposeBag()
 private let networkProvider =  CustomMoyaProvider<CarMasterApi>()
 
@@ -14,8 +14,8 @@ extension Message: Detail {
         request.fetchOffset = offset
         request.predicate = NSPredicate(format: "order.number == %@", NSNumber(value: order.number))
         do {
-            let orders = try context?.fetch(request)
-            return orders!
+            let orders = try context.fetch(request)
+            return orders
         } catch {
             print(error)
             return []

@@ -2,11 +2,6 @@ import UIKit
 
 final class CoordinatorFactoryImp: CoordinatorFactory {
     
-    func makeDetailsTabbarCoordinator(order: Order, router: Router, socketClient: SocketClient<CarMasterSocketApi>) -> DetailsCoordinator {
-        let coordinator = DetailsCoordinator(order: order, router: router, factory: ModuleFactoryImp(), socketClient: socketClient)
-        return coordinator
-    }
-    
     func makeTabbarCoordinator() -> TabbarCoordinator {
         let coordinator = TabbarCoordinator(coordinatorFactory: CoordinatorFactoryImp(), factory: ModuleFactoryImp())
         return coordinator

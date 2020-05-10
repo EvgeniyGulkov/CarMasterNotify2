@@ -22,12 +22,11 @@ class SettingsCoordinator: BaseCoordinator {
         viewModel.showPasswordChangeDialogue = self.showPasswordChangeDialogue
         viewModel.showNameChangeDialogue = self.showNameChangeDialogue
         
-        viewModel.signOutButton?.asObservable()
-            .subscribe(onNext: {[weak self] in self?.finishFlow!()})
+        viewModel.signOutButton.asObservable()
+            .subscribe(onNext: {self.showSignOutAlert()})
             .disposed(by: disposeBag)
         
         let settingsOutput = factory.makeSettingsOutput(viewModel: viewModel)
-        settingsOutput.tabBarItem = UITabBarItem(title: settingsOutput.title!, image: UIImage(named: "settings_icon"), tag: 1)
         router.setRootModule(settingsOutput)
     }
     
@@ -46,10 +45,11 @@ class SettingsCoordinator: BaseCoordinator {
         router.present(passwordChangeDialogueOutput, animated: true)
     }
     
-    private func showNameChangeDialogue(username: String) {
-        let viewmodel = ViewModelFactory.makeNameDialogueViewModel(username: username)
+    private func showNameChangeDialogue() {
+        let viewmodel = ViewModelFactory.makeNameDialogueViewModel()
         let nameChangeDialogueOutput = factory.makeChangeNameDialogueOutput(viewModel: viewmodel)
-        
+        let controller = NavigationController(rootViewController: nameChangeDialogueOutput)
+        controller.modalPresentationStyle = .fullScreen
         viewmodel.tapCancel.asObservable()
         .subscribe(onNext: {nameChangeDialogueOutput.dismiss(animated: true, completion: nil)})
         .disposed(by: disposeBag)
@@ -58,6 +58,17 @@ class SettingsCoordinator: BaseCoordinator {
             .subscribe(onNext: {nameChangeDialogueOutput.dismiss(animated: true, completion: nil)})
             .disposed(by: disposeBag)
         
-        router.present(nameChangeDialogueOutput, animated: true)
+        router.present(controller, animated: true)
+    }
+
+    private func showSignOutAlert() {
+        let alertController = UIAlertController(title: "Sign Out", message: "Do you want to sign out?", preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {_ in
+            SecureManager.SignOut()
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        router.present(alertController)
     }
 }

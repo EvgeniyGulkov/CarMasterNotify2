@@ -1,5 +1,5 @@
 import UIKit
-class OrderTableCell: UITableViewCell{
+class OrderTableCell: BaseDarkTableViewCell {
     @IBOutlet weak var vinNumber: UILabel!
     @IBOutlet weak var carModel: UILabel!
     @IBOutlet weak var plateNumber: UILabel!

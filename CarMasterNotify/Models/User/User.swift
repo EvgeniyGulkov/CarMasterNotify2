@@ -13,10 +13,10 @@ import RxSwift
 extension User {
 
     static var currentUser: User? {
-        let context = CoreDataManager.context
+        let context = DataController.shared.main
         let request = NSFetchRequest<User>(entityName: String(describing: self))
         request.sortDescriptors = []
-        let user = try? context?.fetch(request).first
+        let user = try? context.fetch(request).first
         return user
     }
 }

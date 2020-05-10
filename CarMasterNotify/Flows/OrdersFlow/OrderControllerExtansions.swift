@@ -12,7 +12,6 @@ extension OrderController {
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.textAlignment = .center
-        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.textColor = Theme.Color.greenColor
     }
 }

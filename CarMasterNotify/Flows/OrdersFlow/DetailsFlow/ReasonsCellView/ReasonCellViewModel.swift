@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-class ReasonsCellViewModel {
+class DetailsCellViewModel {
     var id: String
     var status: BehaviorSubject<CellState>
     var text: Observable<String>?

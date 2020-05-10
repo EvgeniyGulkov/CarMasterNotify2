@@ -12,8 +12,10 @@ class TabbarCoordinator: BaseCoordinator {
     init(coordinatorFactory: CoordinatorFactory,factory: MainModuleFactory) {
         self.coordinatorFactory = coordinatorFactory
         self.controller = factory.makeMainOutput()
-        self.ordersNavController = controller.viewControllers![0] as! UINavigationController
-        self.settingsNavController = controller.viewControllers![1] as! UINavigationController
+        ordersNavController = controller.viewControllers![0] as! UINavigationController
+        ordersNavController.tabBarItem = UITabBarItem(title: "Orders", image: UIImage(named: "orders_icon"), tag: 0)
+        settingsNavController = controller.viewControllers![1] as! UINavigationController
+        settingsNavController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings_icon"), tag: 1)
     }
     
     override func start() {

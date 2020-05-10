@@ -18,8 +18,9 @@ class NameChangeDialogueController: BaseTableViewController {
 
     func setupUI() {
         tableView.keyboardDismissMode = .onDrag
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismiss))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
         doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = doneButton
         self.navigationItem.leftBarButtonItem = cancelItem
      }
      
@@ -33,6 +34,11 @@ class NameChangeDialogueController: BaseTableViewController {
             .map{return self.nameTextField.text!}
             .bind(to: self.viewModel!.tapDone)
             .disposed(by: disposeBag)
+    }
+
+    @objc
+    func close() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

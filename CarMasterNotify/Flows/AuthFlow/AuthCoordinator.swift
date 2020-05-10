@@ -21,7 +21,7 @@ final class AuthCoordinator: BaseCoordinator {
         let viewModel = ViewModelFactory.makeLoginViewModel()
         viewModel.signInOk = finishFlow
         let loginOutput = factory.makeLoginOutput(viewModel: viewModel)
-
+        loginOutput.view.backgroundColor = Theme.Color.background
         router.setRootModule(loginOutput)
     }
 }

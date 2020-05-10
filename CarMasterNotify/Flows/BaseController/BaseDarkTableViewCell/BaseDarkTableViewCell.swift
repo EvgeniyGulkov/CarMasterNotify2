@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import RxCocoa
+import RxSwift
 
 class BaseDarkTableViewCell: UITableViewCell {
+    private (set) var disposeBag = DisposeBag()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +19,12 @@ class BaseDarkTableViewCell: UITableViewCell {
             view.tintColor = Theme.Color.tIntColor
             view.image = UIImage(named: "disclosure")
             self.accessoryView = view
+            self.selectionStyle = .none
         }
         self.backgroundColor = Theme.Color.tableSectionBackground
+    }
+
+    override func prepareForReuse() {
+        disposeBag = DisposeBag()
     }
 }

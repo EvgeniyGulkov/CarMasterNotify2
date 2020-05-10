@@ -26,7 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - KeychainAccess
-  - Moya/RxSwift (~> 14.0.0-beta.6)
+  - Moya/RxSwift (~> 14.0.0)
   - RxCocoa (~> 5.1.1)
   - RxDataSources (~> 4.0.1)
   - RxKeyboard
@@ -60,6 +60,6 @@ SPEC CHECKSUMS:
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: 460ddc4cf1b701a12cca5e7516e0749d7602d129
+PODFILE CHECKSUM: 044e5957c999ac296513e2360999b63c1ea346ba
 
 COCOAPODS: 1.9.1

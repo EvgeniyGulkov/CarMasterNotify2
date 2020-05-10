@@ -4,19 +4,25 @@ import RxDataSources
 
 class DataSourcesFactory {
     
-    static func reasonsDatasource(viewModel: ReasonViewModel) ->
-        RxTableViewSectionedReloadDataSource<ReasonDataSource> {
-            return RxTableViewSectionedReloadDataSource<ReasonDataSource>(
+    static func reasonsDatasource(viewModel: DetailsViewModel) ->
+        RxTableViewSectionedReloadDataSource<DetailsDataSource> {
+            return RxTableViewSectionedReloadDataSource<DetailsDataSource>(
                 configureCell: { dataSource, tableView, indexPath, item in
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "reasonsCell", for: indexPath) as! ReasonsCell
-                    
-                    viewModel.reasonsViewModels[indexPath.row].text = Observable.just( item.text!)
-                    
-                    if item.status {
-                        viewModel.reasonsViewModels[indexPath.row].status.onNext(.complete)
+                    if indexPath.section == 0 {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.details, for: indexPath) as! BaseDarkTableViewCell
+                        // toDo need to add car info cell
+                        return cell
                     } else {
-                        viewModel.reasonsViewModels[indexPath.row].status.onNext(.error)
-                    }
+                    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.details, for: indexPath) as! BaseDarkTableViewCell
+                        let reason = item.reason?.allObjects[indexPath.row] as! Reason
+                        let cellViewModel = DetailsCellViewModel(id: reason.id!)
+                            cellViewModel.text = Observable.just( reason.text!)
+                        if reason.status {
+                            cellViewModel.status.onNext(.complete)
+                        } else {
+                            cellViewModel.status.onNext(.error)
+                        }
+                            viewModel.reasonsViewModels.append(cellViewModel)
                     
                     viewModel.reasonsViewModels[indexPath.row].text?
                         .bind(to: (cell.textLabel?.rx.text)!)
@@ -36,7 +42,10 @@ class DataSourcesFactory {
                         .disposed(by: cell.disposeBag)
                     
                     return cell
-                    
+                    }
+            },
+                titleForHeaderInSection: {dataSource,indexPath in
+                    return dataSource.sectionModels[indexPath].title
             },
                 canEditRowAtIndexPath: {
                     dataSource, indexPath in
@@ -47,7 +56,7 @@ class DataSourcesFactory {
     static func getOrdersDataSource () ->
         RxTableViewSectionedReloadDataSource<OrdersDataSource> { return RxTableViewSectionedReloadDataSource<OrdersDataSource>(
             configureCell: { dataSource, tableView, indexPath, item in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.order, for: indexPath) as! OrderTableCell
                 
                 cell.carModel.text = item.model
                 cell.orderStatus.text = item.status
@@ -65,7 +74,7 @@ class DataSourcesFactory {
     static func settingsDataSource (viewModel: SettingsViewModel) ->
         RxTableViewSectionedReloadDataSource<OrdersDataSource> { return RxTableViewSectionedReloadDataSource<OrdersDataSource>(
             configureCell: { dataSource, tableView, indexPath, item in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.order, for: indexPath) as! OrderTableCell
                 
                 cell.carModel.text = item.model
                 cell.orderStatus.text = item.status

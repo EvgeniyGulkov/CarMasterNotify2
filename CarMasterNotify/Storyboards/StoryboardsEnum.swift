@@ -7,7 +7,6 @@ enum Storyboards: String {
     case settings = "Settings"
     case passwordDialogue = "PasswordDialogue"
     case nameDialogue = "NameDialogue"
-    case detailsTabbar = "DetailsTabbar"
-    case reasons = "Reasons"
+    case details = "Details"
     case message = "Message"
 }

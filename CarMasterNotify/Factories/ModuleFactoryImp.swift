@@ -8,19 +8,8 @@ final class ModuleFactoryImp:
     MainModuleFactory,
     DetailsModuleFactory
 {
+    
     let disposeBag = DisposeBag()
-
-    func makeDetailsTabbarOutput() -> DetailsTabbarController {
-        let reasonsNavigationController = NavigationController()
-        let messagesNavigationController = NavigationController()
-        
-        let controller = DetailsTabbarController.controllerFromStoryboard(.detailsTabbar)
-             
-             controller.viewControllers = [reasonsNavigationController, messagesNavigationController]
-             controller.delegate = controller
-        
-        return controller
-    }
         
     func makeMainOutput() -> TabbarController {
         let ordersNavigationController = NavigationController()
@@ -40,8 +29,8 @@ final class ModuleFactoryImp:
         return controller
     }
     
-    func makeReasonsOutput(viewModel: ReasonViewModel) -> ReasonsController {
-        let controller = ReasonsController.controllerFromStoryboard(.reasons)
+    func makeDetailsOutput(viewModel: DetailsViewModel) -> DetailsController {
+        let controller = DetailsController.controllerFromStoryboard(.details)
         controller.viewModel = viewModel
         return controller
     }
@@ -76,7 +65,7 @@ final class ModuleFactoryImp:
         return controller
     }
     
-    func makeOrderDetailOutput(viewModel: DetailViewModel) -> DetailsController {
+    func makeOrderDetailOutput(viewModel: DetailsViewModel) -> DetailsController {
         let controller = DetailsController.controllerFromStoryboard(.main)
         controller.viewModel = viewModel
         return controller

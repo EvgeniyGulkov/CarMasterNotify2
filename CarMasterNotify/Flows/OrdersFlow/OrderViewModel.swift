@@ -48,7 +48,7 @@ class OrderViewModel {
         networkProvider.request(.getCars(offset: offset, limit: limit, searchText: searchText), [OrderModel].self)
             .subscribe(onSuccess: { [unowned self] orders in
                 let _ = orders.map { $0.toManagedObject() }
-                CoreDataManager.save()
+                DataController.shared.save()
                 self.socketClient.connect()
             },
                        onError: {error in

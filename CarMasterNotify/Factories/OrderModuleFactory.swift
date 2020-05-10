@@ -2,5 +2,5 @@ import UIKit
 
 protocol OrderModuleFactory {
     func makeOrdersOutput(viewModel: OrderViewModel) -> OrderController
-    func makeDetailsTabbarOutput() -> DetailsTabbarController
+    func makeDetailsOutput(viewModel: DetailsViewModel) -> DetailsController
 }
