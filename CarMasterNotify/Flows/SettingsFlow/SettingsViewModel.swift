@@ -3,32 +3,39 @@ import RxSwift
 
 class SettingsViewModel {
     private let disposeBag = DisposeBag()
-    let selectSettings: PublishSubject<IndexPath>
-    let signOutButton: PublishSubject<Void>
-    var user: Observable<String>?
+    var selectSettings: PublishSubject<IndexPath>?
+    var signOutButton: PublishSubject<Void>?
+    var nickName: Single<String>?
+    var position: Single<String>?
+    var fullName: Single<String>?
+    var accessLevel: Single<String>?
     var title: Observable<String>?
-    var viewWillAppear: PublishSubject<Void>
-    
+    var viewWillAppear: PublishSubject<Void>?
+
     var showPasswordChangeDialogue:(()->())?
     var showNameChangeDialogue:((String)->())?
     
     init() {
-        let settingsHelper = SettingsHelper()
-        let chatName = settingsHelper.fetchRequest(key: .chatName, type: String.self) ?? ""
-        
+        guard let user = User.currentUser,
+            let firstName = user.firstName,
+            let lastName = user.lastName,
+            let position = user.position else {
+            return
+        }
+        self.accessLevel = Single.just(SecureManager.accessLevel.string)
+        self.nickName = Single.just(user.nickName ?? firstName)
+        self.fullName = Single.just("\(firstName) \(lastName)")
+        self.position = Single.just(position)
         self.viewWillAppear = PublishSubject()
         self.selectSettings = PublishSubject()
         self.signOutButton = PublishSubject()
-        
-        self.user = self.viewWillAppear.asObservable()
-            .map{return chatName}
             
-        self.selectSettings.asObservable()
+        self.selectSettings?.asObservable()
             .subscribe(onNext: {indexpath in
-                if indexpath.section == 0 {
+                if indexpath.section == 1 {
                     switch indexpath.row {
-                    case 0: self.showNameChangeDialogue!(chatName)
-                    case 1: self.showPasswordChangeDialogue!()
+                   // case 0: self.showNameChangeDialogue!(chatName)
+                    case 2: self.showPasswordChangeDialogue!()
                     default: break
                     }
                 }

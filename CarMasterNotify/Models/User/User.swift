@@ -8,17 +8,15 @@
 
 import Foundation
 import CoreData
+import RxSwift
 
 extension User {
-    static func info() -> User? {
+
+    static var currentUser: User? {
         let context = CoreDataManager.context
         let request = NSFetchRequest<User>(entityName: String(describing: self))
-        do {
-            let user = try context?.fetch(request).first
-            return user
-        } catch {
-            print(error)
-            return nil
-        }
+        request.sortDescriptors = []
+        let user = try? context?.fetch(request).first
+        return user
     }
 }

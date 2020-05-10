@@ -17,23 +17,11 @@ class SettingsHelper {
         }
         self.managedContext = appDelegate.persistentContainer.viewContext
     }
-    
-    func fetchRequest<T>(key: DataBaseKeys, type: T.Type) -> T? {
-        var entityName: String = ""
-        switch key {
-        case .chatName:
-            entityName = "User"
-        }
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
-        if let entity = try? self.managedContext?.fetch(fetchRequest) {
-            return (entity.first?.value(forKey: key.rawValue) as? T)
-        } else { return nil }
-    }
-    
+
     func saveUserData(userdata: UserDataModel) {
         let user = User(context: managedContext!)
         user.login = userdata.login
-        user.chatName = userdata.login
+        user.nickName = userdata.login
         CoreDataManager.save()
 
         try? self.keychain.set((userdata.accessToken!), key: "access_token")

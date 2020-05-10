@@ -1,13 +1,13 @@
 PODS:
-  - Alamofire (5.0.0-rc.3)
+  - Alamofire (5.1.0)
   - Differentiator (4.0.1)
-  - KeychainAccess (4.1.0)
-  - Moya/Core (14.0.0-beta.6):
-    - Alamofire (= 5.0.0-rc.3)
-  - Moya/RxSwift (14.0.0-beta.6):
+  - KeychainAccess (4.2.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
-  - RxCocoa (5.0.1):
+  - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxDataSources (4.0.1):
@@ -17,9 +17,9 @@ PODS:
   - RxKeyboard (1.0.0):
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
-  - RxRelay (5.0.1):
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - RxSwift (5.1.1)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
@@ -27,10 +27,10 @@ PODS:
 DEPENDENCIES:
   - KeychainAccess
   - Moya/RxSwift (~> 14.0.0-beta.6)
-  - RxCocoa (~> 5)
-  - RxDataSources (~> 4.0)
+  - RxCocoa (~> 5.1.1)
+  - RxDataSources (~> 4.0.1)
   - RxKeyboard
-  - RxSwift (~> 5)
+  - RxSwift (~> 5.1.1)
   - Socket.IO-Client-Swift (~> 15.2.0)
 
 SPEC REPOS:
@@ -48,18 +48,18 @@ SPEC REPOS:
     - Starscream
 
 SPEC CHECKSUMS:
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
-  Moya: d4821fbcb3e784f34d2f82869e6855057a0b85d1
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: 011658a1e4a8727daa9005ab6b1c9abb13b98ed0
+PODFILE CHECKSUM: 460ddc4cf1b701a12cca5e7516e0749d7602d129
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

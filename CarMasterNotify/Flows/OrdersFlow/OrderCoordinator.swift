@@ -34,7 +34,7 @@ final class OrderCoordinator: BaseCoordinator {
             })
             .disposed(by: disposeBag)
         let ordersOutput = factory.makeOrdersOutput(viewModel: viewModel)
-        ordersOutput.tabBarItem = UITabBarItem(title: ordersOutput.title!, image: UIImage(named: "orders_icon"), tag: 0)
+        ordersOutput.tabBarItem = UITabBarItem(title: ordersOutput.title, image: UIImage(named: "orders_icon"), tag: 0)
         router.setRootModule(ordersOutput)
     }
         

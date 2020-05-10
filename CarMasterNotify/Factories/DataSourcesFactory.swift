@@ -61,4 +61,22 @@ class DataSourcesFactory {
                 return dataSource.sectionModels[indexPath].title
         })
     }
+
+    static func settingsDataSource (viewModel: SettingsViewModel) ->
+        RxTableViewSectionedReloadDataSource<OrdersDataSource> { return RxTableViewSectionedReloadDataSource<OrdersDataSource>(
+            configureCell: { dataSource, tableView, indexPath, item in
+                let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableCell
+                
+                cell.carModel.text = item.model
+                cell.orderStatus.text = item.status
+                cell.plateNumber.text = item.plateNumber
+                cell.vinNumber.text = item.vin
+                cell.orderTime.text = DateFormatter.formattedString(date: item.updateDate!, format: "HH:mm")
+                return cell
+                
+        },
+            titleForHeaderInSection: {dataSource,indexPath in
+                return dataSource.sectionModels[indexPath].title
+        })
+    }
 }

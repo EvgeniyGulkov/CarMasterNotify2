@@ -22,7 +22,7 @@ class SettingsCoordinator: BaseCoordinator {
         viewModel.showPasswordChangeDialogue = self.showPasswordChangeDialogue
         viewModel.showNameChangeDialogue = self.showNameChangeDialogue
         
-        viewModel.signOutButton.asObservable()
+        viewModel.signOutButton?.asObservable()
             .subscribe(onNext: {[weak self] in self?.finishFlow!()})
             .disposed(by: disposeBag)
         
