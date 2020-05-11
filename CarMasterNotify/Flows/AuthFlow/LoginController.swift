@@ -3,13 +3,14 @@ import RxCocoa
 import RxSwift
 
 class LoginController: UIViewController {
-    @IBOutlet weak var loginText: RoundCornerTextField!
-    @IBOutlet weak var passwordText: RoundCornerTextField!
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var loginText: RoundedCornerTextField!
+    @IBOutlet weak var passwordText: RoundedCornerTextField!
+    @IBOutlet weak var signInButton: RoundedCornerButton!
     
     @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var errorMessage: UILabel!
+    @IBOutlet weak var textfieldsContainerView: UIView!
     private let disposeBag = DisposeBag()
     
     var viewModel:LoginViewModel?
@@ -22,6 +23,7 @@ class LoginController: UIViewController {
     }
     
     func setupUI() {
+        textfieldsContainerView.backgroundColor = Theme.Color.tableSectionBackground
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
     }
@@ -35,7 +37,9 @@ class LoginController: UIViewController {
         
         self.viewModel?.checkFields
             .observeOn(MainScheduler.instance)
-            .bind(to: self.signInButton.rx.isEnabled)
+            .subscribe(onNext: {[weak self] isEnabled in
+                self?.signInButton.setEnabled(isEnabled: isEnabled)
+            })
             .disposed(by: disposeBag)
         
         self.loginText.rx.text

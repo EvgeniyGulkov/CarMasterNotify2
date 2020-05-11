@@ -8,6 +8,7 @@
 
 import Foundation
 import KeychainAccess
+import RxSwift
 
 class SecureManager {
     
@@ -30,11 +31,11 @@ class SecureManager {
     }
     private static let keychain = Keychain(service: Constants.SecureManager.service)
 
-    static var accessLevel: AccessLevel {
+    static var accessLevel: Observable<AccessLevel> {
         guard let user = User.currentUser, let accessLevel = user.accessLevel else {
-            return .master
+            return Observable.just(.client)
         }
-        return AccessLevel(rawValue: accessLevel) ?? .master
+        return Observable.just(AccessLevel(rawValue: accessLevel) ?? .client)
     }
 
     static var accessToken: String {

@@ -20,6 +20,7 @@ class NameChangeDialogueController: BaseTableViewController {
         tableView.keyboardDismissMode = .onDrag
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
         doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: nil)
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = doneButton
         self.navigationItem.leftBarButtonItem = cancelItem
      }

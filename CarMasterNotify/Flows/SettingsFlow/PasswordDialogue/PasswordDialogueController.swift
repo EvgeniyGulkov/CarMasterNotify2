@@ -6,9 +6,9 @@ class PasswordDialogueController: UIViewController {
     let disposeBag = DisposeBag()
     
     
-    @IBOutlet weak var currentPassword: RoundCornerTextField!
-    @IBOutlet weak var newPassword: RoundCornerTextField!
-    @IBOutlet weak var confirmPassword: RoundCornerTextField!
+    @IBOutlet weak var currentPassword: RoundedCornerTextField!
+    @IBOutlet weak var newPassword: RoundedCornerTextField!
+    @IBOutlet weak var confirmPassword: RoundedCornerTextField!
     @IBOutlet weak var cancelBtn: UIBarButtonItem!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     

@@ -7,23 +7,17 @@ import CoreData
 class OrderViewModel {
     let dateFormat = "dd.MM.yyyy"
     let disposeBag = DisposeBag()
-    let selectData: PublishSubject<Order>
-    let search: PublishSubject<String>
-    let displayLastCell:PublishSubject<Int>
-    let socketClient: SocketClient<CarMasterSocketApi>
-    
-    var data: PublishSubject<[OrdersDataSource]>
+    var selectData: PublishSubject<Order> = PublishSubject()
+    var search: PublishSubject<String> = PublishSubject()
+    var displayLastCell:PublishSubject<Int> = PublishSubject()
+    var data: PublishSubject<[OrdersDataSource]> = PublishSubject()
+    var orders: [Int:Order] = [:]
+    var socketClient: SocketClient<CarMasterSocketApi>
     var networkProvider: CustomMoyaProvider<CarMasterApi>
-    var orders: [Int:Order]
     
     init(networkProvider: CustomMoyaProvider<CarMasterApi>, socketClient: SocketClient<CarMasterSocketApi>) {
         self.networkProvider = networkProvider
         self.socketClient = socketClient
-        self.selectData = PublishSubject()
-        self.search = PublishSubject()
-        self.data = PublishSubject()
-        self.displayLastCell = PublishSubject()
-        self.orders = [:]
         
         self.displayLastCell.subscribe(onNext: { index in
             if self.orders.values.count > 20 && self.orders.values.count-1 == index {
@@ -36,25 +30,20 @@ class OrderViewModel {
             .subscribe(onNext: { text in
                     self.getData(searchText: text.lowercased(), limit: 20, offset: 0)})
             .disposed(by: disposeBag)
-        
-        getOrdersFromLocalDatabase()
     }
     
     func getData(searchText: String = "", limit: Int = 20, offset: Int = 0) {
-        self.getOrdersFromLocalDatabase(searchText: searchText, limit: limit, offset: offset)
+        getOrdersFromLocalDatabase(searchText: searchText, limit: limit, offset: offset)
         if !searchText.isEmpty {
             self.orders.removeAll()
         }
-        networkProvider.request(.getCars(offset: offset, limit: limit, searchText: searchText), [OrderModel].self)
-            .subscribe(onSuccess: { [unowned self] orders in
-                let _ = orders.map { $0.toManagedObject() }
-                DataController.shared.save()
-                self.socketClient.connect()
-            },
-                       onError: {error in
-                        print(error)
-            })
-            .disposed(by: disposeBag)
+        Order.getOrdersFromServer(offset: offset, limit: limit, searchText: searchText) {[weak self] error in
+            if let error = error {
+                print(error)
+            } else {
+                self?.getOrdersFromLocalDatabase(searchText: searchText, limit: limit, offset: offset)
+            }
+        }
     }
     
     func getOrdersFromLocalDatabase(searchText: String = "", limit: Int = 20, offset: Int = 0) {

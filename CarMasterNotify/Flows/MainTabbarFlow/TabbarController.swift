@@ -9,6 +9,6 @@ final class TabbarController: UITabBarController, UITabBarControllerDelegate {
 
     func setupUI() {
         self.tabBar.barTintColor = Theme.Color.barColor
-        self.tabBar.tintColor = Theme.Color.greenColor
+        self.tabBar.tintColor = Theme.Color.blueColor
     }
 }

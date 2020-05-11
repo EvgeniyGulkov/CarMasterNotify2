@@ -3,13 +3,13 @@ import RxSwift
 
 class SettingsViewModel {
     private let disposeBag = DisposeBag()
-    let selectSettings: PublishSubject<IndexPath>
-    let signOutButton: PublishSubject<Void>
+    let selectSettings: PublishSubject<IndexPath> = PublishSubject()
+    let signOutButton: PublishSubject<Void> = PublishSubject()
+    let accessLevel: PublishSubject<String> = PublishSubject()
+    let viewWillAppear: PublishSubject<Void> = PublishSubject()
     let nickName: Single<String>
     let position: Single<String>
     let fullName: Single<String>
-    let accessLevel: Single<String>
-    let viewWillAppear: PublishSubject<Void>
 
     var showPasswordChangeDialogue:(() -> Void)?
     var showNameChangeDialogue:(() -> Void)?
@@ -19,13 +19,14 @@ class SettingsViewModel {
         let firstName = user?.firstName ?? ""
         let lastName = user?.lastName ?? ""
         let position = user?.position ?? ""
-        self.accessLevel = Single.just(SecureManager.accessLevel.string)
         self.nickName = Single.just(user?.nickName ?? firstName)
         self.fullName = Single.just("\(firstName) \(lastName)")
         self.position = Single.just(position)
-        self.viewWillAppear = PublishSubject()
-        self.selectSettings = PublishSubject()
-        self.signOutButton = PublishSubject()
+        
+        SecureManager.accessLevel.subscribe(onNext: {[weak self] access in
+            self?.accessLevel.onNext(access.string)
+            })
+            .disposed(by: disposeBag)
             
         self.selectSettings.asObservable()
             .subscribe(onNext: { indexpath in

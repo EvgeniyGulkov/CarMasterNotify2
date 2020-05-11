@@ -46,6 +46,6 @@ class DetailsController: BaseTableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = Theme.Color.greenColor
+        header.textLabel?.textColor = Theme.Color.blueColor
     }
 }

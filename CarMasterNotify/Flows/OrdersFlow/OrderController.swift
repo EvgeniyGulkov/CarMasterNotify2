@@ -17,6 +17,7 @@ class OrderController: BaseTableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.viewModel.getData()
     }
 
@@ -50,6 +51,9 @@ class OrderController: BaseTableViewController {
             .distinctUntilChanged()
             .bind(to: self.viewModel.search)
             .disposed(by: disposeBag)
+
+        tableView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
         
         self.viewModel.data
             .bind(to: tableView.rx.items(dataSource: DataSourcesFactory.getOrdersDataSource()))
@@ -60,7 +64,7 @@ class OrderController: BaseTableViewController {
                 self?.refreshControl?.endRefreshing()
             })
             .disposed(by: disposeBag)
-
+        
         tableView.rx.modelSelected(Order.self)
             .bind(to: viewModel.selectData)
             .disposed(by: disposeBag)

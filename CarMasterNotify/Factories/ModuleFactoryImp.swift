@@ -14,10 +14,11 @@ final class ModuleFactoryImp:
     func makeMainOutput() -> TabbarController {
         let ordersNavigationController = NavigationController()
         let settingsNavigationController = NavigationController()
+        let usersNavigationController = NavigationController()
         
         let controller = TabbarController.controllerFromStoryboard(.main)
              
-             controller.viewControllers = [ordersNavigationController, settingsNavigationController]
+             controller.viewControllers = [ordersNavigationController, usersNavigationController, settingsNavigationController]
              controller.delegate = controller
         
         return controller

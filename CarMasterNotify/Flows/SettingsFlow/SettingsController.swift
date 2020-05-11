@@ -10,6 +10,7 @@ class SettingsController: BaseTableViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var accessLevel: UILabel!
     @IBOutlet weak var position: DefaultTextLabel!
+    @IBOutlet weak var fullName: DefaultTextLabel!
     
     var viewModel: SettingsViewModel?
 
@@ -17,8 +18,6 @@ class SettingsController: BaseTableViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Settings"
-        avatarImageView.layer.borderColor = UIColor.gray.cgColor
-        avatarImageView.layer.borderWidth = 1.0
         setupBindings()
     }
     
@@ -37,6 +36,10 @@ class SettingsController: BaseTableViewController {
             })
             .disposed(by: disposeBag)
 
+        self.viewModel?.accessLevel
+            .bind(to: self.accessLevel.rx.text)
+            .disposed(by: disposeBag)
+        
         if let signOutButton = self.viewModel?.signOutButton {
             self.signOutButton.rx.tap
                 .bind(to: signOutButton)
@@ -50,6 +53,6 @@ class SettingsController: BaseTableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = Theme.Color.greenColor
+        header.textLabel?.textColor = Theme.Color.blueColor
     }
 }

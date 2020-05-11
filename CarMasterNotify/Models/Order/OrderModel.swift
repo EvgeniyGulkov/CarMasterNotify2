@@ -23,10 +23,13 @@ struct OrderModel: Codable {
         case updateDate = "updateDate"
     }
     
-    func toManagedObject() -> Order {
+    func toManagedObject() -> Order? {
+        guard let orderNumber = orderNumber else {
+            return nil
+        }
+        let existed = Order.byNumber(number: orderNumber)
         let context = DataController.shared.main
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        let order = Order(context: context)
+        let order = existed ?? Order(context: context)
         order.createDate = self.createDate
         order.updateDate = self.updateDate
         order.manufacturer = self.manufacturer

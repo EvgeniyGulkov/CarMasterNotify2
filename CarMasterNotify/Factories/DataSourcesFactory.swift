@@ -9,10 +9,10 @@ class DataSourcesFactory {
             return RxTableViewSectionedReloadDataSource<DetailsDataSource>(
                 configureCell: { dataSource, tableView, indexPath, item in
                     if indexPath.section == 0 {
-                        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.details, for: indexPath) as! BaseDarkTableViewCell
-                        // toDo need to add car info cell
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.carInfo, for: indexPath)
                         return cell
-                    } else {
+                    }
+                    if indexPath.section == 1 {
                     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.details, for: indexPath) as! BaseDarkTableViewCell
                         let reason = item.reason?.allObjects[indexPath.row] as! Reason
                         let cellViewModel = DetailsCellViewModel(id: reason.id!)
@@ -42,6 +42,8 @@ class DataSourcesFactory {
                         .disposed(by: cell.disposeBag)
                     
                     return cell
+                    } else {
+                        return UITableViewCell()
                     }
             },
                 titleForHeaderInSection: {dataSource,indexPath in

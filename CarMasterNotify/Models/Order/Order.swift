@@ -1,8 +1,10 @@
 import UIKit
 import CoreData
 import RxSwift
+import Moya
 
 private let context = DataController.shared.main
+private let disposeBag = DisposeBag()
 
 struct OrderSection {
     static let dateFormat = "dd.MM.yyyy"
@@ -38,7 +40,7 @@ extension Order {
     
     static func byNumber(number: Int) -> Order? {
         let request = NSFetchRequest<Order>(entityName: String(describing: self))
-            request.predicate = NSPredicate(format: "number == %@", number)
+            request.predicate = NSPredicate(format: "number == %@", NSNumber(value: number))
         do {
             let order = try context.fetch(request).first
             return order
@@ -57,5 +59,22 @@ extension Order {
                                     model: self.model,
                                     status: self.status,
                                     vinNumber: self.vin)
+    }
+
+    static func getOrdersFromServer(offset: Int,
+                                    limit: Int,
+                                    searchText: String,
+                                    _ completion: @escaping (Error?) -> Void) {
+        let networkProvider = CustomMoyaProvider<CarMasterApi>()
+        networkProvider.request(.getCars(offset: offset, limit: limit, searchText: searchText), [OrderModel].self)
+        .subscribe(onSuccess: { orders in
+            let _ = orders.map { $0.toManagedObject() }
+            DataController.shared.save()
+            completion(nil)
+        },
+            onError: {error in
+            completion(error)
+        })
+        .disposed(by: disposeBag)
     }
 }

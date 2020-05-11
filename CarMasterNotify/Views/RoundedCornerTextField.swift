@@ -1,6 +1,6 @@
 import UIKit
 
-class RoundCornerTextField: UITextField {
+class RoundedCornerTextField: UITextField {
     let placeholderColor = UIColor.init(red: 72/255, green: 109/255, blue: 161/255, alpha: 255).cgColor
     
     override init(frame: CGRect) {
@@ -14,6 +14,8 @@ class RoundCornerTextField: UITextField {
     }
 
     private func commonInit() {
+        self.backgroundColor = UIColor.white
         layer.cornerRadius = 15
     }
+
 }
