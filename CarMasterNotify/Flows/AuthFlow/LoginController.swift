@@ -23,6 +23,8 @@ class LoginController: UIViewController {
     }
     
     func setupUI() {
+        loginText.setPlaceHolderColor(color: UIColor.gray)
+        passwordText.setPlaceHolderColor(color: UIColor.gray)
         textfieldsContainerView.backgroundColor = Theme.Color.tableSectionBackground
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
@@ -31,7 +33,10 @@ class LoginController: UIViewController {
     func setupBindings() {
         signInButton.rx.tap
             .observeOn(MainScheduler.instance)
-            .map{_ in return CarMasterApi.signIn(login: self.loginText.text!, password: self.passwordText.text!)}
+            .map{_ in
+                let request = CarMasterSignInRequest(login: self.loginText.text!,
+                                                  password: self.passwordText.text!)
+                return request }
             .bind(to: self.viewModel!.signInButton)
             .disposed(by: disposeBag)
         

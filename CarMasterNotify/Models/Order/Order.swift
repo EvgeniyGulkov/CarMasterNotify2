@@ -65,9 +65,11 @@ extension Order {
                                     limit: Int,
                                     searchText: String,
                                     _ completion: @escaping (Error?) -> Void) {
-        let networkProvider = CustomMoyaProvider<CarMasterApi>()
-        networkProvider.request(.getCars(offset: offset, limit: limit, searchText: searchText), [OrderModel].self)
-        .subscribe(onSuccess: { orders in
+        let networkProvider = CustomMoyaProvider<CarMasterApi.Orders>()
+        let request = CarMasterOrderRequest(offset: offset, limit: limit, searchText: searchText)
+        networkProvider.request(.getOrders(request: request), [OrderModel].self)
+        .subscribe(onSuccess: {
+            orders in
             let _ = orders.map { $0.toManagedObject() }
             DataController.shared.save()
             completion(nil)

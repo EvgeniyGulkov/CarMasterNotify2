@@ -10,25 +10,26 @@ import Foundation
 import KeychainAccess
 import RxSwift
 
-class SecureManager {
-    
-    enum AccessLevel: String {
-        case admin
-        case master
-        case client
+enum AccessLevel: String {
+    case admin
+    case master
+    case client
 
-        var string: String {
-            switch self {
-                // toDO need to add localized string
-            case .admin:
-                return "Admin"
-            case .master:
-                return "Master"
-            case .client:
-                return "Client"
-            }
+    var string: String {
+        switch self {
+            // toDO need to add localized string
+        case .admin:
+            return "Admin"
+        case .master:
+            return "Master"
+        case .client:
+            return "Client"
         }
     }
+}
+
+class SecureManager {
+
     private static let keychain = Keychain(service: Constants.SecureManager.service)
 
     static var accessLevel: Observable<AccessLevel> {

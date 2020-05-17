@@ -5,11 +5,13 @@ struct UserDataModel: Codable {
     var refreshToken: String?
     var login: String?
     var chatName: String?
+    var accessLevel: String?
     
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
         case refreshToken = "refresh_token"
         case chatName = "chatname"
         case login = "username"
+        case accessLevel = "accessLevel"
     }
 }

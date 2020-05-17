@@ -15,6 +15,14 @@
 		6701A824246692B6001EA1B5 /* SecureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6701A823246692B6001EA1B5 /* SecureManager.swift */; };
 		67296B4D2467AFB700D78B16 /* CarMasterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67296B4C2467AFB700D78B16 /* CarMasterError.swift */; };
 		67296B4F2467B41000D78B16 /* CarMasterError.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67296B4E2467B41000D78B16 /* CarMasterError.strings */; };
+		6730783C2469353400260982 /* UITextfieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730783B2469353400260982 /* UITextfieldExtensions.swift */; };
+		6730783E2469366D00260982 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730783D2469366D00260982 /* DefaultTextField.swift */; };
+		6730784224693FE600260982 /* CarMasterApi+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730784124693FE600260982 /* CarMasterApi+Auth.swift */; };
+		67307845246945C800260982 /* CarMasterAuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67307844246945C800260982 /* CarMasterAuthRequest.swift */; };
+		67C5865F246951B0008133D8 /* CarMasterOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5865E246951B0008133D8 /* CarMasterOrderRequest.swift */; };
+		67C5866124695263008133D8 /* CarMasterApi+Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5866024695263008133D8 /* CarMasterApi+Orders.swift */; };
+		67C5866424695994008133D8 /* CarMasterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5866324695994008133D8 /* CarMasterUserRequest.swift */; };
+		67C5866624695A27008133D8 /* CarMasterApi+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5866524695A27008133D8 /* CarMasterApi+User.swift */; };
 		8405399D234EF8FB0042C26F /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8405399C234EF8FB0042C26F /* Message.storyboard */; };
 		840539A2234F36A40042C26F /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840539A1234F36A40042C26F /* UIImageExtensions.swift */; };
 		840539B923509D020042C26F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840539B823509D020042C26F /* NavigationController.swift */; };
@@ -79,7 +87,6 @@
 		848B8B2B24684F0C007ACD29 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B8B2924684F0C007ACD29 /* UserCellViewModel.swift */; };
 		848B8B2D246866FF007ACD29 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B8B2C246866FF007ACD29 /* Constants.swift */; };
 		848B8B3024687444007ACD29 /* CarInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B8B2F24687444007ACD29 /* CarInfoCellView.swift */; };
-		848B8B3424687B57007ACD29 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B8B3324687B57007ACD29 /* RoundedImageView.swift */; };
 		848B8B362468FEAB007ACD29 /* InfoTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B8B352468FEAB007ACD29 /* InfoTextLabel.swift */; };
 		848B8B382469084D007ACD29 /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B8B372469084D007ACD29 /* RoundedCornerButton.swift */; };
 		8492385D23BFA368002B9563 /* DetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385623BFA368002B9563 /* DetailsDataSource.swift */; };
@@ -134,6 +141,14 @@
 		6701A823246692B6001EA1B5 /* SecureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureManager.swift; sourceTree = "<group>"; };
 		67296B4C2467AFB700D78B16 /* CarMasterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterError.swift; sourceTree = "<group>"; };
 		67296B4E2467B41000D78B16 /* CarMasterError.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = CarMasterError.strings; sourceTree = "<group>"; };
+		6730783B2469353400260982 /* UITextfieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtensions.swift; sourceTree = "<group>"; };
+		6730783D2469366D00260982 /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
+		6730784124693FE600260982 /* CarMasterApi+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarMasterApi+Auth.swift"; sourceTree = "<group>"; };
+		67307844246945C800260982 /* CarMasterAuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterAuthRequest.swift; sourceTree = "<group>"; };
+		67C5865E246951B0008133D8 /* CarMasterOrderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterOrderRequest.swift; sourceTree = "<group>"; };
+		67C5866024695263008133D8 /* CarMasterApi+Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarMasterApi+Orders.swift"; sourceTree = "<group>"; };
+		67C5866324695994008133D8 /* CarMasterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterUserRequest.swift; sourceTree = "<group>"; };
+		67C5866524695A27008133D8 /* CarMasterApi+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarMasterApi+User.swift"; sourceTree = "<group>"; };
 		8405399C234EF8FB0042C26F /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		840539A1234F36A40042C26F /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		840539B823509D020042C26F /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -196,7 +211,6 @@
 		848B8B2924684F0C007ACD29 /* UserCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		848B8B2C246866FF007ACD29 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		848B8B2F24687444007ACD29 /* CarInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoCellView.swift; sourceTree = "<group>"; };
-		848B8B3324687B57007ACD29 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		848B8B352468FEAB007ACD29 /* InfoTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTextLabel.swift; sourceTree = "<group>"; };
 		848B8B372469084D007ACD29 /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		8492385423BFA368002B9563 /* ReasonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReasonModel.swift; sourceTree = "<group>"; };
@@ -281,8 +295,8 @@
 			children = (
 				84B221702383A056005FA7B3 /* Spinner */,
 				84D44AE9234D9770005E467E /* RoundedCornerTextField.swift */,
-				848B8B3324687B57007ACD29 /* RoundedImageView.swift */,
 				6701A8172466762A001EA1B5 /* DefaultTextLabel.swift */,
+				6730783D2469366D00260982 /* DefaultTextField.swift */,
 				848B8B372469084D007ACD29 /* RoundedCornerButton.swift */,
 				848B8B352468FEAB007ACD29 /* InfoTextLabel.swift */,
 			);
@@ -334,6 +348,33 @@
 			path = BaseDarkTableViewCell;
 			sourceTree = "<group>";
 		};
+		673078432469458B00260982 /* CarMasterApi+Auth */ = {
+			isa = PBXGroup;
+			children = (
+				6730784124693FE600260982 /* CarMasterApi+Auth.swift */,
+				67307844246945C800260982 /* CarMasterAuthRequest.swift */,
+			);
+			path = "CarMasterApi+Auth";
+			sourceTree = "<group>";
+		};
+		6730784624694E0200260982 /* CarMasterApi+Orders */ = {
+			isa = PBXGroup;
+			children = (
+				67C5865E246951B0008133D8 /* CarMasterOrderRequest.swift */,
+				67C5866024695263008133D8 /* CarMasterApi+Orders.swift */,
+			);
+			path = "CarMasterApi+Orders";
+			sourceTree = "<group>";
+		};
+		67C5866224695979008133D8 /* CarMasterApi+User */ = {
+			isa = PBXGroup;
+			children = (
+				67C5866324695994008133D8 /* CarMasterUserRequest.swift */,
+				67C5866524695A27008133D8 /* CarMasterApi+User.swift */,
+			);
+			path = "CarMasterApi+User";
+			sourceTree = "<group>";
+		};
 		840539A0234F36870042C26F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +386,7 @@
 				8497D44923A90CF4007DDE13 /* DateFormatterExtensions.swift */,
 				840EFEDB23B468D200E23347 /* DateExtensions.swift */,
 				848B8B2224683207007ACD29 /* UIColorExtensions.swift */,
+				6730783B2469353400260982 /* UITextfieldExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,6 +492,9 @@
 		843ABFAB239DE5450050E37D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				67C5866224695979008133D8 /* CarMasterApi+User */,
+				6730784624694E0200260982 /* CarMasterApi+Orders */,
+				673078432469458B00260982 /* CarMasterApi+Auth */,
 				84135DB923C48B7D0066BACD /* Certificates.swift */,
 				843ABFAC239DE5890050E37D /* CarMasterApi.swift */,
 				843ABFE823A2594F0050E37D /* CarMasterApiExtensions.swift */,
@@ -859,10 +904,12 @@
 				848B8B2A24684F0C007ACD29 /* UserMessageCell.swift in Sources */,
 				84E8DD2F23683D5B008EF413 /* ViewModelFactory.swift in Sources */,
 				846E13C323F829C100A77C42 /* Reason.swift in Sources */,
+				6730783E2469366D00260982 /* DefaultTextField.swift in Sources */,
 				847C21E62352ECB20040B097 /* OrderModuleFactory.swift in Sources */,
 				84D44AEA234D9770005E467E /* RoundedCornerTextField.swift in Sources */,
 				8421ED3D23A31E20002091FF /* ReasonCellViewModel.swift in Sources */,
 				6701A82124668FBF001EA1B5 /* BaseViewController.swift in Sources */,
+				67C5866124695263008133D8 /* CarMasterApi+Orders.swift in Sources */,
 				84E6F41B24041930003FFE08 /* MessageViewModel.swift in Sources */,
 				848B8B2324683207007ACD29 /* UIColorExtensions.swift in Sources */,
 				84E6F40A2403EBE7003FFE08 /* DetailsController.swift in Sources */,
@@ -881,6 +928,7 @@
 				8421ED4B23A31ECD002091FF /* LoginViewModel.swift in Sources */,
 				8421ED3A23A31E20002091FF /* DataSourcesFactory.swift in Sources */,
 				840539CC2351D89F0042C26F /* StoryboardsEnum.swift in Sources */,
+				67C5865F246951B0008133D8 /* CarMasterOrderRequest.swift in Sources */,
 				846E13C123F8235E00A77C42 /* DataController.swift in Sources */,
 				840539C82351D5BF0042C26F /* NSObjectExtensions.swift in Sources */,
 				848B8B2D246866FF007ACD29 /* Constants.swift in Sources */,
@@ -890,6 +938,8 @@
 				84532B2A238CB85100CC8676 /* PasswordDialogueController.swift in Sources */,
 				840539C42351CEA00042C26F /* DeepLinkOption.swift in Sources */,
 				840539D42351E4FE0042C26F /* CoordinatorFactory.swift in Sources */,
+				67307845246945C800260982 /* CarMasterAuthRequest.swift in Sources */,
+				6730783C2469353400260982 /* UITextfieldExtensions.swift in Sources */,
 				840539C02351CD140042C26F /* Presentable.swift in Sources */,
 				84D4C17C23758C4B00DB8F58 /* MainModuleFactory.swift in Sources */,
 				840539DF2352CCA50042C26F /* CoordinatorFactoryImp.swift in Sources */,
@@ -915,19 +965,21 @@
 				8437AB0C23C33AE300621A49 /* OrderModel.swift in Sources */,
 				84532B2C238CB89C00CC8676 /* PasswordDialogueViewModel.swift in Sources */,
 				67296B4D2467AFB700D78B16 /* CarMasterError.swift in Sources */,
+				67C5866424695994008133D8 /* CarMasterUserRequest.swift in Sources */,
 				840539BE2351CCEB0042C26F /* BaseView.swift in Sources */,
 				840539E12352CDE40042C26F /* ModuleFactoryImp.swift in Sources */,
 				8492385F23BFA368002B9563 /* UserDataModel.swift in Sources */,
 				840539C22351CDE00042C26F /* Coordinator.swift in Sources */,
 				6701A81324667329001EA1B5 /* Theme.swift in Sources */,
-				848B8B3424687B57007ACD29 /* RoundedImageView.swift in Sources */,
 				847C22102356DE130040B097 /* SettingsCoordinator.swift in Sources */,
 				8492385E23BFA368002B9563 /* MessageModel.swift in Sources */,
+				6730784224693FE600260982 /* CarMasterApi+Auth.swift in Sources */,
 				6701A81D24668859001EA1B5 /* BaseTableViewController.swift in Sources */,
 				8421ED3823A31E20002091FF /* OrderController.swift in Sources */,
 				8437AB0B23C33AD700621A49 /* ReasonModel.swift in Sources */,
 				847C22142356DEC00040B097 /* SettingsModuleFactory.swift in Sources */,
 				84E6F415240403C8003FFE08 /* MessageController.swift in Sources */,
+				67C5866624695A27008133D8 /* CarMasterApi+User.swift in Sources */,
 				848260E723EA51C100C3909C /* Order.swift in Sources */,
 				843ABFAD239DE5890050E37D /* CarMasterApi.swift in Sources */,
 				840539D92351E6190042C26F /* RouterImp.swift in Sources */,

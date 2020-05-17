@@ -7,7 +7,7 @@ class LoginViewModel {
     
     let loginText: PublishSubject<String>
     let passwordText: PublishSubject<String>
-    let signInButton: PublishSubject<CarMasterApi>
+    let signInButton: PublishSubject<CarMasterSignInRequest>
     let loading: PublishSubject<Bool>
     let errorMessage: PublishSubject<String>
     
@@ -33,21 +33,20 @@ class LoginViewModel {
         }
         
         self.signInButton.asObservable()
-            .subscribe(onNext: {[unowned self] signIn in
-                self.signIn(signIn)
+            .subscribe(onNext: {[weak self] signIn in
+                self?.signIn(signIn)
             })
         .disposed(by: disposeBag)
     }
     
-    func signIn (_ signIn: CarMasterApi) {
+    func signIn (_ request: CarMasterSignInRequest) {
         self.loading.onNext(true)
-        let provider = CustomMoyaProvider<CarMasterApi>()
-        provider.signInRequest(signIn)
+        let provider = CustomMoyaProvider<CarMasterApi.Auth>()
+        provider.signInRequest(request: request)
             .subscribe(
             onSuccess: {
                 statusCode in
                 self.loading.onNext(false)
-                
                 if statusCode == 200 {self.signInOk!()}
                 if statusCode == 403 {self.errorMessage.onNext("Login or password is Incorrect")}
         },

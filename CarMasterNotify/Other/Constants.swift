@@ -21,4 +21,8 @@ struct Constants {
         static let details = "DetailsCellKey"
         static let carInfo = "CarInfoCellKey"
     }
+
+    struct CarMasterApi {
+        static let baseUrl = URL(string: "http://192.168.0.104:8000")!
+    }
 }

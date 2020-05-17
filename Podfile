@@ -14,7 +14,7 @@ target 'CarMasterNotify' do
    pod 'Moya/RxSwift', '~> 14.0.0'
    pod 'KeychainAccess'
    pod 'Socket.IO-Client-Swift', '~> 15.2.0'
-
+   pod 'SwiftyJSON', '~> 4.0'
 
   target 'CarMasterNotifyTests' do
     inherit! :search_paths

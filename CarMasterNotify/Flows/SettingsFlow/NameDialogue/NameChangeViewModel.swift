@@ -5,7 +5,6 @@ class NameChangeViewModel {
     let disposeBag = DisposeBag()
     var tapCancel: PublishSubject<Void>
     var tapDone: PublishSubject<String>
-    
     var userName: Observable<String>?
     var nameChanged: PublishSubject<Void>
     
@@ -20,10 +19,20 @@ class NameChangeViewModel {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {self.changeName(newName: $0)})
             .disposed(by: disposeBag)
+
     }
     
     func changeName(newName: String) {
-        UserDefaults.standard.set(newName, forKey: "shortName")
+        let provider = CustomMoyaProvider<CarMasterApi.User>()
+        let request = CarMasterChangeNicknameRequest(newNickname: newName)
+        provider.request(.changeChatname(request: request), String.self)
+            .subscribe(onSuccess: { result in
+                print(result)
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+
         self.nameChanged.onNext(())
     }
 }
