@@ -6,4 +6,14 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class TwoButtonsTableViewCell: BaseDarkTableViewCell {
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = .clear
+    }
+}

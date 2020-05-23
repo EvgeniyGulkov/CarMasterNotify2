@@ -18,6 +18,7 @@ class SettingsController: BaseTableViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Settings"
+        tableView.dataSource = self
         setupBindings()
     }
     

@@ -36,4 +36,10 @@ final class ServicesCoordinator: BaseCoordinator {
         let servicesOutput = factory.makeServicesOutput(viewModel: viewModel)
         router.setRootModule(servicesOutput)
     }
+
+    private func showSelectService() {
+    //    let viewModel = ViewModelFactory.makeSelectCompanyViewModel()
+    //    let selectCompanyOutput = factory.makeSelectCompanyOutput(viewModel: viewModel)
+    //    router.push(selectCompanyOutput)
+    }
 }

@@ -6,4 +6,8 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class TextFieldTableViewCell: BaseDarkTableViewCell {
+    @IBOutlet weak var textField: DefaultTextField!
+}

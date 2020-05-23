@@ -19,7 +19,7 @@ final class AuthCoordinator: BaseCoordinator {
     
     private func showLogin() {
         let viewModel = ViewModelFactory.makeLoginViewModel()
-        viewModel.signInOk = finishFlow
+        viewModel.finishFlow = finishFlow
         viewModel.signUp = showSignUpScreen
         let loginOutput = factory.makeLoginOutput(viewModel: viewModel)
         loginOutput.view.backgroundColor = Theme.Color.background
@@ -31,12 +31,5 @@ final class AuthCoordinator: BaseCoordinator {
         viewModel.finishFlow = finishFlow
         let signUpOutput = factory.makeSignUpOutput(viewModel: viewModel)
         router.push(signUpOutput)
-    }
-
-    private func showSelectCompany() {
-        let viewModel = ViewModelFactory.makeSelectCompanyViewModel()
-        viewModel.finishFlow = finishFlow
-        let selectCompanyOutput = factory.makeSelectCompanyOutput(viewModel: viewModel)
-        router.push(selectCompanyOutput)
     }
 }

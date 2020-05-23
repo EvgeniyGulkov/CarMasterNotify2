@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 class SignUpViewModel {
-    private let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     let networkProvider: CustomMoyaProvider<CarMasterApi.Auth>
     let title = BehaviorSubject<String>(value: "Registration")
     let confirmTouched = PublishSubject<String>()

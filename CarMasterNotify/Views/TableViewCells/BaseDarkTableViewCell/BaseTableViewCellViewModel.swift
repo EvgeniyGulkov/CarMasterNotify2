@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import RxSwift
+
+class BaseTableViewCellViewModel {
+    var textLabel = PublishSubject<String>()
+
+    init() {
+        textLabel.subscribe(onNext: {print($0)}).dispose()
+    }
+}

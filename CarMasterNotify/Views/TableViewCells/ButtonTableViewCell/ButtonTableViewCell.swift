@@ -6,4 +6,13 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ButtonTableViewCell: BaseDarkTableViewCell {
+    @IBOutlet weak var button: RoundedCornerButton!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = .clear
+    }
+}

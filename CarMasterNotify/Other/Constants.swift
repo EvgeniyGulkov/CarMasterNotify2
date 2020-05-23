@@ -20,6 +20,11 @@ struct Constants {
         static let order = "OrderCellKey"
         static let details = "DetailsCellKey"
         static let carInfo = "CarInfoCellKey"
+        static let textField = "TextFieldKey"
+        static let button = "ButtonKey"
+        static let error = "ErrorKey"
+        static let spacer = "SpacerKey"
+        static let twoButtons = "TwoButtonsKey"
     }
 
     struct CarMasterApi {

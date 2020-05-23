@@ -23,8 +23,6 @@ class OrderController: BaseTableViewController {
 
     func setupUI() {
         self.title = "Orders"
-        tableView.dataSource = nil
-        tableView.delegate = nil
         tableView.keyboardDismissMode = .interactive
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.refreshControl = UIRefreshControl()
@@ -50,9 +48,6 @@ class OrderController: BaseTableViewController {
             .throttle(.microseconds(300), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .bind(to: self.viewModel.search)
-            .disposed(by: disposeBag)
-
-        tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
         self.viewModel.data

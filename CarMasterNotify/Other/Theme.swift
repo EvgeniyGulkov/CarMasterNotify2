@@ -11,7 +11,7 @@ import UIKit
 struct Theme {
     struct Color {
         static let background: UIColor = UIColor(red: 14/255, green: 14/255, blue: 14/255, alpha: 1)
-        static let tableSectionBackground = UIColor(red: 25/255, green: 25/255, blue: 30/255, alpha: 1)
+        static let tableSectionBackground = UIColor(red: 30/255, green: 30/255, blue: 35/255, alpha: 1)
         static let defaultTextColor = UIColor.white
         static let blueColor = UIView().tintColor
         static let disabledButtonColor = UIColor.gray

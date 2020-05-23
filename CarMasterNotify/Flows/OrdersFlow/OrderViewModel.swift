@@ -56,7 +56,7 @@ class OrderViewModel {
         let sections = self.splitByDate(orders: self.orders)
         var orderDataSources: [OrdersDataSource] = []
         sections.forEach {section in
-            orderDataSources.append(OrdersDataSource(title: DateFormatter.formattedString(date: section.date, format: "dd.MM.yyyy") , items: section.items))
+            orderDataSources.append(OrdersDataSource(title: DateFormatter.formattedString(date: section.date, format: dateFormat) , items: section.items))
         }
         self.data.onNext(orderDataSources)
     }
