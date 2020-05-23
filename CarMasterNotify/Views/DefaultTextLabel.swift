@@ -9,6 +9,7 @@
 import UIKit
 
 class DefaultTextLabel: UILabel {
+
     @IBInspectable var txtColor: UIColor = Theme.Color.defaultTextColor {
         didSet {
             self.textColor = txtColor

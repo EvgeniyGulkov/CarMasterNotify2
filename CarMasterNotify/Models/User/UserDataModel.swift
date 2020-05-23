@@ -1,17 +1,15 @@
 import Foundation
 
 struct UserDataModel: Codable {
-    var accessToken: String?
-    var refreshToken: String?
-    var login: String?
-    var chatName: String?
-    var accessLevel: String?
-    
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    var phone: String?
+
     enum CodingKeys: String, CodingKey {
-        case accessToken = "access_token"
-        case refreshToken = "refresh_token"
-        case chatName = "chatname"
-        case login = "username"
-        case accessLevel = "accessLevel"
+        case firstName
+        case lastName
+        case email
+        case phone = "phoneNumber"
     }
 }

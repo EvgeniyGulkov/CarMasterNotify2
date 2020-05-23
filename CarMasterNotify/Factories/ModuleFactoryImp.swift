@@ -6,21 +6,31 @@ final class ModuleFactoryImp:
     OrderModuleFactory,
     SettingsModuleFactory,
     MainModuleFactory,
-    DetailsModuleFactory
+    DetailsModuleFactory,
+    SelectCompanyModuleFactory,
+    UsersModuleFactory,
+    ServicesModuleFactory
 {
-    
     let disposeBag = DisposeBag()
-        
+
+    func makeSignUpOutput(viewModel: SignUpViewModel) -> SignUpController {
+        let controller = SignUpController.controllerFromStoryboard(.signUp)
+        controller.viewModel = viewModel
+        return controller
+    }
+
     func makeMainOutput() -> TabbarController {
+        let servicesNavigationController = NavigationController()
         let ordersNavigationController = NavigationController()
         let settingsNavigationController = NavigationController()
         let usersNavigationController = NavigationController()
-        
+
         let controller = TabbarController.controllerFromStoryboard(.main)
-             
-             controller.viewControllers = [ordersNavigationController, usersNavigationController, settingsNavigationController]
-             controller.delegate = controller
-        
+        controller.viewControllers = [servicesNavigationController,
+                                      ordersNavigationController,
+                                      usersNavigationController,
+                                      settingsNavigationController]
+        controller.delegate = controller
         return controller
     }
     
@@ -68,6 +78,24 @@ final class ModuleFactoryImp:
     
     func makeOrderDetailOutput(viewModel: DetailsViewModel) -> DetailsController {
         let controller = DetailsController.controllerFromStoryboard(.main)
+        controller.viewModel = viewModel
+        return controller
+    }
+
+    func makeUsersOutput(viewModel: UsersViewModel) -> UsersController {
+        let controller = UsersController.controllerFromStoryboard(.users)
+        controller.viewModel = viewModel
+        return controller
+    }
+
+    func makeServicesOutput(viewModel: ServicesViewModel) -> ServicesController {
+        let controller = ServicesController.controllerFromStoryboard(.services)
+        controller.viewModel = viewModel
+        return controller
+    }
+
+    func makeSelectCompanyOutput(viewModel: SelectCompanyViewModel) -> SelectCompanyController {
+        let controller = SelectCompanyController.controllerFromStoryboard(.selectCompany)
         controller.viewModel = viewModel
         return controller
     }

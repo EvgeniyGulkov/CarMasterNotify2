@@ -12,15 +12,16 @@ extension CarMasterApi {
     enum Auth {
         case signIn(request: CarMasterSignInRequest)
         case refreshToken (request: CarMasterRefreshTokenRequest)
-
+        case registration(request: CarMasterSignUpRequest)
     }
 }
 
 extension CarMasterApi.Auth: TargetType, AccessTokenAuthorizable {
     var authorizationType: AuthorizationType? {
         switch self {
-        case .signIn: return .bearer
+        case .signIn: return .none
         case .refreshToken: return .bearer
+        case .registration: return .none
         }
     }
     
@@ -31,12 +32,13 @@ extension CarMasterApi.Auth: TargetType, AccessTokenAuthorizable {
     var path: String {
         switch self {
         case .signIn, .refreshToken: return "/oauth/token"
+        case .registration: return "/api/user/registration"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .signIn, .refreshToken: return .post
+        case .signIn, .refreshToken, .registration: return .post
         }
     }
         
@@ -54,6 +56,8 @@ extension CarMasterApi.Auth: TargetType, AccessTokenAuthorizable {
                  return .requestParameters(
                     parameters: request.json,
                  encoding: JSONEncoding.default)
+        case .registration(let request):
+            return .requestParameters(parameters: request.json, encoding: JSONEncoding.default)
         }
     }
 

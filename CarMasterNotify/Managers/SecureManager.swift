@@ -68,14 +68,11 @@ class SecureManager {
 
     static func saveUserData(userdata: UserDataModel) {
         let user = User(context: DataController.shared.main)
-        user.login = userdata.login
-        user.nickName = userdata.login
+        user.email = userdata.email
+        user.firstName = userdata.firstName
+        user.lastName = userdata.lastName
+        user.phoneNumber = userdata.phone
         DataController.shared.save()
-        if let accessToken = userdata.accessToken, let refreshToken = userdata.refreshToken {
-            self.accessToken = accessToken
-            self.refreshToken = refreshToken
-            isAutorized = true
-        }
     }
 
     static func SignOut() {

@@ -18,7 +18,6 @@
 		6730783C2469353400260982 /* UITextfieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730783B2469353400260982 /* UITextfieldExtensions.swift */; };
 		6730783E2469366D00260982 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730783D2469366D00260982 /* DefaultTextField.swift */; };
 		6730784224693FE600260982 /* CarMasterApi+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730784124693FE600260982 /* CarMasterApi+Auth.swift */; };
-		67307845246945C800260982 /* CarMasterAuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67307844246945C800260982 /* CarMasterAuthRequest.swift */; };
 		67C5865F246951B0008133D8 /* CarMasterOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5865E246951B0008133D8 /* CarMasterOrderRequest.swift */; };
 		67C5866124695263008133D8 /* CarMasterApi+Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5866024695263008133D8 /* CarMasterApi+Orders.swift */; };
 		67C5866424695994008133D8 /* CarMasterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5866324695994008133D8 /* CarMasterUserRequest.swift */; };
@@ -44,6 +43,9 @@
 		840539E12352CDE40042C26F /* ModuleFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840539E02352CDE40042C26F /* ModuleFactoryImp.swift */; };
 		840EFEDC23B468D200E23347 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EFEDB23B468D200E23347 /* DateExtensions.swift */; };
 		84135DBA23C48B7D0066BACD /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84135DB923C48B7D0066BACD /* Certificates.swift */; };
+		8420250C2470EE0800621878 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420250B2470EE0800621878 /* SignUpController.swift */; };
+		8420250E2470EE5D00621878 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8420250D2470EE5D00621878 /* SignUp.storyboard */; };
+		842025122470EEA300621878 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842025112470EEA300621878 /* SignUpViewModel.swift */; };
 		8421ED3823A31E20002091FF /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED2823A31E20002091FF /* OrderController.swift */; };
 		8421ED3923A31E20002091FF /* OrderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED2923A31E20002091FF /* OrderTableCell.swift */; };
 		8421ED3A23A31E20002091FF /* DataSourcesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421ED2B23A31E20002091FF /* DataSourcesFactory.swift */; };
@@ -70,6 +72,10 @@
 		846E13C123F8235E00A77C42 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E13C023F8235E00A77C42 /* DataController.swift */; };
 		846E13C323F829C100A77C42 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E13C223F829C100A77C42 /* Reason.swift */; };
 		8475C01723F0627100F19B0D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475C01623F0627100F19B0D /* Message.swift */; };
+		8478BEBB247589BF00923B34 /* SelectCompany.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8478BEBA247589BF00923B34 /* SelectCompany.storyboard */; };
+		8478BEBE24758B9500923B34 /* SelectCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478BEBD24758B9500923B34 /* SelectCompanyController.swift */; };
+		8478BEC024758FA400923B34 /* SelectCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478BEBF24758FA400923B34 /* SelectCompanyViewModel.swift */; };
+		8478BEC22475A33A00923B34 /* SelectCompanyModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478BEC12475A33A00923B34 /* SelectCompanyModuleFactory.swift */; };
 		847C21E62352ECB20040B097 /* OrderModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C21E52352ECB20040B097 /* OrderModuleFactory.swift */; };
 		847C21F52355B79E0040B097 /* TabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C21F42355B79E0040B097 /* TabbarCoordinator.swift */; };
 		847C21F72355B7AB0040B097 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C21F62355B7AB0040B097 /* TabbarController.swift */; };
@@ -93,6 +99,8 @@
 		8492385E23BFA368002B9563 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385823BFA368002B9563 /* MessageModel.swift */; };
 		8492385F23BFA368002B9563 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385923BFA368002B9563 /* UserDataModel.swift */; };
 		8492386023BFA368002B9563 /* OrdersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492385A23BFA368002B9563 /* OrdersDataSource.swift */; };
+		84943A0E247169AC009DFE51 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84943A0D247169AC009DFE51 /* StringExtensions.swift */; };
+		84964A5724776D1400357C11 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84964A5624776D1400357C11 /* TokenModel.swift */; };
 		8497D44A23A90CF4007DDE13 /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497D44923A90CF4007DDE13 /* DateFormatterExtensions.swift */; };
 		84B221692382DAE1005FA7B3 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B221682382DAE0005FA7B3 /* UITableViewExtensions.swift */; };
 		84B2216D2383A039005FA7B3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2216A2383A039005FA7B3 /* CircularProgressBar.swift */; };
@@ -115,6 +123,22 @@
 		84E6F419240408D2003FFE08 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F418240408D2003FFE08 /* DetailsViewModel.swift */; };
 		84E6F41B24041930003FFE08 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6F41A24041930003FFE08 /* MessageViewModel.swift */; };
 		84E8DD2F23683D5B008EF413 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DD2E23683D5B008EF413 /* ViewModelFactory.swift */; };
+		84E913E82470F287007BF7F2 /* CarMasterAuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E913E72470F287007BF7F2 /* CarMasterAuthRequest.swift */; };
+		84E913EC24715170007BF7F2 /* TextValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E913EB2471516F007BF7F2 /* TextValidator.swift */; };
+		84EA85C524782D030073E5E3 /* ServicesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F05DEF24781DDA00D4C509 /* ServicesCoordinator.swift */; };
+		84EA85C624782D060073E5E3 /* ServicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F05DEE24781DDA00D4C509 /* ServicesController.swift */; };
+		84EA85C724782D090073E5E3 /* ServicesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F05DED24781DDA00D4C509 /* ServicesTableCell.swift */; };
+		84EA85C824782D0B0073E5E3 /* ServicesControllerExtansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F05DF024781DDA00D4C509 /* ServicesControllerExtansions.swift */; };
+		84EA85C924782D0F0073E5E3 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F05DEC24781DDA00D4C509 /* ServicesViewModel.swift */; };
+		84EA85D02478300B0073E5E3 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA85CE24782F8E0073E5E3 /* UsersViewModel.swift */; };
+		84EA85D12478300B0073E5E3 /* UsersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA85CB24782F8E0073E5E3 /* UsersCoordinator.swift */; };
+		84EA85D22478300B0073E5E3 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA85CC24782F8E0073E5E3 /* UsersController.swift */; };
+		84EA85D32478300B0073E5E3 /* UsersControllerExtansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA85CF24782F8E0073E5E3 /* UsersControllerExtansions.swift */; };
+		84EA85D42478300B0073E5E3 /* UsersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA85CD24782F8E0073E5E3 /* UsersTableCell.swift */; };
+		84EA85D6247832860073E5E3 /* UsersModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA85D5247832860073E5E3 /* UsersModuleFactory.swift */; };
+		84EA85DA2478333F0073E5E3 /* Services.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA85D92478333F0073E5E3 /* Services.storyboard */; };
+		84EA85DC247833740073E5E3 /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA85DB247833740073E5E3 /* Users.storyboard */; };
+		84EA85DE247835290073E5E3 /* ServicesModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA85DD247835290073E5E3 /* ServicesModuleFactory.swift */; };
 		BC9689BF2E01F2248357E7DF /* Pods_CarMasterNotifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F404F16F419B0B11FE47E697 /* Pods_CarMasterNotifyTests.framework */; };
 		E0E0C7D1F6ACA8D8FC78FB48 /* Pods_CarMasterNotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA0562DFA8AB2CEA0BE13CF /* Pods_CarMasterNotify.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
@@ -144,7 +168,6 @@
 		6730783B2469353400260982 /* UITextfieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtensions.swift; sourceTree = "<group>"; };
 		6730783D2469366D00260982 /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
 		6730784124693FE600260982 /* CarMasterApi+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarMasterApi+Auth.swift"; sourceTree = "<group>"; };
-		67307844246945C800260982 /* CarMasterAuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterAuthRequest.swift; sourceTree = "<group>"; };
 		67C5865E246951B0008133D8 /* CarMasterOrderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterOrderRequest.swift; sourceTree = "<group>"; };
 		67C5866024695263008133D8 /* CarMasterApi+Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarMasterApi+Orders.swift"; sourceTree = "<group>"; };
 		67C5866324695994008133D8 /* CarMasterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterUserRequest.swift; sourceTree = "<group>"; };
@@ -170,6 +193,9 @@
 		840539E02352CDE40042C26F /* ModuleFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryImp.swift; sourceTree = "<group>"; };
 		840EFEDB23B468D200E23347 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		84135DB923C48B7D0066BACD /* Certificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificates.swift; sourceTree = "<group>"; };
+		8420250B2470EE0800621878 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		8420250D2470EE5D00621878 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		842025112470EEA300621878 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8421ED2823A31E20002091FF /* OrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		8421ED2923A31E20002091FF /* OrderTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableCell.swift; sourceTree = "<group>"; };
 		8421ED2B23A31E20002091FF /* DataSourcesFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourcesFactory.swift; sourceTree = "<group>"; };
@@ -194,6 +220,10 @@
 		846E13C023F8235E00A77C42 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		846E13C223F829C100A77C42 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
 		8475C01623F0627100F19B0D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		8478BEBA247589BF00923B34 /* SelectCompany.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectCompany.storyboard; sourceTree = "<group>"; };
+		8478BEBD24758B9500923B34 /* SelectCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCompanyController.swift; sourceTree = "<group>"; };
+		8478BEBF24758FA400923B34 /* SelectCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCompanyViewModel.swift; sourceTree = "<group>"; };
+		8478BEC12475A33A00923B34 /* SelectCompanyModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCompanyModuleFactory.swift; sourceTree = "<group>"; };
 		847C21E52352ECB20040B097 /* OrderModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModuleFactory.swift; sourceTree = "<group>"; };
 		847C21F42355B79E0040B097 /* TabbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCoordinator.swift; sourceTree = "<group>"; };
 		847C21F62355B7AB0040B097 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
@@ -219,6 +249,8 @@
 		8492385823BFA368002B9563 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		8492385923BFA368002B9563 /* UserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		8492385A23BFA368002B9563 /* OrdersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersDataSource.swift; sourceTree = "<group>"; };
+		84943A0D247169AC009DFE51 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		84964A5624776D1400357C11 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		8497D44923A90CF4007DDE13 /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
 		84B221682382DAE0005FA7B3 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		84B2216A2383A039005FA7B3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
@@ -245,6 +277,22 @@
 		84E6F418240408D2003FFE08 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		84E6F41A24041930003FFE08 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		84E8DD2E23683D5B008EF413 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		84E913E72470F287007BF7F2 /* CarMasterAuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMasterAuthRequest.swift; sourceTree = "<group>"; };
+		84E913EB2471516F007BF7F2 /* TextValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValidator.swift; sourceTree = "<group>"; };
+		84EA85CB24782F8E0073E5E3 /* UsersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCoordinator.swift; sourceTree = "<group>"; };
+		84EA85CC24782F8E0073E5E3 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
+		84EA85CD24782F8E0073E5E3 /* UsersTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableCell.swift; sourceTree = "<group>"; };
+		84EA85CE24782F8E0073E5E3 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		84EA85CF24782F8E0073E5E3 /* UsersControllerExtansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersControllerExtansions.swift; sourceTree = "<group>"; };
+		84EA85D5247832860073E5E3 /* UsersModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModuleFactory.swift; sourceTree = "<group>"; };
+		84EA85D92478333F0073E5E3 /* Services.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Services.storyboard; sourceTree = "<group>"; };
+		84EA85DB247833740073E5E3 /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
+		84EA85DD247835290073E5E3 /* ServicesModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesModuleFactory.swift; sourceTree = "<group>"; };
+		84F05DEC24781DDA00D4C509 /* ServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
+		84F05DED24781DDA00D4C509 /* ServicesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableCell.swift; sourceTree = "<group>"; };
+		84F05DEE24781DDA00D4C509 /* ServicesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesController.swift; sourceTree = "<group>"; };
+		84F05DEF24781DDA00D4C509 /* ServicesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCoordinator.swift; sourceTree = "<group>"; };
+		84F05DF024781DDA00D4C509 /* ServicesControllerExtansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesControllerExtansions.swift; sourceTree = "<group>"; };
 		BA4FFBE8354554858DD70326 /* Pods-CarMasterNotifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarMasterNotifyTests.debug.xcconfig"; path = "Target Support Files/Pods-CarMasterNotifyTests/Pods-CarMasterNotifyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F15EFE72F5E8447D6B919EA9 /* Pods-CarMasterNotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarMasterNotify.release.xcconfig"; path = "Target Support Files/Pods-CarMasterNotify/Pods-CarMasterNotify.release.xcconfig"; sourceTree = "<group>"; };
 		F404F16F419B0B11FE47E697 /* Pods_CarMasterNotifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarMasterNotifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -352,7 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				6730784124693FE600260982 /* CarMasterApi+Auth.swift */,
-				67307844246945C800260982 /* CarMasterAuthRequest.swift */,
+				84E913E72470F287007BF7F2 /* CarMasterAuthRequest.swift */,
 			);
 			path = "CarMasterApi+Auth";
 			sourceTree = "<group>";
@@ -387,6 +435,7 @@
 				840EFEDB23B468D200E23347 /* DateExtensions.swift */,
 				848B8B2224683207007ACD29 /* UIColorExtensions.swift */,
 				6730783B2469353400260982 /* UITextfieldExtensions.swift */,
+				84943A0D247169AC009DFE51 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,10 +447,14 @@
 				8405399C234EF8FB0042C26F /* Message.storyboard */,
 				847C21FE2356C1ED0040B097 /* Main.storyboard */,
 				84BEC0BA2349C1030054FE21 /* Orders.storyboard */,
+				84EA85D92478333F0073E5E3 /* Services.storyboard */,
+				84EA85DB247833740073E5E3 /* Users.storyboard */,
 				84532B34238EA3A600CC8676 /* NameDialogue.storyboard */,
 				84532B2D238CBAB600CC8676 /* PasswordDialogue.storyboard */,
 				847C220A2356DD8D0040B097 /* Settings.storyboard */,
 				84E6F40F2403F049003FFE08 /* Details.storyboard */,
+				8420250D2470EE5D00621878 /* SignUp.storyboard */,
+				8478BEBA247589BF00923B34 /* SelectCompany.storyboard */,
 				840539CB2351D89F0042C26F /* StoryboardsEnum.swift */,
 			);
 			path = Storyboards;
@@ -426,11 +479,14 @@
 				840539DC2352C6C80042C26F /* AuthModuleFactory.swift */,
 				840539DE2352CCA50042C26F /* CoordinatorFactoryImp.swift */,
 				840539E02352CDE40042C26F /* ModuleFactoryImp.swift */,
+				84EA85D5247832860073E5E3 /* UsersModuleFactory.swift */,
+				84EA85DD247835290073E5E3 /* ServicesModuleFactory.swift */,
 				847C21E52352ECB20040B097 /* OrderModuleFactory.swift */,
 				847C22132356DEC00040B097 /* SettingsModuleFactory.swift */,
 				84E8DD2E23683D5B008EF413 /* ViewModelFactory.swift */,
 				84D4C17B23758C4B00DB8F58 /* MainModuleFactory.swift */,
 				84E6F4112403F11E003FFE08 /* DetailsModuleFactory.swift */,
+				8478BEC12475A33A00923B34 /* SelectCompanyModuleFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -448,6 +504,8 @@
 			isa = PBXGroup;
 			children = (
 				6701A81B24668842001EA1B5 /* BaseController */,
+				84EA85CA24782F6C0073E5E3 /* UsersFlow */,
+				84F05DEB24781DA300D4C509 /* ServicesFlow */,
 				8421ED4523A31E6E002091FF /* AuthFlow */,
 				84E6F413240403B4003FFE08 /* MessageFlow */,
 				8421ED2723A31E20002091FF /* OrdersFlow */,
@@ -455,6 +513,24 @@
 				847C220C2356DDB60040B097 /* SettingsFlow */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		8420250F2470EE7A00621878 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				8421ED4823A31EAF002091FF /* LoginController.swift */,
+				8421ED4A23A31ECD002091FF /* LoginViewModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		842025102470EE9100621878 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				8420250B2470EE0800621878 /* SignUpController.swift */,
+				842025112470EEA300621878 /* SignUpViewModel.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		8421ED2723A31E20002091FF /* OrdersFlow */ = {
@@ -482,9 +558,10 @@
 		8421ED4523A31E6E002091FF /* AuthFlow */ = {
 			isa = PBXGroup;
 			children = (
+				8478BEBC24758B4F00923B34 /* Company */,
+				842025102470EE9100621878 /* SignUp */,
+				8420250F2470EE7A00621878 /* SignIn */,
 				8421ED4623A31E8E002091FF /* AuthCoordinator.swift */,
-				8421ED4823A31EAF002091FF /* LoginController.swift */,
-				8421ED4A23A31ECD002091FF /* LoginViewModel.swift */,
 			);
 			path = AuthFlow;
 			sourceTree = "<group>";
@@ -553,8 +630,18 @@
 			isa = PBXGroup;
 			children = (
 				846E13C023F8235E00A77C42 /* DataController.swift */,
+				84E913EB2471516F007BF7F2 /* TextValidator.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8478BEBC24758B4F00923B34 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				8478BEBD24758B9500923B34 /* SelectCompanyController.swift */,
+				8478BEBF24758FA400923B34 /* SelectCompanyViewModel.swift */,
+			);
+			path = Company;
 			sourceTree = "<group>";
 		};
 		847C21F12355B57E0040B097 /* MainTabbarFlow */ = {
@@ -589,6 +676,7 @@
 		8492385323BFA368002B9563 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84964A5524776CFE00357C11 /* TokenModel */,
 				84E6F41C240419B8003FFE08 /* DataSources */,
 				84E6F3FE24011BFE003FFE08 /* User */,
 				843F18062400E9A800312109 /* Reason */,
@@ -599,6 +687,14 @@
 				67296B4E2467B41000D78B16 /* CarMasterError.strings */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		84964A5524776CFE00357C11 /* TokenModel */ = {
+			isa = PBXGroup;
+			children = (
+				84964A5624776D1400357C11 /* TokenModel.swift */,
+			);
+			path = TokenModel;
 			sourceTree = "<group>";
 		};
 		84B221702383A056005FA7B3 /* Spinner */ = {
@@ -714,6 +810,30 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
+		84EA85CA24782F6C0073E5E3 /* UsersFlow */ = {
+			isa = PBXGroup;
+			children = (
+				84EA85CE24782F8E0073E5E3 /* UsersViewModel.swift */,
+				84EA85CB24782F8E0073E5E3 /* UsersCoordinator.swift */,
+				84EA85CC24782F8E0073E5E3 /* UsersController.swift */,
+				84EA85CF24782F8E0073E5E3 /* UsersControllerExtansions.swift */,
+				84EA85CD24782F8E0073E5E3 /* UsersTableCell.swift */,
+			);
+			path = UsersFlow;
+			sourceTree = "<group>";
+		};
+		84F05DEB24781DA300D4C509 /* ServicesFlow */ = {
+			isa = PBXGroup;
+			children = (
+				84F05DEC24781DDA00D4C509 /* ServicesViewModel.swift */,
+				84F05DEF24781DDA00D4C509 /* ServicesCoordinator.swift */,
+				84F05DEE24781DDA00D4C509 /* ServicesController.swift */,
+				84F05DF024781DDA00D4C509 /* ServicesControllerExtansions.swift */,
+				84F05DED24781DDA00D4C509 /* ServicesTableCell.swift */,
+			);
+			path = ServicesFlow;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -801,14 +921,18 @@
 			files = (
 				84D44AE1234D85CC005E467E /* Auth.storyboard in Resources */,
 				84532B35238EA3A600CC8676 /* NameDialogue.storyboard in Resources */,
+				8420250E2470EE5D00621878 /* SignUp.storyboard in Resources */,
 				84532B2E238CBAB600CC8676 /* PasswordDialogue.storyboard in Resources */,
 				8440589323C233E800BEE9DF /* carmasterapi.cer in Resources */,
 				847C21FF2356C1ED0040B097 /* Main.storyboard in Resources */,
+				84EA85DC247833740073E5E3 /* Users.storyboard in Resources */,
 				84E6F4102403F049003FFE08 /* Details.storyboard in Resources */,
 				8405399D234EF8FB0042C26F /* Message.storyboard in Resources */,
 				847C220B2356DD8D0040B097 /* Settings.storyboard in Resources */,
 				67296B4F2467B41000D78B16 /* CarMasterError.strings in Resources */,
+				8478BEBB247589BF00923B34 /* SelectCompany.storyboard in Resources */,
 				84BEC0BE2349C1040054FE21 /* Assets.xcassets in Resources */,
+				84EA85DA2478333F0073E5E3 /* Services.storyboard in Resources */,
 				84BEC0BC2349C1030054FE21 /* Orders.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -891,6 +1015,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EA85D32478300B0073E5E3 /* UsersControllerExtansions.swift in Sources */,
 				847C21F52355B79E0040B097 /* TabbarCoordinator.swift in Sources */,
 				840539DD2352C6C80042C26F /* AuthModuleFactory.swift in Sources */,
 				8492385D23BFA368002B9563 /* DetailsDataSource.swift in Sources */,
@@ -899,6 +1024,7 @@
 				848B8B2B24684F0C007ACD29 /* UserCellViewModel.swift in Sources */,
 				8421ED4323A31E20002091FF /* OrderCoordinator.swift in Sources */,
 				848B8B3024687444007ACD29 /* CarInfoCellView.swift in Sources */,
+				84EA85D42478300B0073E5E3 /* UsersTableCell.swift in Sources */,
 				8492386023BFA368002B9563 /* OrdersDataSource.swift in Sources */,
 				84B221692382DAE1005FA7B3 /* UITableViewExtensions.swift in Sources */,
 				848B8B2A24684F0C007ACD29 /* UserMessageCell.swift in Sources */,
@@ -923,10 +1049,12 @@
 				840539D02351E07B0042C26F /* BaseCoordinator.swift in Sources */,
 				84E6F419240408D2003FFE08 /* DetailsViewModel.swift in Sources */,
 				840EFEDC23B468D200E23347 /* DateExtensions.swift in Sources */,
+				84E913EC24715170007BF7F2 /* TextValidator.swift in Sources */,
 				848B8B382469084D007ACD29 /* RoundedCornerButton.swift in Sources */,
 				8475C01723F0627100F19B0D /* Message.swift in Sources */,
 				8421ED4B23A31ECD002091FF /* LoginViewModel.swift in Sources */,
 				8421ED3A23A31E20002091FF /* DataSourcesFactory.swift in Sources */,
+				84E913E82470F287007BF7F2 /* CarMasterAuthRequest.swift in Sources */,
 				840539CC2351D89F0042C26F /* StoryboardsEnum.swift in Sources */,
 				67C5865F246951B0008133D8 /* CarMasterOrderRequest.swift in Sources */,
 				846E13C123F8235E00A77C42 /* DataController.swift in Sources */,
@@ -934,20 +1062,25 @@
 				848B8B2D246866FF007ACD29 /* Constants.swift in Sources */,
 				848B8B2624684DDA007ACD29 /* MessagesCell.swift in Sources */,
 				845163EA23E1142200EA7582 /* CarMasterNotifyData.xcdatamodeld in Sources */,
+				84EA85C824782D0B0073E5E3 /* ServicesControllerExtansions.swift in Sources */,
 				840539CE2351DE4E0042C26F /* ApplicationCoordinator.swift in Sources */,
 				84532B2A238CB85100CC8676 /* PasswordDialogueController.swift in Sources */,
 				840539C42351CEA00042C26F /* DeepLinkOption.swift in Sources */,
 				840539D42351E4FE0042C26F /* CoordinatorFactory.swift in Sources */,
-				67307845246945C800260982 /* CarMasterAuthRequest.swift in Sources */,
 				6730783C2469353400260982 /* UITextfieldExtensions.swift in Sources */,
+				8478BEC024758FA400923B34 /* SelectCompanyViewModel.swift in Sources */,
 				840539C02351CD140042C26F /* Presentable.swift in Sources */,
 				84D4C17C23758C4B00DB8F58 /* MainModuleFactory.swift in Sources */,
+				84EA85C924782D0F0073E5E3 /* ServicesViewModel.swift in Sources */,
+				84943A0E247169AC009DFE51 /* StringExtensions.swift in Sources */,
 				840539DF2352CCA50042C26F /* CoordinatorFactoryImp.swift in Sources */,
+				8478BEBE24758B9500923B34 /* SelectCompanyController.swift in Sources */,
 				848B8B2724684DDA007ACD29 /* CellState.swift in Sources */,
 				84B2216F2383A039005FA7B3 /* BorderLayer.swift in Sources */,
 				840539CA2351D7B20042C26F /* UIViewControllerExtensions.swift in Sources */,
 				840539D72351E5CB0042C26F /* Router.swift in Sources */,
 				6701A824246692B6001EA1B5 /* SecureManager.swift in Sources */,
+				8420250C2470EE0800621878 /* SignUpController.swift in Sources */,
 				847C221A235811420040B097 /* OrderControllerExtansions.swift in Sources */,
 				8421ED3923A31E20002091FF /* OrderTableCell.swift in Sources */,
 				8421ED4923A31EAF002091FF /* LoginController.swift in Sources */,
@@ -957,32 +1090,43 @@
 				840539A2234F36A40042C26F /* UIImageExtensions.swift in Sources */,
 				84CA35A7235E97340082C0BA /* Detail.swift in Sources */,
 				6701A8182466762A001EA1B5 /* DefaultTextLabel.swift in Sources */,
+				84EA85D12478300B0073E5E3 /* UsersCoordinator.swift in Sources */,
 				84BEC0B72349C1030054FE21 /* AppDelegate.swift in Sources */,
+				8478BEC22475A33A00923B34 /* SelectCompanyModuleFactory.swift in Sources */,
 				84B2216D2383A039005FA7B3 /* CircularProgressBar.swift in Sources */,
 				848B8B362468FEAB007ACD29 /* InfoTextLabel.swift in Sources */,
 				84E6F4122403F11E003FFE08 /* DetailsModuleFactory.swift in Sources */,
 				847C22122356DE240040B097 /* SettingsController.swift in Sources */,
+				84964A5724776D1400357C11 /* TokenModel.swift in Sources */,
 				8437AB0C23C33AE300621A49 /* OrderModel.swift in Sources */,
 				84532B2C238CB89C00CC8676 /* PasswordDialogueViewModel.swift in Sources */,
 				67296B4D2467AFB700D78B16 /* CarMasterError.swift in Sources */,
 				67C5866424695994008133D8 /* CarMasterUserRequest.swift in Sources */,
+				842025122470EEA300621878 /* SignUpViewModel.swift in Sources */,
+				84EA85D22478300B0073E5E3 /* UsersController.swift in Sources */,
 				840539BE2351CCEB0042C26F /* BaseView.swift in Sources */,
 				840539E12352CDE40042C26F /* ModuleFactoryImp.swift in Sources */,
 				8492385F23BFA368002B9563 /* UserDataModel.swift in Sources */,
 				840539C22351CDE00042C26F /* Coordinator.swift in Sources */,
 				6701A81324667329001EA1B5 /* Theme.swift in Sources */,
 				847C22102356DE130040B097 /* SettingsCoordinator.swift in Sources */,
+				84EA85C524782D030073E5E3 /* ServicesCoordinator.swift in Sources */,
 				8492385E23BFA368002B9563 /* MessageModel.swift in Sources */,
 				6730784224693FE600260982 /* CarMasterApi+Auth.swift in Sources */,
+				84EA85C724782D090073E5E3 /* ServicesTableCell.swift in Sources */,
 				6701A81D24668859001EA1B5 /* BaseTableViewController.swift in Sources */,
 				8421ED3823A31E20002091FF /* OrderController.swift in Sources */,
 				8437AB0B23C33AD700621A49 /* ReasonModel.swift in Sources */,
 				847C22142356DEC00040B097 /* SettingsModuleFactory.swift in Sources */,
+				84EA85D02478300B0073E5E3 /* UsersViewModel.swift in Sources */,
 				84E6F415240403C8003FFE08 /* MessageController.swift in Sources */,
 				67C5866624695A27008133D8 /* CarMasterApi+User.swift in Sources */,
+				84EA85D6247832860073E5E3 /* UsersModuleFactory.swift in Sources */,
 				848260E723EA51C100C3909C /* Order.swift in Sources */,
+				84EA85DE247835290073E5E3 /* ServicesModuleFactory.swift in Sources */,
 				843ABFAD239DE5890050E37D /* CarMasterApi.swift in Sources */,
 				840539D92351E6190042C26F /* RouterImp.swift in Sources */,
+				84EA85C624782D060073E5E3 /* ServicesController.swift in Sources */,
 				8437AB1223C3518600621A49 /* CustomMoyaProvider.swift in Sources */,
 				84D4C17023741A5700DB8F58 /* SettingsViewModel.swift in Sources */,
 				8421ED3C23A31E20002091FF /* ReasonsCell.swift in Sources */,

@@ -23,6 +23,6 @@ struct Constants {
     }
 
     struct CarMasterApi {
-        static let baseUrl = URL(string: "http://192.168.0.104:8000")!
+        static let baseUrl = URL(string: "http://192.168.0.57:8000")!
     }
 }

@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.1.0)
+  - Alamofire (5.2.0)
   - Differentiator (4.0.1)
   - KeychainAccess (4.2.0)
   - Moya/Core (14.0.0):
@@ -51,7 +51,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Alamofire: c1ca147559e730bfb2182c8c7aafbdd90a867987
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916

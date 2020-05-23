@@ -25,9 +25,9 @@ class DetailsViewModel {
     }
     
     func getReasons () {
-        self.networkProvider.request(.getReasons(orderNumber: Int(self.order.number)), [ReasonModel].self)
+        self.networkProvider.request(.getReasons(orderNumber: Int(self.order.number)))
         .subscribe(onSuccess: { reasons in
-            let _ = reasons.map {$0.toManagedObject(order: self.order)}
+         //   let _ = reasons.map {$0.toManagedObject(order: self.order)}
             DataController.shared.save()
             self.updateReasons()
         }, onError: {error in

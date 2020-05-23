@@ -10,11 +10,10 @@ import Foundation
 
 enum CarMasterError: String, Error, LocalizedError {
     case userNotFound
+    case userExist
     
     public var errorDescription: String? {
-        switch self {
-        case .userNotFound: return localizedString(error: self)
-        }
+        return localizedString(error: self)
     }
 
     private func localizedString(error: CarMasterError) -> String {

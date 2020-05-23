@@ -18,7 +18,6 @@ class ApplicationCoordinator: BaseCoordinator {
     
     private let coordinatorFactory: CoordinatorFactory
     private let router: Router
-    private let keychain = Keychain()
     
     private var instructor: LaunchInstructor {
         if SecureManager.isAutorized {
@@ -50,7 +49,6 @@ class ApplicationCoordinator: BaseCoordinator {
     private func runAuthFlow() {
         let coordinator = coordinatorFactory.makeAuthCoordinatorBox(router: router)
         coordinator.finishFlow = {[weak self,weak coordinator] in
-            isAutorized = true
             self?.start()
             self?.removeDependency(coordinator)
         }
@@ -59,6 +57,17 @@ class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func runMainFlow() {
+        let coordinator = coordinatorFactory.makeTabbarCoordinator()
+        coordinator.finishFlow = {[weak self,weak coordinator] in
+            self?.start()
+            self?.removeDependency(coordinator)
+        }
+        addDependency(coordinator)
+        router.setRootModule(coordinator.controller, hideBar: true)
+        coordinator.start()
+    }
+
+    private func runSelectCompanyFlow() {
         let coordinator = coordinatorFactory.makeTabbarCoordinator()
         coordinator.finishFlow = {[weak self,weak coordinator] in
             self?.start()

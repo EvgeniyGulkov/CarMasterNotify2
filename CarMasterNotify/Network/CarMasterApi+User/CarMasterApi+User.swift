@@ -51,11 +51,10 @@ extension CarMasterApi.User: TargetType, AccessTokenAuthorizable {
         
     var task: Task {
         switch self {
-            case .changeChatname(let request):
-                return .requestParameters(parameters: request.json, encoding: JSONEncoding.default)
-                
-            case .changePassword(let request):
-                return .requestParameters(parameters: request.json, encoding: JSONEncoding.default)
+        case .changeChatname(let request):
+            return .requestParameters(parameters: request.json, encoding: JSONEncoding.default)
+        case .changePassword(let request):
+            return .requestParameters(parameters: request.json, encoding: JSONEncoding.default)
         }
     }
 

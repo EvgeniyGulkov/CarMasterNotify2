@@ -14,7 +14,7 @@ class BaseTableViewController: UITableViewController {
         let view = UIView(frame: self.view.bounds)
         view.backgroundColor = Theme.Color.background
         tableView.backgroundView = view
-        tableView.backgroundColor = UIColor.clear
+        tableView.backgroundColor = Theme.Color.background
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

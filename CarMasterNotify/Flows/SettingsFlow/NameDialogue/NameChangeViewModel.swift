@@ -25,7 +25,7 @@ class NameChangeViewModel {
     func changeName(newName: String) {
         let provider = CustomMoyaProvider<CarMasterApi.User>()
         let request = CarMasterChangeNicknameRequest(newNickname: newName)
-        provider.request(.changeChatname(request: request), String.self)
+        provider.request(.changeChatname(request: request))
             .subscribe(onSuccess: { result in
                 print(result)
             }, onError: { error in

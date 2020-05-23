@@ -2,13 +2,6 @@ import UIKit
 import RxSwift
 import SocketIO
 
-enum ActionStrings: String {
-    case complete = "Complete"
-    case cancel = "Cancel"
-    case message = "Mark Reason as Complete?"
-    case ok = "Ok"
-}
-
 final class OrderCoordinator: BaseCoordinator {
     
     private let disposeBag = DisposeBag()

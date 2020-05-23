@@ -15,6 +15,7 @@ class RoundedCornerButton: UIButton {
         layer.cornerRadius = 15.0
         backgroundColor = Theme.Color.blueColor
         setTitleColor(Theme.Color.defaultTextColor, for:[])
+        setEnabled(isEnabled: isEnabled)
     }
 
     func setEnabled(isEnabled: Bool) {

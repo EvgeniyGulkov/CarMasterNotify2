@@ -18,46 +18,43 @@ class CustomMoyaProvider<Target: TargetType>: MoyaProvider<Target> {
         ]
         
         let alamofireSession = Session(serverTrustManager: ServerTrustManager(evaluators: evaluators))
-        
-        self.provider = MoyaProvider(endpointClosure: endpointClosure, requestClosure: requestClosure, stubClosure: stubClosure, callbackQueue: callbackQueue, session: alamofireSession, plugins: [authPlugin], trackInflights: trackInflights)
+        self.provider = MoyaProvider(endpointClosure: endpointClosure, requestClosure: requestClosure, stubClosure: stubClosure, callbackQueue: callbackQueue, session: alamofireSession, plugins: [authPlugin, NetworkLoggerPlugin()], trackInflights: trackInflights)
         
         self.jsonDecoder = JSONDecoder()
         self.jsonDecoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
 
     }
     
-    func request<T:Decodable>(_ token: Target, _ type: T.Type) -> Single<T> {
-        print(token)
+    func request(_ token: Target) -> Single<Response> {
         let request = self.provider.rx.request(token)
-          return request
-            .flatMap{result in
-                if result.statusCode == 401 {
-                    return self.refreshSessionToken(token: SecureManager.refreshToken)
-                    .do(
-                        onSuccess:{userdata in
-                            SecureManager.saveUserData(userdata: userdata)},
-                        onError: {_ in})
-                        .flatMap{_ in return self.provider.rx.request(token)}
-                }
-                if result.statusCode == 403 {
-                    SecureManager.SignOut()
-                    return Single.just(result)
+        return request
+            .flatMap{response in
+                if (400...499).contains(response.statusCode) {
+                    if response.statusCode == 401 {
+                        return self.refreshSessionToken(token: SecureManager.refreshToken)
+                            .do(
+                                onSuccess:{userdata in
+                                    SecureManager.saveUserData(userdata: userdata)},
+                                onError: {_ in SecureManager.SignOut()})
+                            .flatMap{_ in return self.provider.rx.request(token)}
+                    } else if response.statusCode == 403 {
+                        SecureManager.SignOut()
+                        return Single.create {
+                            $0(.error(CarMasterError.userNotFound))
+                            return Disposables.create()
+                        }
+                    } else {
+                        return Single.create {
+                            $0(.error(CarMasterError.userExist))
+                            return Disposables.create()
+                        }
+                    }
                 } else {
-                    return Single.just(result)
+                    return Single.create {
+                        $0(.success(response))
+                        return Disposables.create()
+                    }
                 }
-            }
-          .map(T.self, atKeyPath: nil, using: self.jsonDecoder, failsOnEmptyData: false)
-        }
-
-    func signInRequest (request: CarMasterSignInRequest) -> Single<Int> {
-        let target = CarMasterApi.Auth.signIn(request: request) as! Target
-        return self.provider.rx.request(target)
-            .map { response in
-                if response.statusCode == 200 {
-                    let userdata = try? response.map(UserDataModel.self)
-                    SecureManager.saveUserData(userdata: userdata!)
-                }
-                return response.statusCode
         }
     }
     

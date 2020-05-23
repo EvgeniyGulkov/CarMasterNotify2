@@ -1,7 +1,7 @@
 import UIKit
 
 final class CoordinatorFactoryImp: CoordinatorFactory {
-    
+
     func makeTabbarCoordinator() -> TabbarCoordinator {
         let coordinator = TabbarCoordinator(coordinatorFactory: CoordinatorFactoryImp(), factory: ModuleFactoryImp())
         return coordinator
@@ -18,10 +18,9 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     }
     
     func makeOrderCoordinator(navController: UINavigationController?) -> OrderCoordinator {
-        let coordinator = OrderCoordinator(
-            router: router(navController),
-            factory: ModuleFactoryImp(),
-            coordinatorFactory: CoordinatorFactoryImp()
+        let coordinator = OrderCoordinator(router: router(navController),
+                                           factory: ModuleFactoryImp(),
+                                           coordinatorFactory: CoordinatorFactoryImp()
         )
         return coordinator
     }
@@ -32,6 +31,28 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     
     func makeSettingsCoordinator(navController: UINavigationController? = nil) -> SettingsCoordinator {
         let coordinator = SettingsCoordinator(router: router(navController), factory: ModuleFactoryImp())
+        return coordinator
+    }
+
+    func makeServicesCoordinator() -> ServicesCoordinator {
+        return makeServicesCoordinator(navController: nil)
+    }
+    
+    func makeServicesCoordinator(navController: UINavigationController? = nil) -> ServicesCoordinator {
+        let coordinator = ServicesCoordinator(router: router(navController),
+                                              factory: ModuleFactoryImp(),
+                                              coordinatorFactory: CoordinatorFactoryImp())
+        return coordinator
+    }
+
+    func makeUsersCoordinator() -> UsersCoordinator {
+        return makeUsersCoordinator(navController: nil)
+    }
+    
+    func makeUsersCoordinator(navController: UINavigationController?) -> UsersCoordinator {
+        let coordinator = UsersCoordinator(router: router(navController),
+                                              factory: ModuleFactoryImp(),
+                                              coordinatorFactory: CoordinatorFactoryImp())
         return coordinator
     }
     
