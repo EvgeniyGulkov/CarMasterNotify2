@@ -10,16 +10,21 @@ import Foundation
 import RxSwift
 
 class SignUpViewModel {
+    let data = BehaviorSubject<[AuthDataSource]>(value: [
+        AuthDataSource(title: "", items: [.textField, .textField, .textField, .textField, .textField, .textField]),
+                                                         AuthDataSource(title: "", items: [.button]),
+                                                         AuthDataSource(title: "", items: [.error(error: "")])])
     let disposeBag = DisposeBag()
     let networkProvider: CustomMoyaProvider<CarMasterApi.Auth>
     let title = BehaviorSubject<String>(value: "Registration")
-    let confirmTouched = PublishSubject<String>()
+    let confirmTouched = PublishSubject<Void>()
     let firstName = PublishSubject<String>()
     let lastName = PublishSubject<String>()
     let phone = PublishSubject<String>()
     let email = PublishSubject<String>()
     let password = PublishSubject<String>()
     let confirmPassword = PublishSubject<String>()
+    let errorMessage = PublishSubject<String>()
 
     var firstNameHint: Observable<String>!
     var lastNameHint: Observable<String>!
@@ -28,6 +33,7 @@ class SignUpViewModel {
     var passwordHint: Observable<String>!
     var confirmPasswordHint: Observable<String>!
     var user = UserDataModel()
+    var pass: String = ""
     var validation: Observable<Bool>?
 
     var finishFlow: (()->())?
@@ -39,9 +45,9 @@ class SignUpViewModel {
 
     func setupBindings() {
         confirmTouched
-            .subscribe(onNext: {[weak self] password in
-                if let user = self?.user {
-                    self?.signUp(userDataModel: user, password: password)
+            .subscribe(onNext: {[weak self] in
+                if let user = self?.user, let self = self {
+                    self.signUp(userDataModel: user, password: self.pass)
                 }
             })
             .disposed(by: disposeBag)
@@ -63,6 +69,7 @@ class SignUpViewModel {
             .flatMapLatest {text in return Observable.just(text.validate(type: .email))}
 
         passwordHint = password.asObservable()
+            .do(onNext: {[weak self] pass in self?.pass = pass})
             .flatMapLatest {text in return Observable.just(text.validate(type: .password))}
         
         confirmPasswordHint = Observable.combineLatest([password, confirmPassword])
@@ -82,8 +89,9 @@ class SignUpViewModel {
         networkProvider.request(.registration(request: request))
             .subscribe(onSuccess: { [weak self] _ in
                 self?.signIn(login: userDataModel.email!, password: password)
-            }, onError: { error in
+            }, onError: {[weak self] error in
                 print(error)
+                self?.errorMessage.onNext(error.localizedDescription)
             })
             .disposed(by: disposeBag)
     }
@@ -99,8 +107,9 @@ class SignUpViewModel {
                 SecureManager.isAutorized = true
                 self?.finishFlow!()
                 }
-            }, onError: {error in
-            print(error)
+            }, onError: {[weak self] error in
+                print(error)
+                self?.errorMessage.onNext(error.localizedDescription)
         })
         .disposed(by: disposeBag)
     }

@@ -22,12 +22,7 @@ struct AuthDataSource {
 }
 
 
-extension AuthDataSource: AnimatableSectionModelType {
-    var identity: String {
-        return "a"
-    }
-    
-    typealias Identity = String
+extension AuthDataSource: SectionModelType {
     typealias Item = CellType
     
     init(original: AuthDataSource, items: [Item]) {

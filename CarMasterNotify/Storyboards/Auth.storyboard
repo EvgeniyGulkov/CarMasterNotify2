@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -111,14 +111,17 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ErrorKey" id="2wO-DT-LBA" customClass="ErrorTextTableViewCell" customModule="CarMasterNotify" customModuleProvider="target">
-                                <rect key="frame" x="16" y="287.5" width="343" height="21.5"/>
+                                <rect key="frame" x="16" y="287.5" width="343" height="50.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2wO-DT-LBA" id="fxj-sV-vWm">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="50.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea2-oJ-XqO">
-                                            <rect key="frame" x="34.5" y="0.0" width="274" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ea2-oJ-XqO">
+                                            <rect key="frame" x="34.5" y="0.0" width="274" height="50.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="cXz-T3-2Q4"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -130,7 +133,6 @@
                                         <constraint firstItem="Ea2-oJ-XqO" firstAttribute="width" secondItem="fxj-sV-vWm" secondAttribute="width" multiplier="0.8" id="VBb-ed-F4s"/>
                                         <constraint firstItem="Ea2-oJ-XqO" firstAttribute="centerX" secondItem="fxj-sV-vWm" secondAttribute="centerX" id="cqO-CV-hTj"/>
                                         <constraint firstAttribute="bottom" secondItem="Ea2-oJ-XqO" secondAttribute="bottom" id="uCh-2N-bKh"/>
-                                        <constraint firstItem="Ea2-oJ-XqO" firstAttribute="height" secondItem="fxj-sV-vWm" secondAttribute="height" id="yoy-bV-bBL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,7 +141,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TwoButtonsKey" id="ndd-29-VUo" userLabel="TwoButtonsCell" customClass="TwoButtonsTableViewCell" customModule="CarMasterNotify" customModuleProvider="target">
-                                <rect key="frame" x="16" y="309" width="343" height="43.5"/>
+                                <rect key="frame" x="16" y="338" width="343" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ndd-29-VUo" id="hf6-Mf-ceB">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>

@@ -11,7 +11,6 @@ import RxSwift
 
 class BaseDarkTableViewCell: UITableViewCell {
     private (set) var disposeBag = DisposeBag()
-    var viewModel = BaseTableViewCellViewModel()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,13 +22,6 @@ class BaseDarkTableViewCell: UITableViewCell {
             self.selectionStyle = .none
         }
         self.backgroundColor = Theme.Color.tableSectionBackground
-        setupBindings()
-    }
-
-    func setupBindings() {
-        self.viewModel.textLabel
-            .bind(to: self.textLabel!.rx.text)
-            .disposed(by: disposeBag)
     }
 
     override func prepareForReuse() {

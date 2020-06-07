@@ -38,7 +38,7 @@ class CustomMoyaProvider<Target: TargetType>: MoyaProvider<Target> {
                                 onError: {_ in SecureManager.SignOut()})
                             .flatMap{_ in return self.provider.rx.request(token)}
                     } else if response.statusCode == 403 {
-                        SecureManager.SignOut()
+                       // SecureManager.SignOut()
                         return Single.create {
                             $0(.error(CarMasterError.userNotFound))
                             return Disposables.create()

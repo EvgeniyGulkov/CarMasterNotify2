@@ -34,12 +34,12 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
         return coordinator
     }
 
-    func makeServicesCoordinator() -> ServicesCoordinator {
-        return makeServicesCoordinator(navController: nil)
+    func makeStationsCoordinator() -> StationsCoordinator {
+        return makeStationsCoordinator(navController: nil)
     }
     
-    func makeServicesCoordinator(navController: UINavigationController? = nil) -> ServicesCoordinator {
-        let coordinator = ServicesCoordinator(router: router(navController),
+    func makeStationsCoordinator(navController: UINavigationController? = nil) -> StationsCoordinator {
+        let coordinator = StationsCoordinator(router: router(navController),
                                               factory: ModuleFactoryImp(),
                                               coordinatorFactory: CoordinatorFactoryImp())
         return coordinator

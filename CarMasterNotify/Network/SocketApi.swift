@@ -13,7 +13,7 @@ class SocketClient<T:RawRepresentable> where T.RawValue == String {
     private var socket: SocketIOClient
     
     init(nsp: String = "/") {
-        self.manager = SocketManager(socketURL: URL(string: "http://192.168.0.57:8000")!, config: [.log(false),.compress, .extraHeaders(["Authorization" : SecureManager.accessToken])])
+        self.manager = SocketManager(socketURL: Constants.CarMasterApi.baseUrl, config: [.log(false),.compress, .extraHeaders(["Authorization" : SecureManager.accessToken])])
         self.socket = manager.socket(forNamespace: nsp)
     }
     

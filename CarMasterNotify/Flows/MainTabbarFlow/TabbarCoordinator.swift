@@ -5,7 +5,7 @@ class TabbarCoordinator: BaseCoordinator {
     private let coordinatorFactory: CoordinatorFactory
 
     var controller:TabbarController
-    var servicesNavController: NavigationController
+    var StationsNavController: NavigationController
     var ordersNavController: NavigationController
     var settingsNavController: NavigationController
     var usersNavController: NavigationController
@@ -14,8 +14,8 @@ class TabbarCoordinator: BaseCoordinator {
     init(coordinatorFactory: CoordinatorFactory,factory: MainModuleFactory) {
         self.coordinatorFactory = coordinatorFactory
         self.controller = factory.makeMainOutput()
-        servicesNavController = controller.viewControllers![0] as! NavigationController
-        servicesNavController.tabBarItem = UITabBarItem(title: "Services", image: UIImage(named: "menu"), tag: 0)
+        StationsNavController = controller.viewControllers![0] as! NavigationController
+        StationsNavController.tabBarItem = UITabBarItem(title: "Stations", image: UIImage(named: "menu"), tag: 0)
         ordersNavController = controller.viewControllers![1] as! NavigationController
         ordersNavController.tabBarItem = UITabBarItem(title: "Orders", image: UIImage(named: "cars_icon"), tag: 1)
         usersNavController = controller.viewControllers![2] as! NavigationController
@@ -26,7 +26,7 @@ class TabbarCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        runServicesFlow(in: self.servicesNavController)
+        runStationsFlow(in: self.StationsNavController)
         runOrderFlow(in: self.ordersNavController)
         runUsersFlow(in: self.usersNavController)
         runSettingsFlow(in: self.settingsNavController)
@@ -50,19 +50,19 @@ class TabbarCoordinator: BaseCoordinator {
         }
     }
 
-    private func runServicesFlow(in navController: UINavigationController) {
+    private func runStationsFlow(in navController: UINavigationController) {
         if navController.viewControllers.isEmpty == true {
-            let serviceCoordinator = self.coordinatorFactory.makeServicesCoordinator(navController: navController)
-            //serviceCoordinator.finishFlow = self.finishFlow
-            self.addDependency(serviceCoordinator)
-            serviceCoordinator.start()
+            let StationCoordinator = self.coordinatorFactory.makeStationsCoordinator(navController: navController)
+            //StationCoordinator.finishFlow = self.finishFlow
+            self.addDependency(StationCoordinator)
+            StationCoordinator.start()
         }
     }
 
     private func runUsersFlow(in navController: UINavigationController) {
         if navController.viewControllers.isEmpty == true {
             let usersCoordinator = self.coordinatorFactory.makeUsersCoordinator(navController: navController)
-            //serviceCoordinator.finishFlow = self.finishFlow
+            //StationCoordinator.finishFlow = self.finishFlow
             self.addDependency(usersCoordinator)
             usersCoordinator.start()
         }

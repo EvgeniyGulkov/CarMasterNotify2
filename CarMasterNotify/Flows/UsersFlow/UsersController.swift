@@ -25,7 +25,9 @@ class UsersController: BaseTableViewController {
         self.title = "Users"
         tableView.keyboardDismissMode = .interactive
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.refreshControl = UIRefreshControl()
+        let addUserButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        let calendarButton = UIBarButtonItem(image: UIImage(named: "calendar"), style: .done, target: self, action: nil)
+        self.navigationItem.rightBarButtonItems = [addUserButton, calendarButton]
         self.createSearchController(navigationItem: self.navigationItem)
         self.createRefreshControl()
     }
@@ -51,16 +53,11 @@ class UsersController: BaseTableViewController {
             .disposed(by: disposeBag)
         
         self.viewModel.data
-            .bind(to: tableView.rx.items(dataSource: DataSourcesFactory.getOrdersDataSource()))
-            .disposed(by: disposeBag)
-
-        self.viewModel.data
-            .subscribe(onNext: {[weak self] _ in
-                self?.refreshControl?.endRefreshing()
-            })
+            .do(onNext: {[weak self] _ in self?.refreshControl?.endRefreshing()})
+            .bind(to: tableView.rx.items(dataSource: UsersDataSourcesFactory.usersDataSource()))
             .disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(Order.self)
+        tableView.rx.modelSelected(User.self)
             .bind(to: viewModel.selectData)
             .disposed(by: disposeBag)
 

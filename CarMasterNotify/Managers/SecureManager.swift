@@ -30,7 +30,7 @@ enum AccessLevel: String {
 
 class SecureManager {
 
-    private static let keychain = Keychain(service: Constants.SecureManager.service)
+    private static let keychain = Keychain(service: Constants.SecureManager.Station)
 
     static var accessLevel: Observable<AccessLevel> {
         guard let user = User.currentUser, let accessLevel = user.accessLevel else {

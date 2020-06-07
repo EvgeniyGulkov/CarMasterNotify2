@@ -11,6 +11,7 @@ import Moya
 
 extension CarMasterApi {
     enum User {
+        case info
         case changeChatname(request: CarMasterChangeNicknameRequest)
         case changePassword(request: CarMasterChangePasswordRequest)
     }
@@ -19,10 +20,9 @@ extension CarMasterApi {
 extension CarMasterApi.User: TargetType, AccessTokenAuthorizable {
     var authorizationType: AuthorizationType? {
         switch self {
-        case .changeChatname:
-            return .bearer
-        case .changePassword:
-            return .bearer
+        case .info: return .bearer
+        case .changeChatname: return .bearer
+        case .changePassword: return .bearer
         }
     }
     
@@ -32,6 +32,8 @@ extension CarMasterApi.User: TargetType, AccessTokenAuthorizable {
     
     var path: String {
         switch self {
+        case .info:
+            return "api/user/info"
         case .changeChatname:
             return "/api/user/changechatname"
         case .changePassword:
@@ -41,6 +43,7 @@ extension CarMasterApi.User: TargetType, AccessTokenAuthorizable {
     
     var method: Moya.Method {
         switch self {
+        case .info: return .get
         case .changePassword, .changeChatname: return .post
         }
     }
@@ -55,6 +58,8 @@ extension CarMasterApi.User: TargetType, AccessTokenAuthorizable {
             return .requestParameters(parameters: request.json, encoding: JSONEncoding.default)
         case .changePassword(let request):
             return .requestParameters(parameters: request.json, encoding: JSONEncoding.default)
+        case .info:
+            return .requestPlain
         }
     }
 

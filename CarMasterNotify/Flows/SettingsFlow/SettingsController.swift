@@ -9,8 +9,9 @@ class SettingsController: BaseTableViewController {
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var accessLevel: UILabel!
-    @IBOutlet weak var position: DefaultTextLabel!
+    @IBOutlet weak var position: UILabel!
     @IBOutlet weak var fullName: DefaultTextLabel!
+    @IBOutlet weak var phoneNumber: DefaultTextLabel!
     
     var viewModel: SettingsViewModel?
 

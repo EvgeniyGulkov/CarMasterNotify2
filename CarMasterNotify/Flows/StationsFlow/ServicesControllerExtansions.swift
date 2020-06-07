@@ -1,7 +1,7 @@
 import UIKit
 import RxDataSources
 
-extension ServicesController {
+extension StationsController {
     func createSearchController(navigationItem: UINavigationItem) {
         searchController = UISearchController(searchResultsController: nil)
         searchController?.obscuresBackgroundDuringPresentation = false

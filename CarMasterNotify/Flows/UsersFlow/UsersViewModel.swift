@@ -5,27 +5,19 @@ import SocketIO
 import CoreData
 
 class UsersViewModel {
-    let dateFormat = "dd.MM.yyyy"
     let disposeBag = DisposeBag()
-    var selectData: PublishSubject<Order> = PublishSubject()
+    var selectData: PublishSubject<User> = PublishSubject()
     var search: PublishSubject<String> = PublishSubject()
     var displayLastCell:PublishSubject<Int> = PublishSubject()
-    var data: PublishSubject<[OrdersDataSource]> = PublishSubject()
-    var orders: [Int:Order] = [:]
+    var data: PublishSubject<[UsersDataSource]> = PublishSubject()
+    var users: [String:User] = [:]
     var socketClient: SocketClient<CarMasterSocketApi>
     var networkProvider: CustomMoyaProvider<CarMasterApi>
     
     init(networkProvider: CustomMoyaProvider<CarMasterApi>, socketClient: SocketClient<CarMasterSocketApi>) {
         self.networkProvider = networkProvider
         self.socketClient = socketClient
-        
-        self.displayLastCell.subscribe(onNext: { index in
-            if self.orders.values.count > 20 && self.orders.values.count-1 == index {
-                self.getData(limit: 10, offset: index)
-            }
-        })
-            .disposed(by: disposeBag)
-        
+
         self.search.asObservable()
             .subscribe(onNext: { text in
                     self.getData(searchText: text.lowercased(), limit: 20, offset: 0)})
@@ -33,49 +25,19 @@ class UsersViewModel {
     }
     
     func getData(searchText: String = "", limit: Int = 20, offset: Int = 0) {
-        getOrdersFromLocalDatabase(searchText: searchText, limit: limit, offset: offset)
+        getUsersFromLocalDatabase(searchText: searchText, limit: limit, offset: offset)
         if !searchText.isEmpty {
-            self.orders.removeAll()
+            self.users.removeAll()
         }
-        Order.getOrdersFromServer(offset: offset, limit: limit, searchText: searchText) {[weak self] error in
-            if let error = error {
-                print(error)
-            } else {
-                self?.getOrdersFromLocalDatabase(searchText: searchText, limit: limit, offset: offset)
-            }
-        }
+        // get users from backend here
     }
     
-    func getOrdersFromLocalDatabase(searchText: String = "", limit: Int = 20, offset: Int = 0) {
-        let orders = Order.orders(offset: offset,
-                                  limit: limit,
-                                  searchText: searchText)
-        orders.forEach {order in
-            self.orders[Int(order.number)] = order
-        }
-        let sections = self.splitByDate(orders: self.orders)
-        var orderDataSources: [OrdersDataSource] = []
-        sections.forEach {section in
-            orderDataSources.append(OrdersDataSource(title: DateFormatter.formattedString(date: section.date, format: "dd.MM.yyyy") , items: section.items))
-        }
-        self.data.onNext(orderDataSources)
-    }
-    
-    func splitByDate (orders: [Int:Order]) -> [OrderSection] {
-        var sections = [String: OrderSection]()
-        orders.values.forEach { order in
-            let key = order.updateDate?.formatted(OrderSection.dateFormat)
-            if sections[key!] == nil {
-                sections[key!] = OrderSection(order: order)
-            } else {
-                if let index = sections[key!]?.items.firstIndex(where: { $0.updateDate! < order.updateDate!
-                }) {
-                    sections[key!]?.items.insert(order, at: index)
-                } else {
-                    sections[key!]?.items.append(order)
-                }
-            }
-        }
-        return Array (sections.values.map{$0}.sorted(by: {first,second in return first.date > second.date}))
+    func getUsersFromLocalDatabase(searchText: String = "", limit: Int = 20, offset: Int = 0) {
+        let user = User(context: DataController.shared.main)
+        user.accessLevel = AccessLevel.admin.string
+        user.firstName = "Vitaly"
+        user.lastName = "Cheremnov"
+        user.position = "Master"
+        self.data.onNext([UsersDataSource(title: "", items: [user])])
     }
 }

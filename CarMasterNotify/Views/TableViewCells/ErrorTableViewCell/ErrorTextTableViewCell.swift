@@ -16,14 +16,4 @@ class ErrorTextTableViewCell: BaseDarkTableViewCell {
         super.awakeFromNib()
         backgroundColor = .clear
     }
-
-    override func setupBindings() {
-                viewModel.textLabel
-                    .subscribe(onNext: { text in
-                        self.backgroundColor = UIColor.red
-                        self.errorLabel.text = text
-                        print(self.errorLabel.text)
-                    })
-            .disposed(by: disposeBag)
-    }
 }

@@ -16,7 +16,7 @@ class LoginViewModel {
     let sighUpButton: PublishSubject<Void> = PublishSubject()
     let forgotPasswordButton: PublishSubject<Void> = PublishSubject()
     var spacer: Observable<CGFloat>?
-    var errorCellViewModel: BaseTableViewCellViewModel?
+    let errorMessage = PublishSubject<String>()
 
     var validation: Observable<Bool>!
     var networkProvider: CustomMoyaProvider<CarMasterApi.Auth>
@@ -58,10 +58,23 @@ class LoginViewModel {
                 SecureManager.accessToken = accessToken
                 SecureManager.refreshToken = refreshToken
                 SecureManager.isAutorized = true
+                self?.getUserInfo()
                 self?.finishFlow!()
                 }
-            }, onError: {error in
-                self.errorCellViewModel?.textLabel.onNext(error.localizedDescription)
+            }, onError: {[weak self] error in
+                self?.errorMessage.onNext(error.localizedDescription)
+        })
+        .disposed(by: disposeBag)
+    }
+
+    func getUserInfo() {
+        CustomMoyaProvider<CarMasterApi.User>()
+        .request(.info)
+        .subscribe(onSuccess: { [weak self] response in
+            print(response)
+        }, onError: { [weak self] error in
+            self?.errorMessage.onNext(error.localizedDescription)
+            print(error)
         })
         .disposed(by: disposeBag)
     }

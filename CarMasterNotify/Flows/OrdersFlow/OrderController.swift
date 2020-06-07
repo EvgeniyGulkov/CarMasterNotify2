@@ -25,6 +25,7 @@ class OrderController: BaseTableViewController {
         self.title = "Orders"
         tableView.keyboardDismissMode = .interactive
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         self.refreshControl = UIRefreshControl()
         self.createSearchController(navigationItem: self.navigationItem)
         self.createRefreshControl()
@@ -51,13 +52,8 @@ class OrderController: BaseTableViewController {
             .disposed(by: disposeBag)
         
         self.viewModel.data
+            .do(onNext: {[weak self] _ in self?.refreshControl?.endRefreshing()})
             .bind(to: tableView.rx.items(dataSource: DataSourcesFactory.getOrdersDataSource()))
-            .disposed(by: disposeBag)
-
-        self.viewModel.data
-            .subscribe(onNext: {[weak self] _ in
-                self?.refreshControl?.endRefreshing()
-            })
             .disposed(by: disposeBag)
         
         tableView.rx.modelSelected(Order.self)

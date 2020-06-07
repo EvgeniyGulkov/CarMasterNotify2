@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Select Company Controller-->
+        <!--Add Station Controller-->
         <scene sceneID="c4o-7s-vzx">
             <objects>
-                <tableViewController storyboardIdentifier="SelectCompanyController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zsv-qd-eH0" customClass="SelectCompanyController" customModule="CarMasterNotify" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddStationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zsv-qd-eH0" customClass="AddStationController" customModule="CarMasterNotify" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="mqv-MD-h8V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7x-08-Ps8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="EmJ-BN-tbd"/>
@@ -52,8 +52,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Company Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="u5q-pl-ezn" customClass="DefaultTextField" customModule="CarMasterNotify" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="60"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Station Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="u5q-pl-ezn" customClass="DefaultTextField" customModule="CarMasterNotify" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="0.0" width="334" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="EoU-qF-o0v"/>
                                                     </constraints>
@@ -81,8 +81,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-7O-KYa">
-                                                    <rect key="frame" x="286" y="7" width="113" height="30"/>
-                                                    <state key="normal" title="Create company"/>
+                                                    <rect key="frame" x="261" y="7" width="98" height="30"/>
+                                                    <state key="normal" title="Create Station"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -100,7 +100,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="472-c4-kYz" customClass="RoundedCornerButton" customModule="CarMasterNotify" customModuleProvider="target">
-                                                    <rect key="frame" x="4" y="4.5" width="406" height="34"/>
+                                                    <rect key="frame" x="4" y="4.5" width="366" height="34"/>
                                                     <color key="backgroundColor" red="0.3078134307" green="0.40722576189999998" blue="0.57951300760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="hY6-US-7N1"/>

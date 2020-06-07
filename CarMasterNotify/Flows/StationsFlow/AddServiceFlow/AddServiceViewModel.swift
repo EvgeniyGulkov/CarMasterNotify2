@@ -9,8 +9,8 @@
 import Foundation
 import RxSwift
 
-class SelectCompanyViewModel {
-    let title: Single<String> = Single.just("Select Company")
+class AddStationViewModel {
+    let title: Single<String> = Single.just("Add Station")
     private let disposeBag = DisposeBag()
     var networkProvider: CustomMoyaProvider<CarMasterApi>
     var backButtonTouched = PublishSubject<Void>()

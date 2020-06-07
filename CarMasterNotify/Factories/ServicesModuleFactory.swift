@@ -1,5 +1,6 @@
 import UIKit
 
-protocol ServicesModuleFactory {
-    func makeServicesOutput(viewModel: ServicesViewModel) -> ServicesController
+protocol StationsModuleFactory {
+    func makeStationsOutput(viewModel: StationsViewModel) -> StationsController
+    func makeAddStationOutput(viewModel: AddStationViewModel) -> AddStationController
 }

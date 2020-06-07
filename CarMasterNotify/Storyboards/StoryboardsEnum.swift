@@ -10,7 +10,7 @@ enum Storyboards: String {
     case nameDialogue = "NameDialogue"
     case details = "Details"
     case message = "Message"
-    case selectCompany = "SelectCompany"
-    case services = "Services"
+    case addStation = "AddStation"
+    case Stations = "Stations"
     case users = "Users"
 }

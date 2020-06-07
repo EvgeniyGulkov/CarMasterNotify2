@@ -53,9 +53,11 @@ class AuthDataSourceFactory {
                             cell.button.setEnabled(isEnabled: $0)})
                         .disposed(by: viewModel.disposeBag)
                     return cell
-                case .error(let error):
+                case .error:
                     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.error, for: indexPath) as! ErrorTextTableViewCell
-                    cell.errorLabel.text = error
+                    viewModel.errorMessage
+                        .bind(to: cell.errorLabel.rx.text)
+                        .disposed(by: viewModel.disposeBag)
                     return cell
                 case .twoButtons:
                     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.twoButtons, for: indexPath) as! TwoButtonsTableViewCell

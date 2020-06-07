@@ -47,11 +47,9 @@ class ViewModelFactory {
         return viewModel
     }
 
-    static func makeServicesViewModel() -> ServicesViewModel {
-        let socketClient = SocketClient<CarMasterSocketApi>()
+    static func makeStationsViewModel() -> StationsViewModel {
         let networkProvider = CustomMoyaProvider<CarMasterApi>()
-        let viewModel = ServicesViewModel(networkProvider: networkProvider,
-                                          socketClient: socketClient)
+        let viewModel = StationsViewModel(networkProvider: networkProvider)
         return viewModel
     }
     
@@ -62,9 +60,9 @@ class ViewModelFactory {
         return viewModel
     }
 
-    static func makeSelectCompanyViewModel() -> SelectCompanyViewModel {
+    static func makeSelectCompanyViewModel() -> AddStationViewModel {
         let networkProvider = CustomMoyaProvider<CarMasterApi>()
-        let viewModel = SelectCompanyViewModel(networkProvider: networkProvider)
+        let viewModel = AddStationViewModel(networkProvider: networkProvider)
         return viewModel
     }
 }

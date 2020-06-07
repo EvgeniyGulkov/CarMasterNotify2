@@ -33,7 +33,7 @@ class SettingsViewModel {
                 if indexpath.section == 1 {
                     switch indexpath.row {
                     case 0: self.showNameChangeDialogue!()
-                    case 2: self.showPasswordChangeDialogue!()
+                    case 1: self.showPasswordChangeDialogue!()
                     default: break
                     }
                 }

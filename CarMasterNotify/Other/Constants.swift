@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     struct SecureManager {
-        static let service = "CarMasterService"
+        static let Station = "CarMasterStation"
         static let accessTokenKey = "AccessTokenKey"
         static let refreshTokenKey = "RefreshTokenKey"
         static let isAuthorizedKey = "IsAuthorizedKey"
@@ -25,9 +25,11 @@ struct Constants {
         static let error = "ErrorKey"
         static let spacer = "SpacerKey"
         static let twoButtons = "TwoButtonsKey"
+        static let Station = "StationKey"
+        static let user = "UserKey"
     }
 
     struct CarMasterApi {
-        static let baseUrl = URL(string: "http://192.168.0.57:8000")!
+        static let baseUrl = URL(string: "http://192.168.0.104:8000")!
     }
 }

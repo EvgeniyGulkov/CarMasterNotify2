@@ -33,7 +33,9 @@ class SettingsCoordinator: BaseCoordinator {
     private func showPasswordChangeDialogue() {
         let viewModel = ViewModelFactory.makePasswordDialogueViewModel()
         let passwordChangeDialogueOutput = factory.makeChangePasswordDialogueOutput(viewModel: viewModel)
-        
+        let controller = NavigationController(rootViewController: passwordChangeDialogueOutput)
+        controller.modalPresentationStyle = .fullScreen
+
         viewModel.tapCancel.asObservable()
             .subscribe(onNext: {passwordChangeDialogueOutput.dismiss(animated: true, completion: nil)})
             .disposed(by: disposeBag)
@@ -42,7 +44,7 @@ class SettingsCoordinator: BaseCoordinator {
             .subscribe(onNext: {passwordChangeDialogueOutput.dismiss(animated: true, completion: nil)})
             .disposed(by: disposeBag)
         
-        router.present(passwordChangeDialogueOutput, animated: true)
+        router.present(controller, animated: true)
     }
     
     private func showNameChangeDialogue() {

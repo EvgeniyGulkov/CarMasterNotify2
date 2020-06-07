@@ -10,12 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SelectCompanyController: BaseTableViewController {
+class AddStationController: BaseTableViewController {
     private let disposeBag = DisposeBag()
 
     @IBOutlet weak var spacerHeight: NSLayoutConstraint!
 
-    var viewModel: SelectCompanyViewModel!
+    var viewModel: AddStationViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +24,9 @@ class SelectCompanyController: BaseTableViewController {
     }
 
     func setupUI() {
+        self.tableView.dataSource = self
         spacerHeight.constant = self.view.frame.height*0.25
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.hidesBackButton = true
     }
 
     func setupBindings() {
@@ -39,10 +39,5 @@ class SelectCompanyController: BaseTableViewController {
         self.navigationItem.leftBarButtonItem?.rx.tap
             .bind(to: self.viewModel.backButtonTouched)
             .disposed(by: disposeBag)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.viewModel?.finishFlow!()
     }
 }

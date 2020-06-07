@@ -42,6 +42,12 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="Station" representedClassName="Station" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="station" inverseEntity="User"/>
+    </entity>
     <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
         <attribute name="accessLevel" attributeType="String" customClassName="AccessLevel"/>
         <attribute name="email" optional="YES" attributeType="String"/>
@@ -50,6 +56,7 @@
         <attribute name="nickName" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="position" attributeType="String"/>
+        <relationship name="station" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Station" inverseName="user" inverseEntity="Station"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="email"/>
@@ -58,9 +65,10 @@
         </uniquenessConstraints>
     </entity>
     <elements>
+        <element name="Station" positionX="117" positionY="72" width="128" height="103"/>
         <element name="Message" positionX="155.08984375" positionY="56.21875" width="128" height="148"/>
         <element name="Order" positionX="-54" positionY="0" width="128" height="193"/>
         <element name="Reason" positionX="117" positionY="54" width="128" height="103"/>
-        <element name="User" positionX="285.3828125" positionY="-37.06640625" width="128" height="148"/>
+        <element name="User" positionX="285.3828125" positionY="-37.06640625" width="128" height="163"/>
     </elements>
 </model>

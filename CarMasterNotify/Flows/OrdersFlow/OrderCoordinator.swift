@@ -39,11 +39,11 @@ final class OrderCoordinator: BaseCoordinator {
     
     func showCompleteAction() -> (DetailsController, Int) -> () {
         return { controller, index in
-            let completeMenu = UIAlertController(title: nil, message: ActionStrings.message.rawValue, preferredStyle: .actionSheet)
+            let completeMenu = UIAlertController(title: nil, message: "Need to add string", preferredStyle: .actionSheet)
                  
-            let markCompleteAction = UIAlertAction(title: ActionStrings.ok.rawValue, style: .default, handler: {action in //controller.viewModel!.changeStatus(index: index)
+            let markCompleteAction = UIAlertAction(title: "Ok", style: .default, handler: {action in //controller.viewModel!.changeStatus(index: index)
             })
-            let cancelAction = UIAlertAction(title: ActionStrings.cancel.rawValue, style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
                 completeMenu.addAction(markCompleteAction)
                 completeMenu.addAction(cancelAction)
               

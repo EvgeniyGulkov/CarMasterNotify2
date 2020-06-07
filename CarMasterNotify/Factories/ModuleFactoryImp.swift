@@ -7,9 +7,8 @@ final class ModuleFactoryImp:
     SettingsModuleFactory,
     MainModuleFactory,
     DetailsModuleFactory,
-    SelectCompanyModuleFactory,
     UsersModuleFactory,
-    ServicesModuleFactory
+    StationsModuleFactory
 {
     let disposeBag = DisposeBag()
 
@@ -20,13 +19,13 @@ final class ModuleFactoryImp:
     }
 
     func makeMainOutput() -> TabbarController {
-        let servicesNavigationController = NavigationController()
+        let StationsNavigationController = NavigationController()
         let ordersNavigationController = NavigationController()
         let settingsNavigationController = NavigationController()
         let usersNavigationController = NavigationController()
 
         let controller = TabbarController.controllerFromStoryboard(.main)
-        controller.viewControllers = [servicesNavigationController,
+        controller.viewControllers = [StationsNavigationController,
                                       ordersNavigationController,
                                       usersNavigationController,
                                       settingsNavigationController]
@@ -88,14 +87,14 @@ final class ModuleFactoryImp:
         return controller
     }
 
-    func makeServicesOutput(viewModel: ServicesViewModel) -> ServicesController {
-        let controller = ServicesController.controllerFromStoryboard(.services)
+    func makeStationsOutput(viewModel: StationsViewModel) -> StationsController {
+        let controller = StationsController.controllerFromStoryboard(.Stations)
         controller.viewModel = viewModel
         return controller
     }
 
-    func makeSelectCompanyOutput(viewModel: SelectCompanyViewModel) -> SelectCompanyController {
-        let controller = SelectCompanyController.controllerFromStoryboard(.selectCompany)
+    func makeAddStationOutput(viewModel: AddStationViewModel) -> AddStationController {
+        let controller = AddStationController.controllerFromStoryboard(.addStation)
         controller.viewModel = viewModel
         return controller
     }

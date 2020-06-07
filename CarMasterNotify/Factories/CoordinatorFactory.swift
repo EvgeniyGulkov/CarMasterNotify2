@@ -11,9 +11,9 @@ protocol CoordinatorFactory {
     func makeSettingsCoordinator() -> SettingsCoordinator
     func makeSettingsCoordinator(navController: UINavigationController?) -> SettingsCoordinator
 
-    func makeServicesCoordinator() -> ServicesCoordinator
-    func makeServicesCoordinator(navController: UINavigationController?) ->
-        ServicesCoordinator
+    func makeStationsCoordinator() -> StationsCoordinator
+    func makeStationsCoordinator(navController: UINavigationController?) ->
+        StationsCoordinator
 
     func makeUsersCoordinator() -> UsersCoordinator
     func makeUsersCoordinator(navController: UINavigationController?) ->
