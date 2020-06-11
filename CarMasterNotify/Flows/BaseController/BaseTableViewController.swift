@@ -25,9 +25,8 @@ class BaseTableViewController: UITableViewController {
             return
         }
         header.textLabel?.textColor = Theme.Color.blueColor
-        let controllerName = NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
         if let text = header.textLabel?.text {
-            header.textLabel?.text = NSLocalizedString(text, tableName: controllerName, comment: "")
+            header.textLabel?.text = NSLocalizedString(text, tableName: "Localization", comment: "")
         }
     }
 }

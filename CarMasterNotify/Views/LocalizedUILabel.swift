@@ -8,15 +8,17 @@
 
 class LocalizedLabel: UILabel {
 
-    @IBInspectable var controllerName: String = "" {
+    @IBInspectable var localized: Bool = false {
         didSet {
-            localize(controllerName)
+            if localized {
+                localize()
+            }
         }
     }
 
-    func localize(_ controllerName: String) {
+    func localize() {
         if let text = self.text {
-            self.text = NSLocalizedString(text, tableName: controllerName, comment: "")
+            self.text = NSLocalizedString(text, tableName: "Localization", comment: "")
         }
     }
 }

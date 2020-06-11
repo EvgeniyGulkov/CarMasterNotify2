@@ -91,8 +91,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="storyBoard" value="Settings"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="controllerName" value="SettingsController"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="localized" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evgeny" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QD-0a-Xjl" customClass="InfoTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
@@ -133,8 +132,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="storyBoard" value="Settings"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="controllerName" value="SettingsController"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="localized" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
@@ -164,7 +162,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="controllerName" value="SettingsController"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="localized" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
@@ -199,8 +197,8 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="controllerName" value="SettingsController"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="localized" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>

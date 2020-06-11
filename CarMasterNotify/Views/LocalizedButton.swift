@@ -8,15 +8,17 @@
 
 class LocalizedButton: UIButton {
 
-    @IBInspectable var controllerName: String = "" {
+    @IBInspectable var localized: Bool = false {
         didSet {
-            localize(controllerName)
+            if localized {
+                localize()
+            }
         }
     }
 
-    func localize(_ controllerName: String) {
+    func localize() {
         if let text = self.titleLabel?.text {
-            let title = NSLocalizedString(text, tableName: controllerName, comment: "")
+            let title = NSLocalizedString(text, tableName: "Localization", comment: "")
             setTitle(title, for: [])
         }
     }

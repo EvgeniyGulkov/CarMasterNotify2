@@ -87,9 +87,11 @@
 		84532B35238EA3A600CC8676 /* NameDialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84532B34238EA3A600CC8676 /* NameDialogue.storyboard */; };
 		84611BD5248BE62800F31E10 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84611BD4248BE62800F31E10 /* Schedule.storyboard */; };
 		84611BD7248BEC0500F31E10 /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84611BD6248BEC0500F31E10 /* CalendarItem.swift */; };
-		84611BDA24911D1800F31E10 /* LocalisedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84611BD924911D1800F31E10 /* LocalisedUILabel.swift */; };
+		84611BDA24911D1800F31E10 /* LocalizedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84611BD924911D1800F31E10 /* LocalizedUILabel.swift */; };
 		84611BDD249132B400F31E10 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84611BDF249132B400F31E10 /* Localization.strings */; };
 		84611BE12491331100F31E10 /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84611BE02491331100F31E10 /* LocalizedButton.swift */; };
+		84611BEE2491C17600F31E10 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84611BED2491C17600F31E10 /* Localization.swift */; };
+		84611BF02491C18300F31E10 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84611BEF2491C18300F31E10 /* Assets.swift */; };
 		846E13C123F8235E00A77C42 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E13C023F8235E00A77C42 /* DataController.swift */; };
 		846E13C323F829C100A77C42 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E13C223F829C100A77C42 /* Reason.swift */; };
 		84724AAA247A939100C9C150 /* StationTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84724AA9247A939100C9C150 /* StationTableViewCellViewModel.swift */; };
@@ -255,10 +257,12 @@
 		84532B34238EA3A600CC8676 /* NameDialogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameDialogue.storyboard; sourceTree = "<group>"; };
 		84611BD4248BE62800F31E10 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		84611BD6248BEC0500F31E10 /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
-		84611BD924911D1800F31E10 /* LocalisedUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedUILabel.swift; sourceTree = "<group>"; };
+		84611BD924911D1800F31E10 /* LocalizedUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedUILabel.swift; sourceTree = "<group>"; };
 		84611BDE249132B400F31E10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		84611BE02491331100F31E10 /* LocalizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedButton.swift; sourceTree = "<group>"; };
 		84611BE22491348800F31E10 /* CarMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CarMaster-Bridging-Header.h"; sourceTree = "<group>"; };
+		84611BED2491C17600F31E10 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		84611BEF2491C18300F31E10 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		846E13C023F8235E00A77C42 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		846E13C223F829C100A77C42 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
 		84724AA9247A939100C9C150 /* StationTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -388,7 +392,7 @@
 				6701A8172466762A001EA1B5 /* DefaultTextLabel.swift */,
 				6730783D2469366D00260982 /* DefaultTextField.swift */,
 				848B8B372469084D007ACD29 /* RoundedCornerButton.swift */,
-				84611BD924911D1800F31E10 /* LocalisedUILabel.swift */,
+				84611BD924911D1800F31E10 /* LocalizedUILabel.swift */,
 				84611BE02491331100F31E10 /* LocalizedButton.swift */,
 				848B8B352468FEAB007ACD29 /* InfoTextLabel.swift */,
 			);
@@ -398,6 +402,8 @@
 		6701A80F24666A79001EA1B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84611BEF2491C18300F31E10 /* Assets.swift */,
+				84611BED2491C17600F31E10 /* Localization.swift */,
 				84611BD824911C8100F31E10 /* Localization */,
 				8440589223C2297C00BEE9DF /* carmasterapi.cer */,
 				84BEC0BD2349C1040054FE21 /* Assets.xcassets */,
@@ -1182,11 +1188,15 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/CarMasterNotify/Resources/Localization/en.lproj/Localization.strings",
+				"$(SRCROOT)/CarMasterNotify/Resources/Assets.xcassets",
 			);
 			name = "Swiftgen Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SRCROOT)/CarMasterNotify/Resources/Localization.swift",
+				"$(SRCROOT)/CarMasterNotify/Resources/Assets.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellScript = "sh \"$SRCROOT/.swiftgen.sh\" \"$PODS_ROOT\"\n";
@@ -1267,7 +1277,7 @@
 				848B8B382469084D007ACD29 /* RoundedCornerButton.swift in Sources */,
 				8475C01723F0627100F19B0D /* Message.swift in Sources */,
 				8421ED4B23A31ECD002091FF /* LoginViewModel.swift in Sources */,
-				84611BDA24911D1800F31E10 /* LocalisedUILabel.swift in Sources */,
+				84611BDA24911D1800F31E10 /* LocalizedUILabel.swift in Sources */,
 				8421ED3A23A31E20002091FF /* DataSourcesFactory.swift in Sources */,
 				672DE38024791704008098B6 /* AuthDataSourceFactory.swift in Sources */,
 				844A9C292479934900F27BE7 /* ServiceDataSource.swift in Sources */,
@@ -1294,6 +1304,7 @@
 				674C68DA2478FBDB0029E91A /* ErrorTextTableViewCell.swift in Sources */,
 				84EA85C924782D0F0073E5E3 /* ServicesViewModel.swift in Sources */,
 				84943A0E247169AC009DFE51 /* StringExtensions.swift in Sources */,
+				84611BF02491C18300F31E10 /* Assets.swift in Sources */,
 				840539DF2352CCA50042C26F /* CoordinatorFactoryImp.swift in Sources */,
 				8478BEBE24758B9500923B34 /* AddServiceController.swift in Sources */,
 				848B8B2724684DDA007ACD29 /* CellState.swift in Sources */,
@@ -1351,6 +1362,7 @@
 				84EA85C624782D060073E5E3 /* ServicesController.swift in Sources */,
 				8437AB1223C3518600621A49 /* CustomMoyaProvider.swift in Sources */,
 				84D4C17023741A5700DB8F58 /* SettingsViewModel.swift in Sources */,
+				84611BEE2491C17600F31E10 /* Localization.swift in Sources */,
 				84724AAA247A939100C9C150 /* StationTableViewCellViewModel.swift in Sources */,
 				8421ED3C23A31E20002091FF /* ReasonsCell.swift in Sources */,
 				84E6F40024011C0B003FFE08 /* User.swift in Sources */,
