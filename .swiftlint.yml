@@ -1,0 +1,23 @@
+disabled_rules:
+- colon
+- comma
+- control_statement
+
+opt_in_rules:
+- empty_count
+- missing_docs
+
+included:
+  - CarMasterNotify
+excluded:
+  - Pods
+
+line_length: 130
+identifier_name:
+  excluded: # excluded via string array
+    - at
+    - id
+    - on
+    - t
+
+warning_threshold: 35

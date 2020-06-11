@@ -1,11 +1,14 @@
-import UIKit
-
 enum Storyboards: String {
     case main = "Main"
     case orders = "Orders"
-    case details = "Details"
     case auth = "Auth"
+    case signUp = "SignUp"
     case settings = "Settings"
     case passwordDialogue = "PasswordDialogue"
     case nameDialogue = "NameDialogue"
+    case details = "Details"
+    case message = "Message"
+    case addStation = "AddStation"
+    case stations = "Stations"
+    case users = "Users"
 }

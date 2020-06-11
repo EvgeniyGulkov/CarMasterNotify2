@@ -1,0 +1,9 @@
+/* 
+  CarMasterError.strings
+  CarMasterNotify
+
+  Created by Gulkov on 10.05.2020.
+  Copyright © 2020 Admin. All rights reserved.
+*/
+
+"userNotFound"          = "User not found. You will be disconneted";

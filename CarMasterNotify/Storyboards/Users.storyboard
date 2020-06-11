@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Users Controller-->
+        <scene sceneID="jbX-f5-QSX">
+            <objects>
+                <tableViewController storyboardIdentifier="UsersController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c2o-33-YVR" customClass="UsersController" customModule="CarMasterNotify" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Y6B-j2-4XN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserKey" rowHeight="90" id="Qzs-7q-UcB" customClass="UserTableViewCell" customModule="CarMasterNotify" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.5" width="374" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qzs-7q-UcB" id="znS-d6-c3u">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="jIK-NA-syT" userLabel="Avatar">
+                                            <rect key="frame" x="10" y="10" width="70" height="70"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="uw8-r5-UZD"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QD2-0C-SCs" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
+                                            <rect key="frame" x="90" y="10" width="243" height="26"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="l0z-4c-3k5" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
+                                            <rect key="frame" x="90" y="36" width="243" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="MoY-jQ-UEf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.4723562925" green="0.65963821600000005" blue="0.29742616449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="txtColor">
+                                                    <color key="value" red="0.4723562925" green="0.65963821600000005" blue="0.29742616449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0Z-Hj-ZVm">
+                                            <rect key="frame" x="90" y="54" width="243" height="26"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pgg-oY-ekr" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="121.5" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="fDp-U6-Tfr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="txtColor">
+                                                            <color key="value" red="0.4723562925" green="0.65963821600000005" blue="0.29742616449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offline" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W1o-yk-7Yq" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
+                                                    <rect key="frame" x="121.5" y="0.0" width="121.5" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="Alx-VD-rHK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="txtColor">
+                                                            <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jIK-NA-syT" firstAttribute="leading" secondItem="znS-d6-c3u" secondAttribute="leading" constant="10" id="0JD-pg-NI0"/>
+                                        <constraint firstItem="jIK-NA-syT" firstAttribute="width" secondItem="jIK-NA-syT" secondAttribute="height" multiplier="1:1" id="1uL-vT-QZ6"/>
+                                        <constraint firstItem="l0z-4c-3k5" firstAttribute="centerY" secondItem="jIK-NA-syT" secondAttribute="centerY" id="5fk-67-4yc"/>
+                                        <constraint firstItem="jIK-NA-syT" firstAttribute="centerY" secondItem="znS-d6-c3u" secondAttribute="centerY" id="9qd-5H-S75"/>
+                                        <constraint firstItem="N0Z-Hj-ZVm" firstAttribute="trailing" secondItem="l0z-4c-3k5" secondAttribute="trailing" id="RIb-AM-SEY"/>
+                                        <constraint firstAttribute="trailing" secondItem="QD2-0C-SCs" secondAttribute="trailing" constant="10" id="TO7-cB-k9N"/>
+                                        <constraint firstItem="l0z-4c-3k5" firstAttribute="trailing" secondItem="QD2-0C-SCs" secondAttribute="trailing" id="V0a-c0-WEE"/>
+                                        <constraint firstItem="l0z-4c-3k5" firstAttribute="leading" secondItem="QD2-0C-SCs" secondAttribute="leading" id="YvQ-Jq-nWd"/>
+                                        <constraint firstAttribute="bottom" secondItem="N0Z-Hj-ZVm" secondAttribute="bottom" constant="10" id="atS-Mg-l7w"/>
+                                        <constraint firstItem="N0Z-Hj-ZVm" firstAttribute="top" secondItem="l0z-4c-3k5" secondAttribute="bottom" id="cQh-aj-gaH"/>
+                                        <constraint firstItem="N0Z-Hj-ZVm" firstAttribute="leading" secondItem="l0z-4c-3k5" secondAttribute="leading" id="exX-To-X0y"/>
+                                        <constraint firstItem="QD2-0C-SCs" firstAttribute="top" secondItem="znS-d6-c3u" secondAttribute="top" constant="10" id="nNi-GY-yTK"/>
+                                        <constraint firstItem="QD2-0C-SCs" firstAttribute="leading" secondItem="jIK-NA-syT" secondAttribute="trailing" constant="10" id="r6W-gx-fU3"/>
+                                        <constraint firstItem="l0z-4c-3k5" firstAttribute="top" secondItem="QD2-0C-SCs" secondAttribute="bottom" id="sfr-qY-kZ3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.1816080346" green="0.18340613389999999" blue="0.18340613389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="accessLevel" destination="Pgg-oY-ekr" id="hvF-HI-SIh"/>
+                                    <outlet property="avatarImageView" destination="jIK-NA-syT" id="URl-b0-jqr"/>
+                                    <outlet property="status" destination="W1o-yk-7Yq" id="V9T-LS-WAT"/>
+                                    <outlet property="userFullName" destination="QD2-0C-SCs" id="4fU-tp-8e1"/>
+                                    <outlet property="userPosition" destination="l0z-4c-3k5" id="uw0-vH-RfO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="c2o-33-YVR" id="UZK-lD-xpx"/>
+                            <outlet property="delegate" destination="c2o-33-YVR" id="rUs-Dv-I8E"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9n-zR-Eyx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="775.44642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="avatar_placeholder" width="50" height="50"/>
+    </resources>
+</document>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stations Controller-->
+        <scene sceneID="Q9s-TR-foP">
+            <objects>
+                <tableViewController storyboardIdentifier="StationsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V20-6M-HuQ" customClass="StationsController" customModule="CarMasterNotify" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="COf-dx-ml1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StationKey" rowHeight="90" id="egp-Gi-ar0" customClass="StationTableViewCell" customModule="CarMasterNotify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="egp-Gi-ar0" id="WmY-82-0D5">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Oi-Ci-9ey">
+                                            <rect key="frame" x="20" y="5" width="374" height="80"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car_Station" translatesAutoresizingMaskIntoConstraints="NO" id="2YQ-No-nWV" userLabel="Station Logo">
+                                                    <rect key="frame" x="10" y="15" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="CIU-2T-jTN"/>
+                                                        <constraint firstAttribute="width" secondItem="2YQ-No-nWV" secondAttribute="height" multiplier="1:1" id="xVG-ny-qJT"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stationName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lo4-53-gJV" userLabel="StationName" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
+                                                    <rect key="frame" x="70" y="10" width="284" height="30.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aaaaaaaaaaaaaaaaa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GVF-Ya-3Kj" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
+                                                    <rect key="frame" x="70" y="40" width="284" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="OfQ-3Y-hd6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Lo4-53-gJV" secondAttribute="trailing" constant="20" id="2Wy-8a-e7T"/>
+                                                <constraint firstAttribute="bottom" secondItem="GVF-Ya-3Kj" secondAttribute="bottom" constant="10" id="4eE-HA-zfI"/>
+                                                <constraint firstItem="2YQ-No-nWV" firstAttribute="centerY" secondItem="8Oi-Ci-9ey" secondAttribute="centerY" id="4up-TN-vq4"/>
+                                                <constraint firstItem="Lo4-53-gJV" firstAttribute="leading" secondItem="2YQ-No-nWV" secondAttribute="trailing" constant="10" id="ICd-VJ-3EM"/>
+                                                <constraint firstItem="GVF-Ya-3Kj" firstAttribute="top" secondItem="Lo4-53-gJV" secondAttribute="bottom" constant="-0.5" id="dup-lg-j7c"/>
+                                                <constraint firstItem="Lo4-53-gJV" firstAttribute="top" secondItem="8Oi-Ci-9ey" secondAttribute="top" constant="10" id="l4Y-k7-fPK"/>
+                                                <constraint firstItem="GVF-Ya-3Kj" firstAttribute="trailing" secondItem="Lo4-53-gJV" secondAttribute="trailing" id="nKi-t8-1Fx"/>
+                                                <constraint firstItem="2YQ-No-nWV" firstAttribute="leading" secondItem="8Oi-Ci-9ey" secondAttribute="leading" constant="10" id="xzS-e1-dqO"/>
+                                                <constraint firstItem="GVF-Ya-3Kj" firstAttribute="leading" secondItem="Lo4-53-gJV" secondAttribute="leading" id="zQa-o9-Fyk"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8Oi-Ci-9ey" firstAttribute="leading" secondItem="WmY-82-0D5" secondAttribute="leading" constant="20" id="N4g-YT-rnx"/>
+                                        <constraint firstAttribute="trailing" secondItem="8Oi-Ci-9ey" secondAttribute="trailing" constant="20" id="ND4-Qd-ruL"/>
+                                        <constraint firstItem="8Oi-Ci-9ey" firstAttribute="top" secondItem="WmY-82-0D5" secondAttribute="top" constant="5" id="bvf-be-W8l"/>
+                                        <constraint firstAttribute="bottom" secondItem="8Oi-Ci-9ey" secondAttribute="bottom" constant="5" id="gv3-0B-0hS"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.1816080346" green="0.18340613389999999" blue="0.18340613389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="StationAddress" destination="GVF-Ya-3Kj" id="AfZ-2A-uxR"/>
+                                    <outlet property="StationLogo" destination="2YQ-No-nWV" id="UCC-mX-faG"/>
+                                    <outlet property="StationName" destination="Lo4-53-gJV" id="NYF-c6-4tW"/>
+                                    <outlet property="roundedView" destination="8Oi-Ci-9ey" id="FbH-SB-48c"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="V20-6M-HuQ" id="CqR-xK-8tx"/>
+                            <outlet property="delegate" destination="V20-6M-HuQ" id="0Aj-hC-wEb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FN2-0I-bDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="775.44642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="car_Station" width="50" height="34"/>
+    </resources>
+</document>

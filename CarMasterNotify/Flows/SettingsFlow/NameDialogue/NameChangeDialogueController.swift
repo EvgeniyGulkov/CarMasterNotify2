@@ -1,17 +1,14 @@
-import UIKit
 import RxSwift
 import RxCocoa
 
-class NameChangeDialogueController: UIViewController {
-    
+class NameChangeDialogueController: BaseTableViewController {
+
     let disposeBag = DisposeBag()
-    
-    @IBOutlet weak var nameTextField: RoundCornerTextField!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
-    @IBOutlet weak var doneButton: UIBarButtonItem!
-    
+
+    @IBOutlet weak var nameTextField: UITextField!
+    var doneButton: UIBarButtonItem?
     var viewModel: NameChangeViewModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -19,30 +16,29 @@ class NameChangeDialogueController: UIViewController {
     }
 
     func setupUI() {
-         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
-         self.view.addGestureRecognizer(tapGesture)
+        tableView.keyboardDismissMode = .onDrag
+        tableView.dataSource = self
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
+        doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: nil)
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.rightBarButtonItem = doneButton
+        self.navigationItem.leftBarButtonItem = cancelItem
      }
-     
+
     func setupBindings() {
         self.viewModel?.userName!.asObservable()
             .observeOn(MainScheduler.instance)
             .bind(to: self.nameTextField.rx.text)
             .disposed(by: disposeBag)
-        
-         cancelButton.rx.tap
-             .bind(to: self.viewModel!.tapCancel)
-             .disposed(by: disposeBag)
-         
-         doneButton.rx.tap
-            .map{return self.nameTextField.text!}
+
+         doneButton?.rx.tap
+            .map {return self.nameTextField.text!}
             .bind(to: self.viewModel!.tapDone)
             .disposed(by: disposeBag)
     }
-     
-    @objc
-    func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-        self.nameTextField.resignFirstResponder()
-    }
-    
-}
 
+    @objc
+    func close() {
+        self.dismiss(animated: true, completion: nil)
+    }
+}

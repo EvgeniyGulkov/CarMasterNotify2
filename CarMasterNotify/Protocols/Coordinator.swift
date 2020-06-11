@@ -6,8 +6,6 @@
 //  Copyright © 2019 Admin. All rights reserved.
 //
 
-import Foundation
-
 protocol Coordinator:class {
     func start()
     func start(with option: DeepLinkOption?)
