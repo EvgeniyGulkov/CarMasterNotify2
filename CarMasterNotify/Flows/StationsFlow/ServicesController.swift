@@ -1,4 +1,3 @@
-import UIKit
 import RxSwift
 import RxCocoa
 import RxKeyboard
@@ -9,7 +8,7 @@ class StationsController: BaseTableViewController {
 
     var viewModel: StationsViewModel!
     var searchController: UISearchController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -29,13 +28,13 @@ class StationsController: BaseTableViewController {
             .do(onNext: {[weak self] _ in self?.refreshControl?.endRefreshing()})
             .bind(to: tableView.rx.items(dataSource: StationDataSourceFactory.stationDataSource(viewModel: self.viewModel)))
             .disposed(by: disposeBag)
-        
+
         tableView.rx.modelSelected(Station.self)
             .bind(to: viewModel.selectData)
             .disposed(by: disposeBag)
 
         tableView.rx.willDisplayCell
-            .map{cell, index in return index.section*2+index.row+1}
+            .map {_, index in return index.section*2+index.row+1}
             .bind(to: self.viewModel.displayLastCell)
             .disposed(by: disposeBag)
 

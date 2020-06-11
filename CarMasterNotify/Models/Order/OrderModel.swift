@@ -1,8 +1,7 @@
-import UIKit
 import CoreData
 
 struct OrderModel: Codable {
-    
+
     var orderNumber: Int?
     var createDate: Date?
     var updateDate: Date?
@@ -11,7 +10,7 @@ struct OrderModel: Codable {
     var model: String?
     var status: String?
     var vinNumber: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case plateNumber = "plate"
         case orderNumber = "orderNum"
@@ -22,7 +21,7 @@ struct OrderModel: Codable {
         case createDate = "createDate"
         case updateDate = "updateDate"
     }
-    
+
     func toManagedObject() -> Order? {
         guard let orderNumber = orderNumber else {
             return nil

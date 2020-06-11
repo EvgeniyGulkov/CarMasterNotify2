@@ -1,0 +1,20 @@
+/* 
+  Stations.strings
+  CarMasterNotify
+
+  Created by Admin on 10.06.2020.
+  Copyright © 2020 Admin. All rights reserved.
+*/
+
+// LABELS
+"nickName" = "Nickname";
+"changePassword" = "Change password";
+"allowNotifications" = "Allow notifications";
+
+// SECTION TITLES
+"ACCOUNTSETTINGS" = "ACCOUNT SETTINGS";
+"NOTIFICATIONSETTINGS" = "NOTIFICATION SETTINGS";
+"USERINFO" = "USER INFO";
+
+//BUTTONS
+"signOut" = "Sign out";

@@ -1,4 +1,3 @@
-import Foundation
 import CoreData
 
 struct MessageModel: Detail, Codable {
@@ -7,7 +6,7 @@ struct MessageModel: Detail, Codable {
     var userName: String?
     var isMy: Bool?
     var id: String?
-    
+
     init(id: String, text: String, date: Date = Date(), userName: String = "", isMy: Bool = true) {
         self.text = text
         self.date = date
@@ -15,7 +14,7 @@ struct MessageModel: Detail, Codable {
         self.isMy = isMy
         self.id = id
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case text = "message"
         case userName = "username"
@@ -23,7 +22,7 @@ struct MessageModel: Detail, Codable {
         case isMy
         case id = "_id"
     }
-    
+
     @discardableResult
     func toManagedObject(order: Order) -> Message {
         let context = DataController.shared.main
@@ -36,14 +35,5 @@ struct MessageModel: Detail, Codable {
         message.username = self.userName
         message.isMy = self.isMy!
         return message
-    }
-    
-    static func fromData(data: Any) -> [MessageModel] {
-        let json = try! JSONSerialization.data(withJSONObject: data, options: [])
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
-        return try! jsonDecoder.decode([MessageModel].self, from: json).sorted(by: {first, second in
-            first.date! < second.date!
-        })
     }
 }

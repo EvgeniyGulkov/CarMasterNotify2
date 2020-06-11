@@ -14,5 +14,5 @@ class UserTableViewCell: BaseDarkTableViewCell {
     @IBOutlet weak var userPosition: DefaultTextLabel!
     @IBOutlet weak var accessLevel: DefaultTextLabel!
     @IBOutlet weak var status: DefaultTextLabel!
-    
+
 }

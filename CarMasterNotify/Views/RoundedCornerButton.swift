@@ -6,9 +6,7 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
-
-class RoundedCornerButton: UIButton {
+class RoundedCornerButton: LocalizedButton {
 
     override func awakeFromNib() {
         super.awakeFromNib()

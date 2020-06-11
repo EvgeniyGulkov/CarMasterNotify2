@@ -6,15 +6,13 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
-
 class StationTableViewCell: BaseDarkTableViewCell {
-    @IBOutlet weak var StationLogo: UIImageView!
-    @IBOutlet weak var StationName: DefaultTextLabel!
-    @IBOutlet weak var StationAddress: DefaultTextLabel!
+    @IBOutlet weak var stationLogo: UIImageView!
+    @IBOutlet weak var stationName: DefaultTextLabel!
+    @IBOutlet weak var stationAddress: DefaultTextLabel!
     @IBOutlet weak var roundedView: UIView!
     var viewModel: StationTableViewCellViewModel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         viewModel = StationTableViewCellViewModel()

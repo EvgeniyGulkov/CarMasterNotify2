@@ -6,8 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
-
 extension String {
     func validate(type: ValidationType) -> String {
         if isEmpty {

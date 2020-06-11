@@ -6,41 +6,40 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
 import CoreData
 import RxSwift
 
 class MessageController: UIViewController {
     private let disposeBag = DisposeBag()
     @IBOutlet weak var tableView: UITableView!
-    
+
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendMessageButton: UIButton!
     var fetchedResultsController: NSFetchedResultsController<Message>!
     var viewModel: MessageViewModel!
     var tableViewDidLoad: Bool = false
-    
+
     var messages: [Message] {
         return self.fetchedResultsController.fetchedObjects!
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         fetch()
         setupBindings()
         getFromApi()
     }
-    
+
     func setupBindings() {
         self.viewModel.title
             .bind(to: self.rx.title)
             .disposed(by: self.disposeBag)
-        
+
         self.tableView.rx.setDataSource(self)
             .disposed(by: self.disposeBag)
-        
+
         self.tableView.rx.willDisplayCell
-            .subscribe(onNext: {[unowned self] cell, indexPath in
+            .subscribe(onNext: {[unowned self] _, indexPath in
                 if indexPath.row == self.tableView.indexPathsForVisibleRows?.last?.row {
                     if !self.tableViewDidLoad {
                         self.tableViewDidLoad = true
@@ -49,19 +48,19 @@ class MessageController: UIViewController {
                 }
             })
             .disposed(by: self.disposeBag)
-        
+
         self.tableView.rx.contentOffset
             .bind(to: self.viewModel.tableContentOffset)
             .disposed(by: self.disposeBag)
-        
+
         sendMessageButton.rx.tap
-            .flatMap{_ in return Observable.just(self.messageTextField.text)}
+            .flatMap {_ in return Observable.just(self.messageTextField.text)}
             .ifEmpty(default: "")
             .bind(to: self.viewModel!.sendMessageTapped)
             .disposed(by: disposeBag)
-        
+
     }
-    
+
     func getFromApi() {
         self.viewModel.getMessages(offset: self.messages.count)
     }
@@ -78,19 +77,22 @@ extension MessageController: NSFetchedResultsControllerDelegate {
                                                               sectionNameKeyPath: nil,
                                                               cacheName: nil)
         fetchedResultsController!.delegate = self
-        
+
         do {
             try fetchedResultsController!.performFetch()
         } catch {
             print(error.localizedDescription)
         }
     }
-    
+
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any, at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
         switch type {
         case .insert:
             guard let indexPath = newIndexPath else {
@@ -116,7 +118,7 @@ extension MessageController: NSFetchedResultsControllerDelegate {
             break
         }
     }
-    
+
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
         tableView.scrollToBottom()
@@ -132,11 +134,14 @@ extension MessageController: UITableViewDataSource {
         self.viewModel.messageCount = sectionInfo.numberOfObjects
         return sectionInfo.numberOfObjects
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
         if message.isMy {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UserMessage", for: indexPath) as! UserMessageCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserMessage",
+                                                           for: indexPath) as? UserMessageCell else {
+                                                            return UITableViewCell()
+            }
             cell.messageText.text = message.text
             switch message.status {
             case "error":
@@ -152,12 +157,14 @@ extension MessageController: UITableViewDataSource {
             }
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Message", for: indexPath) as! MessageCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "Message",
+                                                           for: indexPath) as? MessageCell else {
+                                                            return UITableViewCell()
+            }
             cell.messageText.text = message.text
             cell.author.text = message.username
             return cell
         }
     }
-    
-    
+
 }

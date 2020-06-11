@@ -13,7 +13,7 @@ class UsersViewModel {
     var users: [String:User] = [:]
     var socketClient: SocketClient<CarMasterSocketApi>
     var networkProvider: CustomMoyaProvider<CarMasterApi>
-    
+
     init(networkProvider: CustomMoyaProvider<CarMasterApi>, socketClient: SocketClient<CarMasterSocketApi>) {
         self.networkProvider = networkProvider
         self.socketClient = socketClient
@@ -23,7 +23,7 @@ class UsersViewModel {
                     self.getData(searchText: text.lowercased(), limit: 20, offset: 0)})
             .disposed(by: disposeBag)
     }
-    
+
     func getData(searchText: String = "", limit: Int = 20, offset: Int = 0) {
         getUsersFromLocalDatabase(searchText: searchText, limit: limit, offset: offset)
         if !searchText.isEmpty {
@@ -31,7 +31,7 @@ class UsersViewModel {
         }
         // get users from backend here
     }
-    
+
     func getUsersFromLocalDatabase(searchText: String = "", limit: Int = 20, offset: Int = 0) {
         let user = User(context: DataController.shared.main)
         user.accessLevel = AccessLevel.admin.string

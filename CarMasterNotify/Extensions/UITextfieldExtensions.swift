@@ -6,13 +6,12 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
-
 extension UITextField {
     func setPlaceHolderColor(color: UIColor) {
         guard let placeholder = placeholder else {
             return
         }
-        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: color])
+        self.attributedPlaceholder = NSAttributedString(string: placeholder,
+                                                        attributes: [NSAttributedString.Key.foregroundColor: color])
     }
 }

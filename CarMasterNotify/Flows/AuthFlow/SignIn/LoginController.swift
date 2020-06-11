@@ -1,11 +1,10 @@
-import UIKit
 import RxCocoa
 import RxSwift
 
 class LoginController: BaseTableViewController {
-    
+
     private let disposeBag = DisposeBag()
-    
+
     var viewModel:LoginViewModel?
 
     override func viewDidLoad() {

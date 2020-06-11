@@ -1,4 +1,3 @@
-import Foundation
 import Moya
 
 extension CarMasterApi: TargetType, AccessTokenAuthorizable {
@@ -15,11 +14,11 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             return .bearer
         }
     }
-    
+
     var baseURL: URL {
         return Constants.CarMasterApi.baseUrl
     }
-    
+
     var path: String {
         switch self {
         case .getReasons:
@@ -32,7 +31,7 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             return "/api/recommendations/add"
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         case .getReasons:
@@ -45,19 +44,19 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
             return .post
         }
     }
-    
+
     var sampleData: Data {
         return Data()
     }
-    
+
     var task: Task {
         switch self {
         case .getReasons(let orderNumber):
             return .requestParameters(parameters: ["ordernumber" : orderNumber], encoding: URLEncoding.default)
-            
+
         case .getMessages(let orderNumber):
             return .requestParameters(parameters: ["ordernumber" : orderNumber], encoding: URLEncoding.default)
-            
+
         case .changeStatus(let id):
             return .requestParameters(
                 parameters: [
@@ -65,12 +64,12 @@ extension CarMasterApi: TargetType, AccessTokenAuthorizable {
                     "reasonStatus": true
                 ],
                 encoding: JSONEncoding.default)
-            
+
         case .addMessage(let text, let order):
             return .requestParameters(parameters: ["message" : text, "orderNum" : order], encoding: JSONEncoding.default)
         }
     }
-    
+
     var headers: [String : String]? {
         return ["Content-Type": "application/json"]
     }

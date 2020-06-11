@@ -6,7 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 
 class SignUpViewModel {
@@ -36,7 +35,7 @@ class SignUpViewModel {
     var pass: String = ""
     var validation: Observable<Bool>?
 
-    var finishFlow: (()->())?
+    var finishFlow: (() -> Void)?
 
     init(networkProvider: CustomMoyaProvider<CarMasterApi.Auth>) {
         self.networkProvider = networkProvider
@@ -53,33 +52,38 @@ class SignUpViewModel {
             .disposed(by: disposeBag)
 
         firstNameHint = firstName.asObservable()
-            .do(onNext:{[weak self] name in  self?.user.firstName = name})
+            .do(onNext: {[weak self] name in  self?.user.firstName = name})
             .flatMapLatest {text in return Observable.just(text.validate(type: .name))}
 
         lastNameHint = lastName.asObservable()
-            .do(onNext:{[weak self] name in  self?.user.lastName = name})
+            .do(onNext: {[weak self] name in  self?.user.lastName = name})
             .flatMapLatest {text in return Observable.just(text.validate(type: .name))}
 
         phoneHint = phone.asObservable()
-            .do(onNext:{[weak self] phone in  self?.user.phone = phone})
+            .do(onNext: {[weak self] phone in  self?.user.phone = phone})
             .flatMapLatest {text in return Observable.just(text.validate(type: .phone))}
 
         emailHint = email.asObservable()
-            .do(onNext:{[weak self] email in  self?.user.email = email})
+            .do(onNext: {[weak self] email in  self?.user.email = email})
             .flatMapLatest {text in return Observable.just(text.validate(type: .email))}
 
         passwordHint = password.asObservable()
             .do(onNext: {[weak self] pass in self?.pass = pass})
             .flatMapLatest {text in return Observable.just(text.validate(type: .password))}
-        
+
         confirmPasswordHint = Observable.combineLatest([password, confirmPassword])
-            .flatMapLatest{passwords in
+            .flatMapLatest {passwords in
                 return Observable.just(passwords[1].validate(type: .confirmPassword(password: passwords[0])))}
 
-        self.validation = Observable.combineLatest([firstNameHint, lastNameHint, phoneHint, emailHint, passwordHint, confirmPasswordHint])
-            .flatMapLatest{fields in
+        self.validation = Observable.combineLatest([firstNameHint,
+                                                    lastNameHint,
+                                                    phoneHint,
+                                                    emailHint,
+                                                    passwordHint,
+                                                    confirmPasswordHint])
+            .flatMapLatest {fields in
                 return Observable.just(
-                    fields.filter{!$0.isEmpty}.isEmpty
+                    fields.filter {!$0.isEmpty}.isEmpty
                 )
         }
     }

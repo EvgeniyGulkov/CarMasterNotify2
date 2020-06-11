@@ -1,15 +1,14 @@
-import UIKit
 import RxSwift
 import RxCocoa
 
 class NameChangeDialogueController: BaseTableViewController {
-    
+
     let disposeBag = DisposeBag()
-    
+
     @IBOutlet weak var nameTextField: UITextField!
     var doneButton: UIBarButtonItem?
     var viewModel: NameChangeViewModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -25,22 +24,17 @@ class NameChangeDialogueController: BaseTableViewController {
         self.navigationItem.rightBarButtonItem = doneButton
         self.navigationItem.leftBarButtonItem = cancelItem
      }
-     
+
     func setupBindings() {
         self.viewModel?.userName!.asObservable()
             .observeOn(MainScheduler.instance)
             .bind(to: self.nameTextField.rx.text)
             .disposed(by: disposeBag)
-         
+
          doneButton?.rx.tap
-            .map{return self.nameTextField.text!}
+            .map {return self.nameTextField.text!}
             .bind(to: self.viewModel!.tapDone)
             .disposed(by: disposeBag)
-    }
-
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = Theme.Color.blueColor
     }
 
     @objc
@@ -48,4 +42,3 @@ class NameChangeDialogueController: BaseTableViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
-

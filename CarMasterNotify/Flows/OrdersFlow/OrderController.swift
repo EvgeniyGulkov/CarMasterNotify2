@@ -1,4 +1,3 @@
-import UIKit
 import RxSwift
 import RxCocoa
 import RxKeyboard
@@ -9,13 +8,13 @@ class OrderController: BaseTableViewController {
 
     var viewModel: OrderViewModel!
     var searchController: UISearchController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupBindings()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel.getData()
@@ -50,18 +49,18 @@ class OrderController: BaseTableViewController {
             .distinctUntilChanged()
             .bind(to: self.viewModel.search)
             .disposed(by: disposeBag)
-        
+
         self.viewModel.data
             .do(onNext: {[weak self] _ in self?.refreshControl?.endRefreshing()})
             .bind(to: tableView.rx.items(dataSource: DataSourcesFactory.getOrdersDataSource()))
             .disposed(by: disposeBag)
-        
+
         tableView.rx.modelSelected(Order.self)
             .bind(to: viewModel.selectData)
             .disposed(by: disposeBag)
 
         tableView.rx.willDisplayCell
-            .map{cell, index in return index.section*2+index.row+1}
+            .map {_, index in return index.section*2+index.row+1}
             .bind(to: self.viewModel.displayLastCell)
             .disposed(by: disposeBag)
     }

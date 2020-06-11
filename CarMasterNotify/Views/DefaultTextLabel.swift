@@ -6,9 +6,7 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
-
-class DefaultTextLabel: UILabel {
+class DefaultTextLabel: LocalizedLabel {
 
     @IBInspectable var txtColor: UIColor = Theme.Color.defaultTextColor {
         didSet {

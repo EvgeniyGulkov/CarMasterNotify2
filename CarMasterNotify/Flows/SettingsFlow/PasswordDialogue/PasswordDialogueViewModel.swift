@@ -1,4 +1,3 @@
-import UIKit
 import RxSwift
 
 class PasswordDialogueViewModel {
@@ -6,7 +5,7 @@ class PasswordDialogueViewModel {
     var tapCancel: PublishSubject<Void>
     var tapDone: PublishSubject<Void>
     var passwordChanged: PublishSubject<Void>
-    
+
     init() {
         self.passwordChanged = PublishSubject<Void>()
         self.tapCancel = PublishSubject<Void>()
@@ -16,7 +15,7 @@ class PasswordDialogueViewModel {
             .subscribe(onNext: {self.changePassword()})
             .disposed(by: disposeBag)
     }
-    
+
     func changePassword() {
         print("passwordChanged")
         passwordChanged.onNext(())

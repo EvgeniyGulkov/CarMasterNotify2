@@ -1,4 +1,3 @@
-import Foundation
 import RxSwift
 import RxDataSources
 
@@ -21,15 +20,14 @@ struct AuthDataSource {
     var items: [CellType]
 }
 
-
 extension AuthDataSource: SectionModelType {
     typealias Item = CellType
-    
+
     init(original: AuthDataSource, items: [Item]) {
         self.items = items
         self.title = original.title
     }
-    
+
     init(items: [Item], title:String) {
         self.items = items
         self.title = title

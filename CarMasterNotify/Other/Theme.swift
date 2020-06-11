@@ -6,8 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
-
 struct Theme {
     struct Color {
         static let background: UIColor = UIColor(red: 14/255, green: 14/255, blue: 14/255, alpha: 1)

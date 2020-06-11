@@ -1,9 +1,8 @@
-import UIKit
 import KeychainAccess
 
-fileprivate var isAutorized = false
+private var isAutorized = false
 
-fileprivate enum LaunchInstructor {
+private enum LaunchInstructor {
     case main, auth
 
 static func configure(isAutorized: Bool = isAutorized) -> LaunchInstructor {
@@ -15,22 +14,22 @@ static func configure(isAutorized: Bool = isAutorized) -> LaunchInstructor {
 }
 
 class ApplicationCoordinator: BaseCoordinator {
-    
+
     private let coordinatorFactory: CoordinatorFactory
     private let router: Router
-    
+
     private var instructor: LaunchInstructor {
         if SecureManager.isAutorized {
             isAutorized = true
         } else { isAutorized = false }
         return LaunchInstructor.configure()
     }
-    
+
     init(router: Router, coordinatorFactory: CoordinatorFactory) {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
     }
-    
+
     override func start(with option: DeepLinkOption?) {
         if let option = option {
             switch option {
@@ -40,12 +39,12 @@ class ApplicationCoordinator: BaseCoordinator {
             }
         } else {
             switch instructor {
-                case .auth: runAuthFlow()
-                case .main: runMainFlow()
+            case .auth: runAuthFlow()
+            case .main: runMainFlow()
             }
         }
     }
-    
+
     private func runAuthFlow() {
         let coordinator = coordinatorFactory.makeAuthCoordinatorBox(router: router)
         coordinator.finishFlow = {[weak self,weak coordinator] in
@@ -55,7 +54,7 @@ class ApplicationCoordinator: BaseCoordinator {
         addDependency(coordinator)
         coordinator.start()
     }
-    
+
     private func runMainFlow() {
         let coordinator = coordinatorFactory.makeTabbarCoordinator()
         coordinator.finishFlow = {[weak self,weak coordinator] in

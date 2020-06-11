@@ -6,7 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import RxCocoa
 import RxDataSources
@@ -15,7 +14,10 @@ class StationDataSourceFactory {
     static func stationDataSource (viewModel: StationsViewModel) ->
         RxTableViewSectionedReloadDataSource<StationDataSource> { return RxTableViewSectionedReloadDataSource<StationDataSource>(
             configureCell: { dataSource, tableView, indexPath, item in
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.Station, for: indexPath) as! StationTableViewCell
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.Station,
+                                                               for: indexPath) as? StationTableViewCell else {
+                                                                return UITableViewCell()
+                }
                 viewModel.selectData
                     .subscribe(onNext: { station in
                         if station == item {
@@ -25,8 +27,8 @@ class StationDataSourceFactory {
                     })
                     .disposed(by: viewModel.disposeBag)
                 if let name = item.name, let address = item.address {
-                    cell.StationAddress.text = address
-                    cell.StationName.text = name
+                    cell.stationAddress.text = address
+                    cell.stationName.text = name
 
                 }
                 return cell

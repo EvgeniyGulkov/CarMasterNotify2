@@ -1,4 +1,3 @@
-import Foundation
 import RxSwift
 import KeychainAccess
 
@@ -8,7 +7,7 @@ class LoginViewModel {
                                                          AuthDataSource(title: "", items: [.twoButtons]),
                                                          AuthDataSource(title: "", items: [.button]),
                                                          AuthDataSource(title: "", items: [.error(error: "")])])
-    
+
     let disposeBag = DisposeBag()
     let loginText: PublishSubject<String> = PublishSubject()
     let passwordText = PublishSubject<String>()
@@ -25,15 +24,15 @@ class LoginViewModel {
     var finishFlow: (() -> Void)?
     var forgotPassword: (() -> Void)?
     var signUp: (() -> Void)?
-    
+
     init(networkProvider: CustomMoyaProvider<CarMasterApi.Auth>) {
         self.networkProvider = networkProvider
-        
+
         self.validation = Observable.combineLatest([loginText, passwordText])
             .do(onNext: {self.login = $0[0]; self.password = $0[1]})
-            .flatMapLatest{fields in
+            .flatMapLatest {fields in
                 return Observable.just(
-                    fields.filter{$0.isEmpty}.isEmpty
+                    fields.filter {$0.isEmpty}.isEmpty
                 )
         }
         self.signInButton
@@ -41,14 +40,14 @@ class LoginViewModel {
                 guard let self = self else {return}
                 self.signIn(login: self.login, password: self.password)})
             .disposed(by: disposeBag)
-        
+
         self.sighUpButton
             .subscribe(onNext: {[weak self] in
                 self?.signUp!()
             })
             .disposed(by: disposeBag)
     }
-    
+
     func signIn(login: String, password: String) {
         let request = CarMasterSignInRequest(login: login, password: password)
         networkProvider.request(.signIn(request: request))
@@ -70,7 +69,7 @@ class LoginViewModel {
     func getUserInfo() {
         CustomMoyaProvider<CarMasterApi.User>()
         .request(.info)
-        .subscribe(onSuccess: { [weak self] response in
+        .subscribe(onSuccess: { response in
             print(response)
         }, onError: { [weak self] error in
             self?.errorMessage.onNext(error.localizedDescription)

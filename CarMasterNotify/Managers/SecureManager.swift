@@ -6,7 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
 import KeychainAccess
 import RxSwift
 
@@ -75,7 +74,7 @@ class SecureManager {
         DataController.shared.save()
     }
 
-    static func SignOut() {
+    static func signOut() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }

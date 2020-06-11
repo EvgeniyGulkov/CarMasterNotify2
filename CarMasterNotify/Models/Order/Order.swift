@@ -1,4 +1,3 @@
-import UIKit
 import CoreData
 import RxSwift
 import Moya
@@ -10,7 +9,7 @@ struct OrderSection {
     static let dateFormat = "dd.MM.yyyy"
     var date: Date
     var items: [Order]
-    
+
     init(order:Order) {
         self.date = (order.updateDate?.midnightDate())!
         self.items = [order]
@@ -18,7 +17,7 @@ struct OrderSection {
 }
 
 extension Order {
-    
+
     static func orders(offset: Int, limit: Int, searchText: String = "") -> [Order] {
         let request = NSFetchRequest<Order>(entityName: String(describing: self))
         request.fetchLimit = limit
@@ -37,7 +36,7 @@ extension Order {
             return []
         }
     }
-    
+
     static func byNumber(number: Int) -> Order? {
         let request = NSFetchRequest<Order>(entityName: String(describing: self))
             request.predicate = NSPredicate(format: "number == %@", NSNumber(value: number))
@@ -49,7 +48,7 @@ extension Order {
             return nil
         }
     }
-    
+
     func toObject() -> OrderModel {
         return OrderModel(orderNumber: Int(self.number),
                                     createDate: self.createDate,
@@ -68,7 +67,7 @@ extension Order {
         let networkProvider = CustomMoyaProvider<CarMasterApi.Orders>()
         let request = CarMasterOrderRequest(offset: offset, limit: limit, searchText: searchText)
         networkProvider.request(.getOrders(request: request))
-        .subscribe(onSuccess: { response in
+        .subscribe(onSuccess: { _ in
          //   let _ = orders.map { $0.toManagedObject() }
         //    DataController.shared.save()
             completion(nil)

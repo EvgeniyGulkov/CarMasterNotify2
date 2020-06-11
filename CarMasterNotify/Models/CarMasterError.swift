@@ -6,12 +6,10 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
-
 enum CarMasterError: String, Error, LocalizedError {
     case userNotFound
     case userExist
-    
+
     public var errorDescription: String? {
         return localizedString(error: self)
     }

@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.2.0)
+  - Alamofire (5.2.1)
   - Differentiator (4.0.1)
   - KeychainAccess (4.2.0)
   - Moya/Core (14.0.0):
@@ -20,19 +20,23 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - SkeletonView (1.8.7)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
+  - SwiftGen (6.1.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - KeychainAccess
   - Moya/RxSwift (~> 14.0.0)
-  - RxCocoa (~> 5.1.1)
+  - RxCocoa
   - RxDataSources (~> 4.0.1)
   - RxKeyboard
-  - RxSwift (~> 5.1.1)
+  - RxSwift
+  - SkeletonView
   - Socket.IO-Client-Swift (~> 15.2.0)
+  - SwiftGen
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -46,12 +50,14 @@ SPEC REPOS:
     - RxKeyboard
     - RxRelay
     - RxSwift
+    - SkeletonView
     - Socket.IO-Client-Swift
     - Starscream
+    - SwiftGen
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: c1ca147559e730bfb2182c8c7aafbdd90a867987
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
@@ -60,10 +66,12 @@ SPEC CHECKSUMS:
   RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: b684af329aa92a341f829e0190dc851f3372fe02
+PODFILE CHECKSUM: 3900f84b962d6ca9962e9ef803ead0b9b40792f7
 
 COCOAPODS: 1.9.1

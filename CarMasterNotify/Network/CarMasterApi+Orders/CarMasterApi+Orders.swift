@@ -6,7 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
 import Moya
 
 extension CarMasterApi {
@@ -21,27 +20,27 @@ extension CarMasterApi.Orders: TargetType, AccessTokenAuthorizable {
         case .getOrders: return .bearer
         }
     }
-    
+
     var baseURL: URL {
         return Constants.CarMasterApi.baseUrl
     }
-    
+
     var path: String {
         switch self {
         case .getOrders: return "/api/carorders"
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         case .getOrders: return .get
         }
     }
-        
+
     var sampleData: Data {
         return Data()
     }
-        
+
     var task: Task {
         switch self {
         case .getOrders (let request):
@@ -55,4 +54,3 @@ extension CarMasterApi.Orders: TargetType, AccessTokenAuthorizable {
         return ["Content-Type": "application/json"]
     }
 }
-

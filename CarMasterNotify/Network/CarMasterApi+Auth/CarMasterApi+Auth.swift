@@ -5,7 +5,7 @@
 //  Created by Gulkov on 11.05.2020.
 //  Copyright © 2020 Admin. All rights reserved.
 //
-import Foundation
+
 import Moya
 
 extension CarMasterApi {
@@ -24,28 +24,28 @@ extension CarMasterApi.Auth: TargetType, AccessTokenAuthorizable {
         case .registration: return .none
         }
     }
-    
+
     var baseURL: URL {
         return Constants.CarMasterApi.baseUrl
     }
-    
+
     var path: String {
         switch self {
         case .signIn, .refreshToken: return "/oauth/token"
         case .registration: return "/api/user/registration"
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         case .signIn, .refreshToken, .registration: return .post
         }
     }
-        
+
     var sampleData: Data {
         return Data()
     }
-        
+
     var task: Task {
         switch self {
         case .signIn (let request):

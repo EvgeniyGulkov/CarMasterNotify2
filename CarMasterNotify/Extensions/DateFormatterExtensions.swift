@@ -1,6 +1,3 @@
-import Foundation
-
-
 extension DateFormatter {
   static let iso8601Full: DateFormatter = {
     let formatter = DateFormatter()
@@ -10,7 +7,7 @@ extension DateFormatter {
     formatter.locale = Locale(identifier: "en_US_POSIX")
     return formatter
   }()
-    
+
     static func formattedString(date:Date, format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format

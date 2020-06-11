@@ -14,7 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
-                            <tableViewSection headerTitle="User Info" id="1Uk-2p-HIp">
+                            <tableViewSection headerTitle="userinfo" id="1Uk-2p-HIp">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="100" id="SWJ-Qv-8AU" customClass="BaseDarkTableViewCell" customModule="CarMasterNotify" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="374" height="100"/>
@@ -63,11 +63,17 @@
                                                 <constraint firstItem="iiQ-MT-sxG" firstAttribute="width" secondItem="T2K-iM-uwR" secondAttribute="width" id="l6f-zw-4LT"/>
                                                 <constraint firstItem="DEE-PQ-nQX" firstAttribute="centerY" secondItem="BrO-0f-cE9" secondAttribute="centerY" id="qFS-ac-bEL"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Account Settings" id="j72-Pa-LEj">
+                            <tableViewSection headerTitle="accountSettings" id="j72-Pa-LEj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="accountSettings" id="3hp-Ln-MN7" customClass="BaseDarkTableViewCell" customModule="CarMasterNotify" customModuleProvider="target">
                                         <rect key="frame" x="20" y="211.33333206176758" width="374" height="43.5"/>
@@ -79,11 +85,15 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MPg-Qh-6jW">
                                                     <rect key="frame" x="20" y="-0.33333333333333215" width="304" height="44.333333333333329"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uh-v0-fMT" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uh-v0-fMT" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="152" height="44.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="storyBoard" value="Settings"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="controllerName" value="SettingsController"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evgeny" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QD-0a-Xjl" customClass="InfoTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
                                                             <rect key="frame" x="152" y="0.0" width="152" height="44.333333333333336"/>
@@ -105,6 +115,9 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="MPg-Qh-6jW" secondAttribute="trailing" constant="50" id="ZCM-lm-WAh"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="accountSettings" textLabel="tq2-rq-fp4" style="IBUITableViewCellStyleDefault" id="Da5-vO-2PU" customClass="BaseDarkTableViewCell" customModule="CarMasterNotify" customModuleProvider="target">
                                         <rect key="frame" x="20" y="254.83333206176758" width="374" height="43.5"/>
@@ -113,19 +126,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Change password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tq2-rq-fp4">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="changePassword" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tq2-rq-fp4" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="0.0" width="315" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="storyBoard" value="Settings"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="controllerName" value="SettingsController"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Notification Settings" id="Ofk-rg-ctb">
+                            <tableViewSection headerTitle="notificationSettings" id="Ofk-rg-ctb">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="5Tb-1c-fh9" customClass="BaseDarkTableViewCell" customModule="CarMasterNotify" customModuleProvider="target">
                                         <rect key="frame" x="20" y="354.33333206176758" width="374" height="43.5"/>
@@ -138,19 +158,27 @@
                                                     <rect key="frame" x="301" y="6.6666666666666679" width="51" height="31.000000000000004"/>
                                                     <color key="onTintColor" red="0.5450980392" green="0.76078431369999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qak-ab-jR4" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="11" width="142" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="allowNotifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qak-ab-jR4" customClass="DefaultTextLabel" customModule="CarMasterNotify" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11.666666666666664" width="261" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="controllerName" value="SettingsController"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="34F-2j-naY" firstAttribute="centerY" secondItem="ZQy-O9-gMG" secondAttribute="centerY" id="3Sy-ac-mYW"/>
+                                                <constraint firstItem="Qak-ab-jR4" firstAttribute="leading" secondItem="ZQy-O9-gMG" secondAttribute="leading" constant="20" id="8c3-0T-o5b"/>
                                                 <constraint firstAttribute="trailing" secondItem="34F-2j-naY" secondAttribute="trailing" constant="24" id="UKf-Gh-Gdt"/>
+                                                <constraint firstItem="34F-2j-naY" firstAttribute="leading" secondItem="Qak-ab-jR4" secondAttribute="trailing" constant="20" id="bdX-cC-977"/>
+                                                <constraint firstItem="Qak-ab-jR4" firstAttribute="centerY" secondItem="ZQy-O9-gMG" secondAttribute="centerY" id="poS-KR-5ed"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -166,10 +194,14 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bf-Th-6Xp" customClass="RoundedCornerButton" customModule="CarMasterNotify" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                                     <color key="backgroundColor" red="0.47235629251320282" green="0.65963821598426398" blue="0.29742616448813664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="Sign Out"/>
+                                                    <state key="normal" title="signOut"/>
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="controllerName" value="SettingsController"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -180,6 +212,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -192,6 +227,7 @@
                     <connections>
                         <outlet property="accessLevel" destination="T2K-iM-uwR" id="heR-ya-oND"/>
                         <outlet property="avatarImageView" destination="DEE-PQ-nQX" id="KK7-Ea-gll"/>
+                        <outlet property="contentViewFirst" destination="BrO-0f-cE9" id="wHK-6o-Mby"/>
                         <outlet property="fullName" destination="laJ-Aq-WFe" id="iRK-7e-TcY"/>
                         <outlet property="nickName" destination="6QD-0a-Xjl" id="oiH-dw-QY8"/>
                         <outlet property="position" destination="iiQ-MT-sxG" id="Qri-87-aY7"/>

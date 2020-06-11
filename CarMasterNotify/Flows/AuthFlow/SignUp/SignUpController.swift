@@ -6,12 +6,11 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
 import RxSwift
 import RxCocoa
 
 class SignUpController: BaseTableViewController {
-    
+
     @IBOutlet weak var confirmButton: RoundedCornerButton!
     @IBOutlet weak var firstName: DefaultTextField!
     @IBOutlet weak var lastName: DefaultTextField!
@@ -19,7 +18,7 @@ class SignUpController: BaseTableViewController {
     @IBOutlet weak var email: DefaultTextField!
     @IBOutlet weak var password: DefaultTextField!
     @IBOutlet weak var confirmPassword: DefaultTextField!
-    
+
     private let disposeBag = DisposeBag()
     var viewModel: SignUpViewModel!
 

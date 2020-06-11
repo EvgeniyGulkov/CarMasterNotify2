@@ -6,8 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
-
 protocol DetailsModuleFactory {
     func makeMessagesOutput(viewModel: MessageViewModel) -> MessageController
 }

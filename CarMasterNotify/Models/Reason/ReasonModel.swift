@@ -1,4 +1,3 @@
-import Foundation
 import CoreData
 
 struct ReasonModel: Detail, Codable {
@@ -6,14 +5,14 @@ struct ReasonModel: Detail, Codable {
     var orderNumber: Int?
     var text: String?
     var isComplete: Bool?
-    
+
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case orderNumber = "orderNum"
         case text = "reasonText"
         case isComplete = "reasonStatus"
     }
-    
+
     func toManagedObject(order: Order) -> Reason {
         let context = DataController.shared.main
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy

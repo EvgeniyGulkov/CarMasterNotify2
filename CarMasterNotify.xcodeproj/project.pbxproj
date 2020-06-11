@@ -87,6 +87,9 @@
 		84532B35238EA3A600CC8676 /* NameDialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84532B34238EA3A600CC8676 /* NameDialogue.storyboard */; };
 		84611BD5248BE62800F31E10 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84611BD4248BE62800F31E10 /* Schedule.storyboard */; };
 		84611BD7248BEC0500F31E10 /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84611BD6248BEC0500F31E10 /* CalendarItem.swift */; };
+		84611BDA24911D1800F31E10 /* LocalisedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84611BD924911D1800F31E10 /* LocalisedUILabel.swift */; };
+		84611BDD249132B400F31E10 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84611BDF249132B400F31E10 /* Localization.strings */; };
+		84611BE12491331100F31E10 /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84611BE02491331100F31E10 /* LocalizedButton.swift */; };
 		846E13C123F8235E00A77C42 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E13C023F8235E00A77C42 /* DataController.swift */; };
 		846E13C323F829C100A77C42 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E13C223F829C100A77C42 /* Reason.swift */; };
 		84724AAA247A939100C9C150 /* StationTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84724AA9247A939100C9C150 /* StationTableViewCellViewModel.swift */; };
@@ -252,6 +255,10 @@
 		84532B34238EA3A600CC8676 /* NameDialogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameDialogue.storyboard; sourceTree = "<group>"; };
 		84611BD4248BE62800F31E10 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		84611BD6248BEC0500F31E10 /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
+		84611BD924911D1800F31E10 /* LocalisedUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedUILabel.swift; sourceTree = "<group>"; };
+		84611BDE249132B400F31E10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		84611BE02491331100F31E10 /* LocalizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedButton.swift; sourceTree = "<group>"; };
+		84611BE22491348800F31E10 /* CarMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CarMaster-Bridging-Header.h"; sourceTree = "<group>"; };
 		846E13C023F8235E00A77C42 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		846E13C223F829C100A77C42 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
 		84724AA9247A939100C9C150 /* StationTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -381,6 +388,8 @@
 				6701A8172466762A001EA1B5 /* DefaultTextLabel.swift */,
 				6730783D2469366D00260982 /* DefaultTextField.swift */,
 				848B8B372469084D007ACD29 /* RoundedCornerButton.swift */,
+				84611BD924911D1800F31E10 /* LocalisedUILabel.swift */,
+				84611BE02491331100F31E10 /* LocalizedButton.swift */,
 				848B8B352468FEAB007ACD29 /* InfoTextLabel.swift */,
 			);
 			path = Views;
@@ -389,6 +398,7 @@
 		6701A80F24666A79001EA1B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84611BD824911C8100F31E10 /* Localization */,
 				8440589223C2297C00BEE9DF /* carmasterapi.cer */,
 				84BEC0BD2349C1040054FE21 /* Assets.xcassets */,
 				84BEC0C22349C1040054FE21 /* Info.plist */,
@@ -401,6 +411,7 @@
 			children = (
 				6701A81224667329001EA1B5 /* Theme.swift */,
 				848B8B2C246866FF007ACD29 /* Constants.swift */,
+				84611BE22491348800F31E10 /* CarMaster-Bridging-Header.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -768,6 +779,14 @@
 			path = NameDialogue;
 			sourceTree = "<group>";
 		};
+		84611BD824911C8100F31E10 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				84611BDF249132B400F31E10 /* Localization.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		8475C01523F0625D00F19B0D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -989,10 +1008,12 @@
 			buildConfigurationList = 84BEC0D02349C1040054FE21 /* Build configuration list for PBXNativeTarget "CarMasterNotify" */;
 			buildPhases = (
 				AA0A427985303AA92FE82215 /* [CP] Check Pods Manifest.lock */,
+				84611BE82491B57A00F31E10 /* Swiftgen Script */,
 				84BEC0AF2349C1030054FE21 /* Sources */,
 				84BEC0B02349C1030054FE21 /* Frameworks */,
 				84BEC0B12349C1030054FE21 /* Resources */,
 				14E4A9DAA3A027AA577551E5 /* [CP] Embed Pods Frameworks */,
+				84611BE324919AE500F31E10 /* Swiftlint Script */,
 			);
 			buildRules = (
 			);
@@ -1070,6 +1091,7 @@
 				84532B35238EA3A600CC8676 /* NameDialogue.storyboard in Resources */,
 				8420250E2470EE5D00621878 /* SignUp.storyboard in Resources */,
 				84532B2E238CBAB600CC8676 /* PasswordDialogue.storyboard in Resources */,
+				84611BDD249132B400F31E10 /* Localization.strings in Resources */,
 				8440589323C233E800BEE9DF /* carmasterapi.cer in Resources */,
 				847C21FF2356C1ED0040B097 /* Main.storyboard in Resources */,
 				84EA85DC247833740073E5E3 /* Users.storyboard in Resources */,
@@ -1133,6 +1155,41 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		84611BE324919AE500F31E10 /* Swiftlint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swiftlint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+		84611BE82491B57A00F31E10 /* Swiftgen Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swiftgen Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellScript = "sh \"$SRCROOT/.swiftgen.sh\" \"$PODS_ROOT\"\n";
 		};
 		AA0A427985303AA92FE82215 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1210,6 +1267,7 @@
 				848B8B382469084D007ACD29 /* RoundedCornerButton.swift in Sources */,
 				8475C01723F0627100F19B0D /* Message.swift in Sources */,
 				8421ED4B23A31ECD002091FF /* LoginViewModel.swift in Sources */,
+				84611BDA24911D1800F31E10 /* LocalisedUILabel.swift in Sources */,
 				8421ED3A23A31E20002091FF /* DataSourcesFactory.swift in Sources */,
 				672DE38024791704008098B6 /* AuthDataSourceFactory.swift in Sources */,
 				844A9C292479934900F27BE7 /* ServiceDataSource.swift in Sources */,
@@ -1231,6 +1289,7 @@
 				6730783C2469353400260982 /* UITextfieldExtensions.swift in Sources */,
 				8478BEC024758FA400923B34 /* AddServiceViewModel.swift in Sources */,
 				840539C02351CD140042C26F /* Presentable.swift in Sources */,
+				84611BE12491331100F31E10 /* LocalizedButton.swift in Sources */,
 				84D4C17C23758C4B00DB8F58 /* MainModuleFactory.swift in Sources */,
 				674C68DA2478FBDB0029E91A /* ErrorTextTableViewCell.swift in Sources */,
 				84EA85C924782D0F0073E5E3 /* ServicesViewModel.swift in Sources */,
@@ -1317,6 +1376,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		84611BDF249132B400F31E10 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84611BDE249132B400F31E10 /* en */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
 		84BEC0BA2349C1030054FE21 /* Orders.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1459,6 +1526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Evgeniy.CarMasterNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CarMasterNotify/Other/CarMaster-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1479,6 +1547,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Evgeniy.CarMasterNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CarMasterNotify/Other/CarMaster-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

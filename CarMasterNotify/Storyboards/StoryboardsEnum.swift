@@ -1,5 +1,3 @@
-import UIKit
-
 enum Storyboards: String {
     case main = "Main"
     case orders = "Orders"
@@ -11,6 +9,6 @@ enum Storyboards: String {
     case details = "Details"
     case message = "Message"
     case addStation = "AddStation"
-    case Stations = "Stations"
+    case stations = "Stations"
     case users = "Users"
 }

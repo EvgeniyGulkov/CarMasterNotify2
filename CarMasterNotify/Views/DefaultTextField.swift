@@ -6,8 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
-
 class DefaultTextField: UITextField {
 
     var hintLabel: UILabel!

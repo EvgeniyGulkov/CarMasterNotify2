@@ -1,4 +1,3 @@
-import UIKit
 import RxSwift
 import Moya
 import SocketIO
@@ -25,7 +24,7 @@ class StationsViewModel {
         station2.name = "RogaiKopita"
         station2.address = "Russia, Novosibirsk, Jopa Mira 1"
         self.data = BehaviorSubject(value: [StationDataSource(title: "", items: [station, station2])])
-        
+
         self.selectData
             .subscribe(onNext: {[weak self] station in
                 if let user = User.currentUser {

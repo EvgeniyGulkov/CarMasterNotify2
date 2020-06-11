@@ -1,4 +1,3 @@
-import UIKit
 class OrderTableCell: BaseDarkTableViewCell {
     @IBOutlet weak var vinNumber: UILabel!
     @IBOutlet weak var carModel: UILabel!
@@ -6,11 +5,11 @@ class OrderTableCell: BaseDarkTableViewCell {
     @IBOutlet weak var orderStatus: UILabel!
     @IBOutlet weak var orderTime: UILabel!
     @IBOutlet weak var carLogo: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         let image = UIImage(named: "Volvo")?.scaleToSize(scaledToSize: carLogo.frame.size)
         carLogo.image = image
     }
-    
+
 }

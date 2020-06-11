@@ -1,25 +1,23 @@
-import UIKit
 import RxSwift
 import RxCocoa
 
 class PasswordDialogueController: BaseTableViewController {
     let disposeBag = DisposeBag()
-    
-    
+
     @IBOutlet weak var currentPassword: DefaultTextField!
     @IBOutlet weak var newPassword: DefaultTextField!
     @IBOutlet weak var confirmPassword: DefaultTextField!
     var doneButton: UIBarButtonItem?
 
     var viewModel: PasswordDialogueViewModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         setupUI()
         setupBindings()
     }
-    
+
     func setupUI() {
         tableView.keyboardDismissMode = .onDrag
         tableView.dataSource = self
@@ -29,20 +27,15 @@ class PasswordDialogueController: BaseTableViewController {
         self.navigationItem.rightBarButtonItem = doneButton
         self.navigationItem.leftBarButtonItem = canceButton
     }
-    
+
     func setupBindings() {
         self.navigationItem.leftBarButtonItem?.rx.tap
             .bind(to: self.viewModel!.tapCancel)
             .disposed(by: disposeBag)
-        
+
         doneButton?.rx.tap
             .bind(to: self.viewModel!.tapDone)
             .disposed(by: disposeBag)
-    }
-
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = Theme.Color.blueColor
     }
 
     @objc

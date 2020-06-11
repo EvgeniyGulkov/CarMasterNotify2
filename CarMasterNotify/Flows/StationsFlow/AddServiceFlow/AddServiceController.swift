@@ -6,7 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
 import RxSwift
 import RxCocoa
 
@@ -35,7 +34,7 @@ class AddStationController: BaseTableViewController {
                 self?.title = title
                 }, onError: {_ in print("Cannot get title")})
             .disposed(by: disposeBag)
-        
+
         self.navigationItem.leftBarButtonItem?.rx.tap
             .bind(to: self.viewModel.backButtonTouched)
             .disposed(by: disposeBag)

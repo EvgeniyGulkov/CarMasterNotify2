@@ -1,28 +1,25 @@
-import UIKit
-
-
 open class CircularProgressBar: UIView {
-    
+
     var darkBorderLayer:BorderLayer!
     var progressBorderLayer:BorderLayer!
-    
+
     static let startAngle = 3/2*CGFloat.pi
     static let endAngle = 7/2*CGFloat.pi
 
     internal class func radianForValue(_ value:CGFloat) -> CGFloat {
         return (value * 4/2 * CGFloat.pi / 100) + CircularProgressBar.startAngle
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     open func commonInit() {
         darkBorderLayer = BorderLayer()
         darkBorderLayer.lineColor = UIColor(
@@ -45,7 +42,7 @@ open class CircularProgressBar: UIView {
         progressBorderLayer.endAngle = CircularProgressBar.radianForValue(0)
         self.layer.addSublayer(progressBorderLayer)
     }
-    
+
     override open func layoutSubviews() {
         super.layoutSubviews()
         darkBorderLayer.frame = self.bounds

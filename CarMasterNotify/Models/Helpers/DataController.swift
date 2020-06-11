@@ -1,5 +1,4 @@
 import CoreData
-import UIKit
 
 class DataController {
 
@@ -66,4 +65,3 @@ class DataController {
         }
     }
 }
-

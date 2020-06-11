@@ -6,7 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
 import Moya
 
 extension CarMasterApi {
@@ -25,11 +24,11 @@ extension CarMasterApi.User: TargetType, AccessTokenAuthorizable {
         case .changePassword: return .bearer
         }
     }
-    
+
     var baseURL: URL {
         return Constants.CarMasterApi.baseUrl
     }
-    
+
     var path: String {
         switch self {
         case .info:
@@ -40,18 +39,18 @@ extension CarMasterApi.User: TargetType, AccessTokenAuthorizable {
             return "/api/user/changepassword"
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         case .info: return .get
         case .changePassword, .changeChatname: return .post
         }
     }
-        
+
     var sampleData: Data {
         return Data()
     }
-        
+
     var task: Task {
         switch self {
         case .changeChatname(let request):
@@ -67,4 +66,3 @@ extension CarMasterApi.User: TargetType, AccessTokenAuthorizable {
         return ["Content-Type": "application/json"]
     }
 }
-

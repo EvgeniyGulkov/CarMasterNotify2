@@ -6,7 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import RxCocoa
 import RxDataSources
@@ -17,50 +16,40 @@ class AuthDataSourceFactory {
             configureCell: { dataSource, tableView, indexPath, item in
                 switch item {
                 case .spacer:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.spacer, for: indexPath) as! SpacerTableViewCell
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.spacer,
+                                                                   for: indexPath) as? SpacerTableViewCell else {
+                                                                    return UITableViewCell()
+                    }
                     viewModel.spacer?
                         .bind(to: cell.spacerHeight.rx.constant)
                         .disposed(by: viewModel.disposeBag)
                     return cell
                 case .textField:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.textField, for: indexPath) as! TextFieldTableViewCell
-                    if indexPath.row == 0 {
-                        cell.textField.placeholder = "Phone or Email"
-                        cell.textField.rx.text
-                            .orEmpty
-                            .bind(to: viewModel.loginText)
-                            .disposed(by: viewModel.disposeBag)
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.textField,
+                                                                   for: indexPath) as? TextFieldTableViewCell else {
+                                                                    return UITableViewCell()
                     }
-                    if indexPath.row == 1 {
-                        cell.textField.placeholder = "Password"
-                        cell.textField.isSecureTextEntry = true
-                        cell.textField.rx.text
-                            .orEmpty
-                            .bind(to: viewModel.passwordText)
-                            .disposed(by: viewModel.disposeBag)
-                    }
+                    configureTextFields(cell: cell, indexPath: indexPath, viewModel: viewModel)
                     return cell
                 case .button:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.button, for: indexPath) as! ButtonTableViewCell
-                    cell.button.setEnabled(isEnabled: false)
-                    
-                    cell.button.rx.tap
-                        .bind(to: viewModel.signInButton)
-                        .disposed(by: viewModel.disposeBag)
-                    
-                    viewModel.validation
-                        .subscribe(onNext: {
-                            cell.button.setEnabled(isEnabled: $0)})
-                        .disposed(by: viewModel.disposeBag)
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.button,
+                                                                   for: indexPath) as? ButtonTableViewCell else {
+                                                                    return UITableViewCell()
+                    }
+                    configureButtons(cell: cell, indexPath: indexPath, viewModel: viewModel)
                     return cell
                 case .error:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.error, for: indexPath) as! ErrorTextTableViewCell
-                    viewModel.errorMessage
-                        .bind(to: cell.errorLabel.rx.text)
-                        .disposed(by: viewModel.disposeBag)
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.error,
+                                                                   for: indexPath) as? ErrorTextTableViewCell else {
+                                                                    return UITableViewCell()
+                    }
+                    configureErrorLabel(cell: cell, indexPath: indexPath, viewModel: viewModel)
                     return cell
                 case .twoButtons:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.twoButtons, for: indexPath) as! TwoButtonsTableViewCell
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.twoButtons,
+                                                                   for: indexPath) as? TwoButtonsTableViewCell else {
+                                                                    return UITableViewCell()
+                    }
                     cell.leftButton.setTitle("Forgot password", for: [])
                     cell.rightButton.setTitle("Sign Up", for: [])
                     cell.rightButton.rx.tap
@@ -72,5 +61,47 @@ class AuthDataSourceFactory {
             titleForHeaderInSection: {dataSource,indexPath in
                 return dataSource.sectionModels[indexPath].title
         })
+    }
+
+    private static func configureTextFields(cell: TextFieldTableViewCell,
+                                            indexPath: IndexPath,
+                                            viewModel: LoginViewModel) {
+        if indexPath.row == 0 {
+            cell.textField.placeholder = "Phone or Email"
+            cell.textField.rx.text
+                .orEmpty
+                .bind(to: viewModel.loginText)
+                .disposed(by: viewModel.disposeBag)
+        }
+        if indexPath.row == 1 {
+            cell.textField.placeholder = "Password"
+            cell.textField.isSecureTextEntry = true
+            cell.textField.rx.text
+                .orEmpty
+                .bind(to: viewModel.passwordText)
+                .disposed(by: viewModel.disposeBag)
+        }
+    }
+
+    private static func configureButtons(cell: ButtonTableViewCell,
+                                         indexPath: IndexPath,
+                                         viewModel: LoginViewModel) {
+        cell.button.setEnabled(isEnabled: false)
+        cell.button.rx.tap
+            .bind(to: viewModel.signInButton)
+            .disposed(by: viewModel.disposeBag)
+
+        viewModel.validation
+            .subscribe(onNext: {
+                cell.button.setEnabled(isEnabled: $0)})
+            .disposed(by: viewModel.disposeBag)
+    }
+
+    private static func configureErrorLabel(cell: ErrorTextTableViewCell,
+                                            indexPath: IndexPath,
+                                            viewModel: LoginViewModel) {
+        viewModel.errorMessage
+            .bind(to: cell.errorLabel.rx.text)
+            .disposed(by: viewModel.disposeBag)
     }
 }

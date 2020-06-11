@@ -1,7 +1,5 @@
-import Foundation
-
 enum CellState: String {
-    case loading = "loading"
-    case complete = "complete"
-    case error = "error"
+    case loading
+    case complete
+    case error
 }

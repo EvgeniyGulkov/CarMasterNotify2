@@ -1,0 +1,16 @@
+xcassets:
+- paths: ../CarMasterNotify/Resources/Assets.xcassets
+  templatePath: Templates/ImageAssets.stencil
+  output: ../CarMasterNotify/Resources/Image.swift
+  params:
+    enumName: Image
+    publicAccess: 1
+    noAllValues: 1
+strings:
+- paths: ../CarMasterNotify/Localization/en.lproj/Localizable.strings
+  templatePath: Templates/LocalizableStrings.stencil
+  output: ../CarMasterNotify/Localization/Localization.swift
+  params:
+    enumName: Localization
+    publicAccess: 1
+    noComments: 0

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
 import RxSwift
 
 class BaseDarkTableViewCell: UITableViewCell {

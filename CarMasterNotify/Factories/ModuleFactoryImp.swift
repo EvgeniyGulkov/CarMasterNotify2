@@ -1,4 +1,3 @@
-import Foundation
 import RxSwift
 
 final class ModuleFactoryImp:
@@ -8,8 +7,7 @@ final class ModuleFactoryImp:
     MainModuleFactory,
     DetailsModuleFactory,
     UsersModuleFactory,
-    StationsModuleFactory
-{
+    StationsModuleFactory {
     let disposeBag = DisposeBag()
 
     func makeSignUpOutput(viewModel: SignUpViewModel) -> SignUpController {
@@ -19,62 +17,62 @@ final class ModuleFactoryImp:
     }
 
     func makeMainOutput() -> TabbarController {
-        let StationsNavigationController = NavigationController()
+        let stationsNavigationController = NavigationController()
         let ordersNavigationController = NavigationController()
         let settingsNavigationController = NavigationController()
         let usersNavigationController = NavigationController()
 
         let controller = TabbarController.controllerFromStoryboard(.main)
-        controller.viewControllers = [StationsNavigationController,
+        controller.viewControllers = [stationsNavigationController,
                                       ordersNavigationController,
                                       usersNavigationController,
                                       settingsNavigationController]
         controller.delegate = controller
         return controller
     }
-    
+
     func makeSettingsOutput(viewModel: SettingsViewModel) -> SettingsController {
         let controller = SettingsController.controllerFromStoryboard(.settings)
         controller.viewModel = viewModel
         return controller
     }
-    
+
     func makeDetailsOutput(viewModel: DetailsViewModel) -> DetailsController {
         let controller = DetailsController.controllerFromStoryboard(.details)
         controller.viewModel = viewModel
         return controller
     }
-    
+
     func makeMessagesOutput(viewModel: MessageViewModel) -> MessageController {
         let controller = MessageController.controllerFromStoryboard(.message)
         controller.viewModel = viewModel
         return controller
     }
-    
+
     func makeChangePasswordDialogueOutput(viewModel: PasswordDialogueViewModel) -> PasswordDialogueController {
         let controller = PasswordDialogueController.controllerFromStoryboard(.passwordDialogue)
         controller.viewModel = viewModel
         return controller
     }
-    
+
     func makeChangeNameDialogueOutput(viewModel: NameChangeViewModel) -> NameChangeDialogueController {
         let controller = NameChangeDialogueController.controllerFromStoryboard(.nameDialogue)
         controller.viewModel = viewModel
         return controller
     }
-    
+
     func makeOrdersOutput(viewModel: OrderViewModel) -> OrderController {
         let controller = OrderController.controllerFromStoryboard(.orders)
         controller.viewModel = viewModel
         return controller
     }
-    
+
     func makeLoginOutput(viewModel: LoginViewModel) -> LoginController {
         let controller = LoginController.controllerFromStoryboard(.auth)
         controller.viewModel = viewModel
         return controller
     }
-    
+
     func makeOrderDetailOutput(viewModel: DetailsViewModel) -> DetailsController {
         let controller = DetailsController.controllerFromStoryboard(.main)
         controller.viewModel = viewModel
@@ -88,7 +86,7 @@ final class ModuleFactoryImp:
     }
 
     func makeStationsOutput(viewModel: StationsViewModel) -> StationsController {
-        let controller = StationsController.controllerFromStoryboard(.Stations)
+        let controller = StationsController.controllerFromStoryboard(.stations)
         controller.viewModel = viewModel
         return controller
     }

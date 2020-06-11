@@ -1,4 +1,3 @@
-import UIKit
 import RxSwift
 import CoreData
 
@@ -7,7 +6,7 @@ private let disposeBag = DisposeBag()
 private let networkProvider =  CustomMoyaProvider<CarMasterApi>()
 
 extension Message: Detail {
-    
+
     static func messages(offset: Int = 0, limit: Int = 0, order: Order) -> [Message] {
         let request = NSFetchRequest<Message>(entityName: String(describing: self))
         request.fetchLimit = limit
@@ -21,7 +20,7 @@ extension Message: Detail {
             return []
         }
     }
-    
+
     func toObject() -> MessageModel {
         let message = MessageModel(id: self.id!,
                                    text: self.text!,
