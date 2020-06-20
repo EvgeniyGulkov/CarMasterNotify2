@@ -16,4 +16,7 @@ protocol CoordinatorFactory {
     func makeUsersCoordinator() -> UsersCoordinator
     func makeUsersCoordinator(navController: UINavigationController?) ->
         UsersCoordinator
+
+    func makeForgotPasswordCoordinator(router: Router) ->
+        ForgotPasswordCoordinator
 }

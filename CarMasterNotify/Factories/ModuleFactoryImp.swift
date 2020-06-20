@@ -1,13 +1,14 @@
 import RxSwift
 
 final class ModuleFactoryImp:
+    ForgotPasswordFactory,
     AuthModuleFactory,
     OrderModuleFactory,
     SettingsModuleFactory,
     MainModuleFactory,
     DetailsModuleFactory,
     UsersModuleFactory,
-    StationsModuleFactory {
+StationsModuleFactory {
     let disposeBag = DisposeBag()
 
     func makeSignUpOutput(viewModel: SignUpViewModel) -> SignUpController {
@@ -95,5 +96,15 @@ final class ModuleFactoryImp:
         let controller = AddStationController.controllerFromStoryboard(.addStation)
         controller.viewModel = viewModel
         return controller
+    }
+
+    func makeEnterEmailOutput(viewModel: ForgotPasswordEnterEmailViewModel) -> ForgotPasswordEnterEmailController {
+        let controller = ForgotPasswordEnterEmailController.controllerFromStoryboard(.forgotPasswordEmail)
+        controller.viewModel = viewModel
+        return controller
+    }
+
+    func makeSendCodeOutput(viewModel: ForgotPasswordEnterEmailViewModel) -> ForgotPasswordEnterEmailController {
+        return ForgotPasswordEnterEmailController()
     }
 }

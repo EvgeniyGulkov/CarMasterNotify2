@@ -52,6 +52,10 @@
 		840539E12352CDE40042C26F /* ModuleFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840539E02352CDE40042C26F /* ModuleFactoryImp.swift */; };
 		840EFEDC23B468D200E23347 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EFEDB23B468D200E23347 /* DateExtensions.swift */; };
 		84135DBA23C48B7D0066BACD /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84135DB923C48B7D0066BACD /* Certificates.swift */; };
+		841398922499242000936903 /* ForgotPasswordDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841398912499242000936903 /* ForgotPasswordDataSource.swift */; };
+		841398952499328800936903 /* ForgotPasswordSendCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841398942499328800936903 /* ForgotPasswordSendCode.storyboard */; };
+		8413989A249932FB00936903 /* ForgotPasswordSendCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84139898249932F700936903 /* ForgotPasswordSendCodeController.swift */; };
+		8413989B249932FD00936903 /* ForgotPasswordSendCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84139899249932F700936903 /* ForgotPasswordSendCodeViewModel.swift */; };
 		8420250C2470EE0800621878 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420250B2470EE0800621878 /* SignUpController.swift */; };
 		8420250E2470EE5D00621878 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8420250D2470EE5D00621878 /* SignUp.storyboard */; };
 		842025122470EEA300621878 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842025112470EEA300621878 /* SignUpViewModel.swift */; };
@@ -79,6 +83,11 @@
 		844A9C30247A567300F27BE7 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A9C2F247A567300F27BE7 /* UserTableViewCell.swift */; };
 		844A9C33247A7DB400F27BE7 /* Station+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A9C32247A7DB400F27BE7 /* Station+Extensions.swift */; };
 		845163EA23E1142200EA7582 /* CarMasterNotifyData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845163E823E1142200EA7582 /* CarMasterNotifyData.xcdatamodeld */; };
+		8452E96F24963A36009AB61F /* ForgotPasswordEnterEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8452E96E24963A36009AB61F /* ForgotPasswordEnterEmail.storyboard */; };
+		8452E971249679DB009AB61F /* ForgotPasswordEnterEmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452E970249679DA009AB61F /* ForgotPasswordEnterEmailController.swift */; };
+		8452E97324967ABD009AB61F /* ForgotPasswordEnterEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452E97224967ABD009AB61F /* ForgotPasswordEnterEmailViewModel.swift */; };
+		8452E97524967B17009AB61F /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452E97424967B17009AB61F /* ForgotPasswordCoordinator.swift */; };
+		8452E97724967D8D009AB61F /* ForgotPasswordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452E97624967D8D009AB61F /* ForgotPasswordFactory.swift */; };
 		84532B2A238CB85100CC8676 /* PasswordDialogueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84532B29238CB85100CC8676 /* PasswordDialogueController.swift */; };
 		84532B2C238CB89C00CC8676 /* PasswordDialogueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84532B2B238CB89C00CC8676 /* PasswordDialogueViewModel.swift */; };
 		84532B2E238CBAB600CC8676 /* PasswordDialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84532B2D238CBAB600CC8676 /* PasswordDialogue.storyboard */; };
@@ -224,6 +233,10 @@
 		840539E02352CDE40042C26F /* ModuleFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryImp.swift; sourceTree = "<group>"; };
 		840EFEDB23B468D200E23347 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		84135DB923C48B7D0066BACD /* Certificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificates.swift; sourceTree = "<group>"; };
+		841398912499242000936903 /* ForgotPasswordDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataSource.swift; sourceTree = "<group>"; };
+		841398942499328800936903 /* ForgotPasswordSendCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordSendCode.storyboard; sourceTree = "<group>"; };
+		84139898249932F700936903 /* ForgotPasswordSendCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSendCodeController.swift; sourceTree = "<group>"; };
+		84139899249932F700936903 /* ForgotPasswordSendCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSendCodeViewModel.swift; sourceTree = "<group>"; };
 		8420250B2470EE0800621878 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		8420250D2470EE5D00621878 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		842025112470EEA300621878 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -249,6 +262,11 @@
 		844A9C2F247A567300F27BE7 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		844A9C32247A7DB400F27BE7 /* Station+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Station+Extensions.swift"; sourceTree = "<group>"; };
 		845163E923E1142200EA7582 /* CarMasterNotifyData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarMasterNotifyData.xcdatamodel; sourceTree = "<group>"; };
+		8452E96E24963A36009AB61F /* ForgotPasswordEnterEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordEnterEmail.storyboard; sourceTree = "<group>"; };
+		8452E970249679DA009AB61F /* ForgotPasswordEnterEmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordEnterEmailController.swift; sourceTree = "<group>"; };
+		8452E97224967ABD009AB61F /* ForgotPasswordEnterEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordEnterEmailViewModel.swift; sourceTree = "<group>"; };
+		8452E97424967B17009AB61F /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
+		8452E97624967D8D009AB61F /* ForgotPasswordFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFactory.swift; sourceTree = "<group>"; };
 		84532B29238CB85100CC8676 /* PasswordDialogueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDialogueController.swift; sourceTree = "<group>"; };
 		84532B2B238CB89C00CC8676 /* PasswordDialogueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDialogueViewModel.swift; sourceTree = "<group>"; };
 		84532B2D238CBAB600CC8676 /* PasswordDialogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordDialogue.storyboard; sourceTree = "<group>"; };
@@ -488,6 +506,7 @@
 		674C68C62478D5FC0029E91A /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				84139893249924A800936903 /* ForgotPassEmailTablewViewCell */,
 				844A9C2E247A565B00F27BE7 /* UserTableViewCell */,
 				844A9C2324798DF900F27BE7 /* StationTableViewCell */,
 				672DE37B24791522008098B6 /* TwoButtonsCell */,
@@ -574,6 +593,8 @@
 				8420250D2470EE5D00621878 /* SignUp.storyboard */,
 				8478BEBA247589BF00923B34 /* AddStation.storyboard */,
 				84611BD4248BE62800F31E10 /* Schedule.storyboard */,
+				8452E96E24963A36009AB61F /* ForgotPasswordEnterEmail.storyboard */,
+				841398942499328800936903 /* ForgotPasswordSendCode.storyboard */,
 				840539CB2351D89F0042C26F /* StoryboardsEnum.swift */,
 			);
 			path = Storyboards;
@@ -601,6 +622,7 @@
 				840539E02352CDE40042C26F /* ModuleFactoryImp.swift */,
 				84EA85D5247832860073E5E3 /* UsersModuleFactory.swift */,
 				84EA85DD247835290073E5E3 /* ServicesModuleFactory.swift */,
+				8452E97624967D8D009AB61F /* ForgotPasswordFactory.swift */,
 				847C21E52352ECB20040B097 /* OrderModuleFactory.swift */,
 				847C22132356DEC00040B097 /* SettingsModuleFactory.swift */,
 				84E8DD2E23683D5B008EF413 /* ViewModelFactory.swift */,
@@ -632,6 +654,31 @@
 				847C220C2356DDB60040B097 /* SettingsFlow */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		84139893249924A800936903 /* ForgotPassEmailTablewViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ForgotPassEmailTablewViewCell;
+			sourceTree = "<group>";
+		};
+		84139896249932CF00936903 /* EmailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8452E970249679DA009AB61F /* ForgotPasswordEnterEmailController.swift */,
+				8452E97224967ABD009AB61F /* ForgotPasswordEnterEmailViewModel.swift */,
+			);
+			path = EmailScreen;
+			sourceTree = "<group>";
+		};
+		84139897249932E300936903 /* SendCode */ = {
+			isa = PBXGroup;
+			children = (
+				84139898249932F700936903 /* ForgotPasswordSendCodeController.swift */,
+				84139899249932F700936903 /* ForgotPasswordSendCodeViewModel.swift */,
+			);
+			path = SendCode;
 			sourceTree = "<group>";
 		};
 		8420250F2470EE7A00621878 /* SignIn */ = {
@@ -738,6 +785,9 @@
 		8449ECBE24839C570040814F /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
+				8452E97424967B17009AB61F /* ForgotPasswordCoordinator.swift */,
+				84139897249932E300936903 /* SendCode */,
+				84139896249932CF00936903 /* EmailScreen */,
 			);
 			path = ForgotPassword;
 			sourceTree = "<group>";
@@ -976,6 +1026,7 @@
 				674C68CE2478E0FE0029E91A /* AuthDataSource.swift */,
 				8492385623BFA368002B9563 /* DetailsDataSource.swift */,
 				844A9C282479934900F27BE7 /* ServiceDataSource.swift */,
+				841398912499242000936903 /* ForgotPasswordDataSource.swift */,
 				844A9C2A247A55A100F27BE7 /* UsersDataSource.swift */,
 			);
 			path = DataSources;
@@ -1102,6 +1153,7 @@
 				847C21FF2356C1ED0040B097 /* Main.storyboard in Resources */,
 				84EA85DC247833740073E5E3 /* Users.storyboard in Resources */,
 				84E6F4102403F049003FFE08 /* Details.storyboard in Resources */,
+				841398952499328800936903 /* ForgotPasswordSendCode.storyboard in Resources */,
 				8405399D234EF8FB0042C26F /* Message.storyboard in Resources */,
 				84611BD5248BE62800F31E10 /* Schedule.storyboard in Resources */,
 				847C220B2356DD8D0040B097 /* Settings.storyboard in Resources */,
@@ -1109,6 +1161,7 @@
 				8478BEBB247589BF00923B34 /* AddStation.storyboard in Resources */,
 				84BEC0BE2349C1040054FE21 /* Assets.xcassets in Resources */,
 				84EA85DA2478333F0073E5E3 /* Stations.storyboard in Resources */,
+				8452E96F24963A36009AB61F /* ForgotPasswordEnterEmail.storyboard in Resources */,
 				84BEC0BC2349C1030054FE21 /* Orders.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1272,6 +1325,7 @@
 				844A9C33247A7DB400F27BE7 /* Station+Extensions.swift in Sources */,
 				674C68D42478E4C60029E91A /* ButtonTableViewCell.swift in Sources */,
 				84E6F419240408D2003FFE08 /* DetailsViewModel.swift in Sources */,
+				8452E97324967ABD009AB61F /* ForgotPasswordEnterEmailViewModel.swift in Sources */,
 				840EFEDC23B468D200E23347 /* DateExtensions.swift in Sources */,
 				84E913EC24715170007BF7F2 /* TextValidator.swift in Sources */,
 				848B8B382469084D007ACD29 /* RoundedCornerButton.swift in Sources */,
@@ -1300,6 +1354,7 @@
 				8478BEC024758FA400923B34 /* AddServiceViewModel.swift in Sources */,
 				840539C02351CD140042C26F /* Presentable.swift in Sources */,
 				84611BE12491331100F31E10 /* LocalizedButton.swift in Sources */,
+				8413989A249932FB00936903 /* ForgotPasswordSendCodeController.swift in Sources */,
 				84D4C17C23758C4B00DB8F58 /* MainModuleFactory.swift in Sources */,
 				674C68DA2478FBDB0029E91A /* ErrorTextTableViewCell.swift in Sources */,
 				84EA85C924782D0F0073E5E3 /* ServicesViewModel.swift in Sources */,
@@ -1307,6 +1362,7 @@
 				84611BF02491C18300F31E10 /* Assets.swift in Sources */,
 				840539DF2352CCA50042C26F /* CoordinatorFactoryImp.swift in Sources */,
 				8478BEBE24758B9500923B34 /* AddServiceController.swift in Sources */,
+				8413989B249932FD00936903 /* ForgotPasswordSendCodeViewModel.swift in Sources */,
 				848B8B2724684DDA007ACD29 /* CellState.swift in Sources */,
 				84B2216F2383A039005FA7B3 /* BorderLayer.swift in Sources */,
 				840539CA2351D7B20042C26F /* UIViewControllerExtensions.swift in Sources */,
@@ -1324,6 +1380,7 @@
 				6701A8182466762A001EA1B5 /* DefaultTextLabel.swift in Sources */,
 				84EA85D12478300B0073E5E3 /* UsersCoordinator.swift in Sources */,
 				84BEC0B72349C1030054FE21 /* AppDelegate.swift in Sources */,
+				841398922499242000936903 /* ForgotPasswordDataSource.swift in Sources */,
 				84B2216D2383A039005FA7B3 /* CircularProgressBar.swift in Sources */,
 				848B8B362468FEAB007ACD29 /* InfoTextLabel.swift in Sources */,
 				84E6F4122403F11E003FFE08 /* DetailsModuleFactory.swift in Sources */,
@@ -1335,6 +1392,7 @@
 				67C5866424695994008133D8 /* CarMasterUserRequest.swift in Sources */,
 				842025122470EEA300621878 /* SignUpViewModel.swift in Sources */,
 				84EA85D22478300B0073E5E3 /* UsersController.swift in Sources */,
+				8452E97724967D8D009AB61F /* ForgotPasswordFactory.swift in Sources */,
 				844A9C2524798E1900F27BE7 /* StationTableViewCell.swift in Sources */,
 				840539BE2351CCEB0042C26F /* BaseView.swift in Sources */,
 				840539E12352CDE40042C26F /* ModuleFactoryImp.swift in Sources */,
@@ -1358,6 +1416,7 @@
 				84EA85DE247835290073E5E3 /* ServicesModuleFactory.swift in Sources */,
 				843ABFAD239DE5890050E37D /* CarMasterApi.swift in Sources */,
 				844A9C2B247A55A100F27BE7 /* UsersDataSource.swift in Sources */,
+				8452E97524967B17009AB61F /* ForgotPasswordCoordinator.swift in Sources */,
 				840539D92351E6190042C26F /* RouterImp.swift in Sources */,
 				84EA85C624782D060073E5E3 /* ServicesController.swift in Sources */,
 				8437AB1223C3518600621A49 /* CustomMoyaProvider.swift in Sources */,
@@ -1365,6 +1424,7 @@
 				84611BEE2491C17600F31E10 /* Localization.swift in Sources */,
 				84724AAA247A939100C9C150 /* StationTableViewCellViewModel.swift in Sources */,
 				8421ED3C23A31E20002091FF /* ReasonsCell.swift in Sources */,
+				8452E971249679DB009AB61F /* ForgotPasswordEnterEmailController.swift in Sources */,
 				84E6F40024011C0B003FFE08 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

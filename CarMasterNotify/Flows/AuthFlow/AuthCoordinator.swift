@@ -4,11 +4,13 @@ final class AuthCoordinator: BaseCoordinator {
     var finishFlow: (() -> Void)?
 
     private let factory: ModuleFactoryImp
+    private let coordinatorFactory: CoordinatorFactoryImp
     private let router: Router
     private let disposeBag = DisposeBag()
 
-    init(router: Router, factory: ModuleFactoryImp) {
+    init(router: Router, coordinatorFactory: CoordinatorFactoryImp, factory: ModuleFactoryImp) {
         self.factory = factory
+        self.coordinatorFactory = coordinatorFactory
         self.router = router
     }
 
@@ -20,6 +22,7 @@ final class AuthCoordinator: BaseCoordinator {
         let viewModel = ViewModelFactory.makeLoginViewModel()
         viewModel.finishFlow = finishFlow
         viewModel.signUp = showSignUpScreen
+        viewModel.showForgotPassword = startForgotPasswordFlow
         let loginOutput = factory.makeLoginOutput(viewModel: viewModel)
         loginOutput.view.backgroundColor = Theme.Color.background
         router.setRootModule(loginOutput)
@@ -30,5 +33,10 @@ final class AuthCoordinator: BaseCoordinator {
         viewModel.finishFlow = finishFlow
         let signUpOutput = factory.makeSignUpOutput(viewModel: viewModel)
         router.push(signUpOutput)
+    }
+
+    private func startForgotPasswordFlow() {
+        let coordinator = coordinatorFactory.makeForgotPasswordCoordinator(router: router)
+        coordinator.start()
     }
 }

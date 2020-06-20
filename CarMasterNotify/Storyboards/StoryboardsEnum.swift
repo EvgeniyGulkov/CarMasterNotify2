@@ -11,4 +11,6 @@ enum Storyboards: String {
     case addStation = "AddStation"
     case stations = "Stations"
     case users = "Users"
+    case forgotPasswordEmail = "ForgotPasswordEnterEmail"
+    case forgotPasswordSendCode = "ForgotPasswordSendCode"
 }

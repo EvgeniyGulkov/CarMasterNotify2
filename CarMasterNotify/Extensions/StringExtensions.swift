@@ -8,10 +8,17 @@
 
 extension String {
     func validate(type: ValidationType) -> String {
-        if isEmpty {
-            return "bla bla bla"
+        guard !isEmpty else {return " "}
+        var result = TextValidator.checkContent(text: self, type: type)
+        if !result {
+            return type.contentError
         } else {
-            return ""
+            result = TextValidator.checkLength(text: self, type: type)
+            if !result {
+                return type.lengthError
+            } else {
+                return ""
+            }
         }
     }
 }

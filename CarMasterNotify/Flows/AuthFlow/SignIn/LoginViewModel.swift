@@ -22,7 +22,7 @@ class LoginViewModel {
     var login: String = ""
     var password: String = ""
     var finishFlow: (() -> Void)?
-    var forgotPassword: (() -> Void)?
+    var showForgotPassword: (() -> Void)?
     var signUp: (() -> Void)?
 
     init(networkProvider: CustomMoyaProvider<CarMasterApi.Auth>) {
@@ -44,6 +44,11 @@ class LoginViewModel {
         self.sighUpButton
             .subscribe(onNext: {[weak self] in
                 self?.signUp!()
+            })
+            .disposed(by: disposeBag)
+        self.forgotPasswordButton
+            .subscribe(onNext: {[weak self] in
+                self?.showForgotPassword!()
             })
             .disposed(by: disposeBag)
     }
