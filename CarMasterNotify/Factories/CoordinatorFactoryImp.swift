@@ -1,13 +1,11 @@
 final class CoordinatorFactoryImp: CoordinatorFactory {
-
     func makeTabbarCoordinator() -> TabbarCoordinator {
         let coordinator = TabbarCoordinator(coordinatorFactory: CoordinatorFactoryImp(), factory: ModuleFactoryImp())
         return coordinator
     }
 
     func makeAuthCoordinatorBox(router: Router) -> AuthCoordinator {
-
-        let coordinator = AuthCoordinator(router: router, factory: ModuleFactoryImp())
+        let coordinator = AuthCoordinator(router: router, coordinatorFactory: CoordinatorFactoryImp(), factory: ModuleFactoryImp())
         return coordinator
     }
 
@@ -51,6 +49,11 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
         let coordinator = UsersCoordinator(router: router(navController),
                                               factory: ModuleFactoryImp(),
                                               coordinatorFactory: CoordinatorFactoryImp())
+        return coordinator
+    }
+
+    func makeForgotPasswordCoordinator(router: Router) -> ForgotPasswordCoordinator {
+        let coordinator = ForgotPasswordCoordinator(router: router, factory: ModuleFactoryImp())
         return coordinator
     }
 

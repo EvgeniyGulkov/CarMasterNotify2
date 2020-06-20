@@ -15,7 +15,7 @@ class SignUpViewModel {
                                                          AuthDataSource(title: "", items: [.error(error: "")])])
     let disposeBag = DisposeBag()
     let networkProvider: CustomMoyaProvider<CarMasterApi.Auth>
-    let title = BehaviorSubject<String>(value: "Registration")
+    let title = BehaviorSubject<String>(value: L10n.registration)
     let confirmTouched = PublishSubject<Void>()
     let firstName = PublishSubject<String>()
     let lastName = PublishSubject<String>()

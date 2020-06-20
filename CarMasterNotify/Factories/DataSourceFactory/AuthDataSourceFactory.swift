@@ -51,6 +51,9 @@ class AuthDataSourceFactory {
                                                                     return UITableViewCell()
                     }
                     cell.leftButton.setTitle("Forgot password", for: [])
+                    cell.leftButton.rx.tap
+                        .bind(to: viewModel.forgotPasswordButton)
+                        .disposed(by: viewModel.disposeBag)
                     cell.rightButton.setTitle("Sign Up", for: [])
                     cell.rightButton.rx.tap
                         .bind(to: viewModel.sighUpButton)

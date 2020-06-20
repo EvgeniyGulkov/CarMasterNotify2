@@ -49,7 +49,7 @@ class SignUpDataSourceFactory {
             viewModel.firstNameHint
                 .bind(to: cell.textField.hintLabel.rx.text)
                 .disposed(by: viewModel.disposeBag)
-            cell.textField.placeholder = "First Name"
+            cell.textField.placeholder = L10n.firstName
             cell.textField.rx.text
                 .orEmpty
                 .bind(to: viewModel.firstName)
@@ -59,7 +59,7 @@ class SignUpDataSourceFactory {
             viewModel.lastNameHint
                 .bind(to: cell.textField.hintLabel.rx.text)
                 .disposed(by: viewModel.disposeBag)
-            cell.textField.placeholder = "Last Name"
+            cell.textField.placeholder = L10n.lastName
             cell.textField.rx.text
                 .orEmpty
                 .bind(to: viewModel.lastName)
@@ -69,7 +69,8 @@ class SignUpDataSourceFactory {
             viewModel.phoneHint
                 .bind(to: cell.textField.hintLabel.rx.text)
                 .disposed(by: viewModel.disposeBag)
-            cell.textField.placeholder = "Phone"
+            cell.textField.placeholder = L10n.phoneNumber
+            cell.textField.keyboardType = .phonePad
             cell.textField.rx.text
                 .orEmpty
                 .bind(to: viewModel.phone)
@@ -79,7 +80,8 @@ class SignUpDataSourceFactory {
             viewModel.emailHint
                 .bind(to: cell.textField.hintLabel.rx.text)
                 .disposed(by: viewModel.disposeBag)
-            cell.textField.placeholder = "Email"
+            cell.textField.placeholder = L10n.email
+            cell.textField.keyboardType = .emailAddress
             cell.textField.rx.text
                 .orEmpty
                 .bind(to: viewModel.email)
@@ -89,7 +91,7 @@ class SignUpDataSourceFactory {
             viewModel.passwordHint
                 .bind(to: cell.textField.hintLabel.rx.text)
                 .disposed(by: viewModel.disposeBag)
-            cell.textField.placeholder = "Password"
+            cell.textField.placeholder = L10n.password
             cell.textField.isSecureTextEntry = true
             cell.textField.rx.text
                 .orEmpty
@@ -100,7 +102,7 @@ class SignUpDataSourceFactory {
             viewModel.confirmPasswordHint
                 .bind(to: cell.textField.hintLabel.rx.text)
                 .disposed(by: viewModel.disposeBag)
-            cell.textField.placeholder = "Confirm Password"
+            cell.textField.placeholder = L10n.confirmPassword
             cell.textField.isSecureTextEntry = true
             cell.textField.rx.text
                 .orEmpty

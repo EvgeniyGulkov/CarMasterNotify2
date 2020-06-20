@@ -65,4 +65,10 @@ class ViewModelFactory {
         let viewModel = AddStationViewModel(networkProvider: networkProvider)
         return viewModel
     }
+
+    static func makeForgotPasswordEnterEmailViewModel() -> ForgotPasswordEnterEmailViewModel {
+        let networkProvider = CustomMoyaProvider<CarMasterApi>()
+        let viewModel = ForgotPasswordEnterEmailViewModel(networkProvider: networkProvider)
+        return viewModel
+    }
 }

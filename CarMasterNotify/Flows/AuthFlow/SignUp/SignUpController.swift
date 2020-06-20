@@ -29,7 +29,6 @@ class SignUpController: BaseTableViewController {
     }
 
     func setupUI() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.keyboardDismissMode = .interactive
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }

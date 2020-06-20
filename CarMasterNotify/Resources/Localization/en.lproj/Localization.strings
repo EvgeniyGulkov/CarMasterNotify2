@@ -11,6 +11,20 @@
 "changePassword" = "Change password";
 "allowNotifications" = "Allow notifications";
 
+//PlACEHOLDERS
+"firstName" = "First name";
+"lastName" = "Last name";
+"phoneNumber" = "Phone number";
+"email" = "Email";
+"password" = "Password";
+"confirmPassword" = "Confirm password";
+
+//TITLES
+"registration" = "Registration";
+"orders" = "Orders";
+"stations" = "Stations";
+"users" = "Users";
+
 // SECTION TITLES
 "ACCOUNTSETTINGS" = "ACCOUNT SETTINGS";
 "NOTIFICATIONSETTINGS" = "NOTIFICATION SETTINGS";
@@ -18,3 +32,12 @@
 
 //BUTTONS
 "signOut" = "Sign out";
+
+//VALIDATION MESSAGES
+"nameLength" = "The name should be within 2 and 20 characters";
+"phoneLength" = "The phone number should be within 8 and 15 characters";
+"emailContent" = "The email should look like email@example.com";
+"passwordLength" = "The password should be within 8 and 16 characters";
+"nameContent" = "The name should not contain punctuation characters and spaces";
+"phoneContent" = "The phone number should only contain digits";
+"confirmPasswordContent" = "The entered text does not match the password";
